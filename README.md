@@ -32,12 +32,48 @@ Tnis application will of course be built mobile first, followed by tablet and th
 
 Our team will be constructing our own API on an Express server. This API will have the following schema as an example transaction:
 
+**User Schema**
+- Takes in user inffo - first and last name, email, password, their budget $$. 
+- User will reference the Budget model which contains user's income and how much they are willing to spend. 
+
 ```
-{
-    Description: String
-    Category: String
-    amountSpent : Number
-    Time: Date
+
+User: {
+    firstname: String,
+    lastname: String,
+    email: String,
+    password: String,
+    Budget: ref 'Budget' ,
+    Transaction: ref 'Transactions'
+}
+```
+**Budget Schema**
+- This has an Income number for how much money user has right now.
+- There is a Spend Goal amount which represents how much user is willing to spend monthly. (Not required)
+- Spend Category is for which categories user would like to spend on.  (Not required)
+```
+Budget: {
+    Income: Number,
+    SpendGoal: {type: Number, required: false },
+    SpendCategory: {type: String, required: false }
+}
+```
+**Transactions Shcema**
+- Description of transaction made ex: 'Sushi with family'
+- Category of the transaction ex: Food, Gas, Travel, Groceries.
+- Amount Spent for the transaction
+- The date transaction was made
+- What type of transaction? Routine Yes/No? --> Routine is for bills. If user has monthly bills to pay, that becomes a routine transaction.
+- What type of transaction? Expense Yes/No? --> User can spend money or receive money. If someone pays them back or the user gets paid for work, the transaction is added to their income.
+
+```
+Transactions: {
+    Description: String,
+    Category: String,
+    AmountSpent: Number,
+    Time: Date,
+    Routine: {type: Boolean, required: false}
+    Expense: {type: Boolean, required: false}
 }
 ```
 ## User Stories
