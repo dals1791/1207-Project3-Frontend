@@ -1,27 +1,24 @@
-# Project 3 - MERN - Sean, Steven and Anny!
+# Project 3 - MERN - BUDGTPAD (name is not final)!
 
 ## Project Links
 
-- [Frontend Repo Link]()
-- [Backend Repo Link]()
-- [Netlify Link]()
-- [Heroku Link]()
+- [Frontend Repo Link](https://github.com/dals1791/1207-Project3-Frontend)
+- [Backend Repo Link](https://github.com/dals1791/1207-Project3-Backend)
+- [Netlify Link](https://elated-galileo-c1aa74.netlify.app/)
+- [Heroku Link](https://project3-backend-1207.herokuapp.com/)
 
 ## Project Description
 
-Our team will be building and deploying a full-stack application that will ## Project Ideas to be determined as of 7:43pm EST 2/4/2021
+Our team will be building and deploying a full-stack application that will allow users to manage their income and expenses in their bank account. Their income and expenses will be visualized by a bar/pie chart on the main page. Users will be able to add daily transactions and see what their spending habits are on. Users can enter transactions based on category, cost, and even place date/time stamps for reference.
 
-- Component
-- Component
-- Component
-- Component
+Tnis application will of course be built mobile first, followed by tablet and then desktop.
 
 ## Project Completion status
 
 | Project Phase | Status/Notes | 
 | --- | :---: |  
-| Group meeting to decide what our application will do | Complete / Meeting scheduled 2/4/2021 9:00PM EST| 
-| Front-End Architecture Planning  | Pending | 
+| Group meeting to decide what our application will do | Complete| 
+| Front-End Architecture Planning  | Complete | 
 | Back-End Architecture Planning | Complete | 
 | Initializing React/Express for basic set-up use | Complete |
 | Primary assembly of Express API Server | Pending |
@@ -33,16 +30,15 @@ Our team will be building and deploying a full-stack application that will ## Pr
 
 ## API
 
-Our team will be constructing our own API on an Express server. ##content to be determined.
+Our team will be constructing our own API on an Express server. This API will have the following schema as an example transaction:
 
 ```
-"example": {
-        "name": "New York",
-        "country": "United States of America"
-        "timezone_id": "America/New_York",
-        "food": "Beef Wellington",
-        "topping": Lamb Sauce,
-        "Cook": "Medium-Rare"
+{
+    Description: String
+    Category: String
+    amountSpent : Number
+    Time: Date
+}
 ```
 ## User Stories
 
@@ -50,9 +46,10 @@ Our team will be constructing our own API on an Express server. ##content to be 
 
 ## Wireframes
 
-Here are the official wireframes for my weather application. The first link is the basic wireframe on the appearance of the application. The second link is the architecture framework for my React components.
+Here are the official wireframes for our budget application. The first two links are the Figma wireframes for both mobile and desktop applications. Our architecture for our React front-end, and Express back-end are attached as well.
 
-- [Wireframe for Application]()
+- [WireFrame - Mobile](https://www.figma.com/file/DfRQa0bx3jLrD2q41igogW/BUDGTPAD-WireFrame-Mobile-name-is-not-final?node-id=4%3A2)
+- [WireFrame - Desktop](https://www.figma.com/file/njd9KOGH3tyByGZcg606vH/BUDGTPAD-WireFrame-Desktop?node-id=0%3A1)
 - [Front-End Architecture](https://docs.google.com/document/d/1cihabkw6SrNlEe_E8MJKUVV-zLnOUvzDcJDbjgFdojk/edit?usp=sharing)
 - [Back-End Architecture](https://docs.google.com/spreadsheets/d/1XECmUmoJZeuVNIFufisZjdueglj_SYs-7OsxV74k5nQ/edit#gid=0)
 
@@ -92,33 +89,45 @@ Two separate repo's are required for this project, one for the `Back-End` and on
 
 #### PostMVP Application
 
-- Add styling to make the weather look appealing to the user. 
-- Add Javascript animations to the application. 
+- User authentication for people to be able to make accounts and log-in.
+- Light and dark mode.
+- Sorting transactions (monthly, daily)
+- Edit a transaction based on clicking the transaction versus clicking a button. 
+- Settings page for users to configure light and dark mode.
 
-## Front-End Components
-##### Project meeting to determine what application we will build.
+## Front-End Pages and Components
 Initial components decided for Project. 
 
-| Component | Description | 
-| --- | :---: |  
-| *Component Name* | *Component Description* |
-| *Component Name* | *Component Description* |
-| *Component Name* | *Component Description* |
-| *Component Name* | *Component Description* |
-| *Component Name* | *Component Description* |
-| *Component Name* | *Component Description* |
-| *Component Name* | *Component Description* |
+| Pages | Description | 
+| --- | :---: | 
+| App.js | Main page to store and render all components |
+| Login | Lets users log on the application. |
+| Landing | Render pie chart, transactions and income. |
+| Transactions | Shows daily transactions of user. |
+| User info | Account infomation of user. |
+
+| Components | Description | 
+| --- | :---: |
+| Team | Shows user stories and team members that worked on this app. |
+| User Login Form | Lets users create account using email and password. |
+| Pie Chart | Visual diagram of user income and expenses. |
+| Add Transaction | Allows users to log transaction based on category, description, cost, date and time. |
+| Add Income/Goal | Adding user income and goals of spending habits.       |
 
 ## Time-Frames
 
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| Task | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
-| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
-| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
-| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
-| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
-| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
+| Create database | H | 5 hrs | *hrs* | *hrs* |
+| Create React Components | H | 4 hrs | *hrs* | *hrs* |
+| Create routes/test | H | 8 hrs | 4 hrs | *hrs* |
+| Send routes to React | H | 1 hr | *hrs* |
+| Render data on components | H| | 6 hrs | *hrs* |
+| Link API to React | H| 1 hr | *hrs* | *hrs* |
+| Final touches front-end | L | 1 hr | *hrs* | *hrs* |
+| Final touches back-end | L | 1 hr | *hrs* | *hrs* |
+| CSS Styling | M | 8 hrs | *hrs* | *hrs* |
+| Total Time | H | 35 hrs | *hrs* | *hrs* |
 
 ## Additional Libraries
 Our team will probably use the following libraries and frameworks:
@@ -134,6 +143,19 @@ Our team will probably use the following libraries and frameworks:
 
 Official tasks assigned to each team member. Collaboration will be done on Trello.
 
-- Sean - *insert tasks to be assigned*
-- Anny - *insert tasks to be assigned*
-- Steven - *insert tasks to be assigned*
+**Sean:**
+- Working on the database. 
+- Handling mostly back-end but will stand-by for front-end when neccesary.
+- Creating planning directory and architecture.
+
+**Anny:**
+- Handling piechart diagrams.
+- Seeding data.
+- Helping out with routes, back-end and front-end. 
+
+**Steven:**
+- Handling visualization of the final product. Created wireframes for the project.
+- CSS Styling when everything is up and running.
+- Create basic component layout and render to React. 
+- Update the readme file and provide updates on the team.
+- Handling front-end look and components, will receive assistance when neccesary.
