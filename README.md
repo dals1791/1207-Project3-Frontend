@@ -33,11 +33,10 @@ Tnis application will of course be built mobile first, followed by tablet and th
 Our team will be constructing our own API on an Express server. This API will have the following schema as an example transaction:
 
 **User Schema**
-- Takes in user inffo - first and last name, email, password, their budget $$. 
-- User will reference the Budget model which contains user's income and how much they are willing to spend. 
-
+- Contains user info - first and last name, email, password
+- User will reference the Budget model which contains their income and how much they are willing to spend. 
+- User will also reference a Transaction Model which contains details of what they spend money on.
 ```
-
 User: {
     firstname: String,
     lastname: String,
