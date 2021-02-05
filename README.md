@@ -22,8 +22,8 @@ Our team will be building and deploying a full-stack application that will ## Pr
 | --- | :---: |  
 | Group meeting to decide what our application will do | Complete / Meeting scheduled 2/4/2021 9:00PM EST| 
 | Front-End Architecture Planning  | Pending | 
-| Back-End Architecture Planning | Pending | 
-| Initializing React/Express for basic set-up use | Pending |
+| Back-End Architecture Planning | Complete | 
+| Initializing React/Express for basic set-up use | Complete |
 | Primary assembly of Express API Server | Pending |
 | Primary assembly of React front-end application | Pending |
 | Setting useState and useEffect hooks | Pending |
@@ -44,14 +44,18 @@ Our team will be constructing our own API on an Express server. ##content to be 
         "topping": Lamb Sauce,
         "Cook": "Medium-Rare"
 ```
+## User Stories
+
+- [User Stories](https://docs.google.com/spreadsheets/d/1Jt04_3x2bBOjLyEk1pWXB2FXh_d--9XjrhQ5qbZH9aM/edit#gid=0)
 
 ## Wireframes
 
 Here are the official wireframes for my weather application. The first link is the basic wireframe on the appearance of the application. The second link is the architecture framework for my React components.
 
 - [Wireframe for Application]()
-- [Front-End Architecture]()
-- [Back-End Architecture]()
+- [Front-End Architecture](https://docs.google.com/document/d/1cihabkw6SrNlEe_E8MJKUVV-zLnOUvzDcJDbjgFdojk/edit?usp=sharing)
+- [Back-End Architecture](https://docs.google.com/spreadsheets/d/1XECmUmoJZeuVNIFufisZjdueglj_SYs-7OsxV74k5nQ/edit#gid=0)
+
 
 ## Overall Project Requirements
 
