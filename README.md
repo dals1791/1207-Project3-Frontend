@@ -60,7 +60,7 @@ Budget: {
 **Transactions Shcema**
 - Description of transaction made ex: 'Sushi with family'
 - Category of the transaction ex: Food, Gas, Travel, Groceries.
-- Amount Spent for the transaction
+- Amount of money for the transaction
 - The date transaction was made
 - What type of transaction? Routine Yes/No? --> Routine is for bills. If user has monthly bills to pay, that becomes a routine transaction.
 - What type of transaction? Expense Yes/No? --> User can spend money or receive money. If someone pays them back or the user gets paid for work, the transaction is added to their income.
@@ -69,7 +69,7 @@ Budget: {
 Transactions: {
     Description: String,
     Category: String,
-    AmountSpent: Number,
+    Amount: Number,
     Time: Date,
     Routine: {type: Boolean, required: false}
     Expense: {type: Boolean, required: false}
@@ -89,46 +89,58 @@ Here are the official wireframes for our budget application. The first two links
 - [Back-End Architecture](https://docs.google.com/spreadsheets/d/1XECmUmoJZeuVNIFufisZjdueglj_SYs-7OsxV74k5nQ/edit#gid=0)
 
 
-## Overall Project Requirements
+### Technical Requirements - Two Separate Repos
 
-The following **_must_** be met in order for the project to be considered
-complete:
+- [Frontend Repo Link](https://github.com/dals1791/1207-Project3-Frontend)
+- [Backend Repo Link](https://github.com/dals1791/1207-Project3-Backend)
 
-- Our app is deployed fully deployed (both the front-end and the back-end).
-- Students include a `planning/` directory that sufficiently demonstrates their
-  team's planning process.
-- The repos have a README that adequately documents the project.
-- The commit history of your repos show a roughly equal number of commits from
-  each group member
-- a `Team` page to show case each team memeber's picture, passion, and contribution on the project. 
 
-### Technical Requirements
+## MVP 
 
-Two separate repo's are required for this project, one for the `Back-End` and one for the `Front-End`. They must not reside in the same repo. 
+### Backend
+- Backend Repo wth readme that describes backend.
+- Planning Directory that has full backend/frontend planning.
+  - Contains user stories, backend architecture, frontend architecture, and wireframes
+- Use Node, express, and mongoosedb
+- Create a minimum of 2 models.
+  - User, Budget, and Transaction
+- Models have at least one association. (1 to 1, 1 to Many, Many to Many)
+  - Create 1 to Many association
+- Full CRUD on at least one model. (where it makes sense)
+- Create logically named routes/urls.
+- Deployed via Heroku
 
-**Back-End Requirements:**
+### Frontend
+- Frontend Repo with readme that describes frontend.
+- Uses React App. 
+- React app leverages backend API information. 
+- Uses React Router to handle multiple views
+- Communicate with backend DB using Fetch or Axios.
+  - Communicate with fetch. 
+  - Render data to frontend.
+- Contains project team page
+- Be responsive (Mobile, Tablet, and Desktop).
+- Deployed via Netlify or Vercel 
 
-- Our back-end must be a Node, Express, and Mongoose API with at least 2
-  models, more if needed, and one association.
-- Must have Create, Read, Update, and Destroy functionality built throughout the
-  app (i.e. You don't need full CRUD on every model, just full CRUD throughout
-  your models where it makes sense).
+## Functional Aspect
+- user can log in (default page).
+- landing page shows summary of monthly (default) expenses. 
+  - income, expenses, pie or bar chart with breakdown of transactions, net gain/loss.
+- user has ability to navigate to home, transactions, user info, or porject team pages via navbar. 
+- user can add a transaction (expense or income) anytime via nav-bar.
+  - populates transactions page and updates landing page.
+- transactions page shows following infomration:
+  - routine transactions aka monthly bills (utilities, rent, insurance, etc)
+  - non-routine transactions i.e. dining out, spntaneous purchases, groceries, etc. 
+  - shows transactions based on time stamp.
+- user can add user information and create expense goals per month
 
-**Front-End Requirements:**
-
-- Your front-end must use React and leverage the backend API.
-- You must use React Router to handle multiple views.
-- You must communicate with the back-end API RESTfully to Create, Read, Update,
-  and Destroy resources (using either `fetch` or `axios`).
-- Your frontend must be responsive and work on mobile phones, tablets, and desktops
-
-#### PostMVP Application
-
+#### Post-MVP
 - User authentication for people to be able to make accounts and log-in.
-- Light and dark mode.
-- Sorting transactions (monthly, daily)
+- Sorting transactions (monthly, daily).
 - Edit a transaction based on clicking the transaction versus clicking a button. 
 - Settings page for users to configure light and dark mode.
+- historical trending, analysis, comparisons. (daily, monthly, yearly)
 
 ## Front-End Pages and Components
 Initial components decided for Project. 
@@ -149,20 +161,37 @@ Initial components decided for Project.
 | Add Transaction | Allows users to log transaction based on category, description, cost, date and time. |
 | Add Income/Goal | Adding user income and goals of spending habits.       |
 
-## Time-Frames
+## MVP Time-Frames
 
 | Task | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Create database | H | 5 hrs | *hrs* | *hrs* |
-| Create React Components | H | 4 hrs | *hrs* | *hrs* |
-| Create routes/test | H | 8 hrs | 4 hrs | *hrs* |
-| Send routes to React | H | 1 hr | *hrs* |
-| Render data on components | H| | 6 hrs | *hrs* |
-| Link API to React | H| 1 hr | *hrs* | *hrs* |
-| Final touches front-end | L | 1 hr | *hrs* | *hrs* |
-| Final touches back-end | L | 1 hr | *hrs* | *hrs* |
-| CSS Styling | M | 8 hrs | *hrs* | *hrs* |
-| Total Time | H | 35 hrs | *hrs* | *hrs* |
+| Create database/seed data | H | 6 hrs | *hrs* | *hrs* |
+| Create routes/test | H | 8 hrs | *hrs* | *hrs* |
+| Create React Skeleton React Components | H | 5 hrs | *hrs* | *hrs* |
+| React Routes/Paths linking to components | H | 1 hr | *hrs* |
+| API fetch to grab data in React | H| 1 hr | *hrs* | *hrs* |
+| Login page - check user Input | H| | 4 hrs | *hrs* 
+| Landing page - Render pie chart and income data | H | 8 hrs | *hrs* |
+| Transactions page - Render transactions data | H| | 4 hrs | *hrs* |
+| Transactions Form component - add new transaction and display it on Transactions page | H| | 3 hrs | *hrs* |
+| User Info page - render data | H| | 3 hrs | *hrs* |
+| User Info Form Component - Edit user info: name, email, password, income | H| | 3 hrs | *hrs* |
+| Teams page | H| | 2 hrs | *hrs* |
+| Mobile Layout | M | 15 hrs | *hrs* | *hrs* |
+| Tablet Layout | M | 15 hrs | *hrs* | *hrs* |
+| Desktop Layout | M | 15 hrs | *hrs* | *hrs* |
+| Total Time | H |  93 hrs | *hrs* | *hrs* |
+
+## Post MVP Time-Frames
+| Task | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| User authentication | H | 10 hrs | *hrs* | *hrs* |
+| Sorting transactions (monthly, daily, yearly) | M | 6 hrs | *hrs* | *hrs* |
+| Edit a transaction based on clicking the transaction versus clicking a button.  | MH | 10 hrs | *hrs* | *hrs* |
+| Settings page for users to configure light and dark mode. | L | 6 hrs | *hrs* | *hrs* |
+| Historical trending, analysis, comparisons of spending data. (daily, monthly, yearly) | L | 20 hrs | *hrs* | *hrs* |
+| Total Time | H |  52 hrs | *hrs* | *hrs* |
+
 
 ## Additional Libraries
 Our team will probably use the following libraries and frameworks:
@@ -172,7 +201,8 @@ Our team will probably use the following libraries and frameworks:
 - Express.js
 - Mongo Shell
 - Mongoose
-- Bootstrap (*optional*)
+- Bootstrap
+- Chart.js
 
 ## Tasks for Team Members
 
