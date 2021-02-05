@@ -171,13 +171,13 @@ Initial components decided for Project.
 | Create React Skeleton React Components | H | 5 hrs | *hrs* | *hrs* |
 | React Routes/Paths linking to components | H | 1 hr | *hrs* |
 | API fetch to grab data in React | H| 1 hr | *hrs* | *hrs* |
-| Login page - check user Input | H| | 4 hrs | *hrs* 
+| Login page - check user Input | H|4 hrs | *hrs*  | *hrs* |
 | Landing page - Render pie chart and income data | H | 8 hrs | *hrs* |
-| Transactions page - Render transactions data | H| | 4 hrs | *hrs* |
-| Transactions Form component - add new transaction and display it on Transactions page | H| | 3 hrs | *hrs* |
-| User Info page - render data | H| | 3 hrs | *hrs* |
-| User Info Form Component - Edit user info: name, email, password, income | H| | 3 hrs | *hrs* |
-| Teams page | H| | 2 hrs | *hrs* |
+| Transactions page - Render transactions data | H| 4 hrs| *hrs* | *hrs* |
+| Transactions Form component - add new transaction and display it on Transactions page | H| 3 hrs| *hrs* | *hrs* |
+| User Info page - render data | H| 3 hrs| *hrs* | *hrs* |
+| User Info Form Component - Edit user info: name, email, password, income | H|3 hrs | *hrs* | *hrs* |
+| Teams page | H|2 hrs | *hrs* | *hrs* |
 | Mobile Layout | M | 15 hrs | *hrs* | *hrs* |
 | Tablet Layout | M | 15 hrs | *hrs* | *hrs* |
 | Desktop Layout | M | 15 hrs | *hrs* | *hrs* |
