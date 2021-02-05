@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# Project 3 - MERN - Sean, Steven and Anny!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Links
 
-## Available Scripts
+- [Frontend Repo Link]()
+- [Backend Repo Link]()
+- [Netlify Link]()
+- [Heroku Link]()
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+Our team will be building and deploying a full-stack application that will ## Project Ideas to be determined as of 7:43pm EST 2/4/2021
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Component
+- Component
+- Component
+- Component
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Completion status
 
-### `npm test`
+| Project Phase | Status/Notes | 
+| --- | :---: |  
+| Group meeting to decide what our application will do | Complete / Meeting scheduled 2/4/2021 9:00PM EST| 
+| Front-End Architecture Planning  | Pending | 
+| Back-End Architecture Planning | Pending | 
+| Initializing React/Express for basic set-up use | Pending |
+| Primary assembly of Express API Server | Pending |
+| Primary assembly of React front-end application | Pending |
+| Setting useState and useEffect hooks | Pending |
+| Calling API to React application | Pending |
+| Testing of bare-bone application for functionality | Pending |
+| CSS Styling | Pending |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API
 
-### `npm run build`
+Our team will be constructing our own API on an Express server. ##content to be determined.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+"example": {
+        "name": "New York",
+        "country": "United States of America"
+        "timezone_id": "America/New_York",
+        "food": "Beef Wellington",
+        "topping": Lamb Sauce,
+        "Cook": "Medium-Rare"
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Wireframes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Here are the official wireframes for my weather application. The first link is the basic wireframe on the appearance of the application. The second link is the architecture framework for my React components.
 
-### `npm run eject`
+- [Wireframe for Application]()
+- [Front-End Architecture]()
+- [Back-End Architecture]()
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Overall Project Requirements
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The following **_must_** be met in order for the project to be considered
+complete:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Our app is deployed fully deployed (both the front-end and the back-end).
+- Students include a `planning/` directory that sufficiently demonstrates their
+  team's planning process.
+- The repos have a README that adequately documents the project.
+- The commit history of your repos show a roughly equal number of commits from
+  each group member
+- a `Team` page to show case each team memeber's picture, passion, and contribution on the project. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Technical Requirements
 
-## Learn More
+Two separate repo's are required for this project, one for the `Back-End` and one for the `Front-End`. They must not reside in the same repo. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Back-End Requirements:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Our back-end must be a Node, Express, and Mongoose API with at least 2
+  models, more if needed, and one association.
+- Must have Create, Read, Update, and Destroy functionality built throughout the
+  app (i.e. You don't need full CRUD on every model, just full CRUD throughout
+  your models where it makes sense).
 
-### Code Splitting
+**Front-End Requirements:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Your front-end must use React and leverage the backend API.
+- You must use React Router to handle multiple views.
+- You must communicate with the back-end API RESTfully to Create, Read, Update,
+  and Destroy resources (using either `fetch` or `axios`).
+- Your frontend must be responsive and work on mobile phones, tablets, and desktops
 
-### Analyzing the Bundle Size
+#### PostMVP Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Add styling to make the weather look appealing to the user. 
+- Add Javascript animations to the application. 
 
-### Making a Progressive Web App
+## Front-End Components
+##### Project meeting to determine what application we will build.
+Initial components decided for Project. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Component | Description | 
+| --- | :---: |  
+| *Component Name* | *Component Description* |
+| *Component Name* | *Component Description* |
+| *Component Name* | *Component Description* |
+| *Component Name* | *Component Description* |
+| *Component Name* | *Component Description* |
+| *Component Name* | *Component Description* |
+| *Component Name* | *Component Description* |
 
-### Advanced Configuration
+## Time-Frames
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
+| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
+| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
+| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
+| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
+| *Task Name* | *Priority* | *hrs*| *hrs* | *hrs* |
 
-### Deployment
+## Additional Libraries
+Our team will probably use the following libraries and frameworks:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- React.js
+- React-Router
+- Express.js
+- Mongo Shell
+- Mongoose
+- Bootstrap (*optional*)
 
-### `npm run build` fails to minify
+## Tasks for Team Members
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Official tasks assigned to each team member. Collaboration will be done on Trello.
+
+- Sean - *insert tasks to be assigned*
+- Anny - *insert tasks to be assigned*
+- Steven - *insert tasks to be assigned*
