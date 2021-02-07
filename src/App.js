@@ -1,10 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AddIncome from "./components/AddIncome";
+import PieChart from "./components/PieChart";
+import Team from "./components/Team";
+import Transaction from "./components/Transaction";
+import UserLogin from "./components/UserLogin";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <AddIncome />
+      <PieChart />
+      <Team />
+      <Transaction />
+      <UserLogin />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +26,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
