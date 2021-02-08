@@ -25,7 +25,7 @@ const UserLogin = ()=>{
           <h1>BUGTPAD</h1>
           <p>We got tired of complicated apps, so here you go.</p>
           <button onClick={handleToggleLogin}>Login</button>
-          <button onClick={handleToggleRegister}>Register</button>
+          <button onClick={handleToggleRegister}>New User?</button>
             <div>
                 {displayUserLogin()}
             </div>

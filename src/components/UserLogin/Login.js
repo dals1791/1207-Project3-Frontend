@@ -9,7 +9,7 @@ const Login = () => {
   };
   //Handle for UserName & PW - Tracks typing when inputing into form input.
   const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    setFormData({[event.target.name]: event.target.value });
   };
   return (
     <form>
