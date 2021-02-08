@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "liveServer.settings.donotShowInfoMsg": true,
     "liveServer.settings.donotVerifyTags": true,
-    "workbench.colorTheme": "Feather",
+    "workbench.colorTheme": "Atom One Light",
     "terminal.integrated.fontSize": 16,
     "files.autoSave": "off",
     "json.maxItemsComputed": 10000,

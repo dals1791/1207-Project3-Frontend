@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
-import Mychart from "./Mychart";
-import Dounut from "./Dounut";
+
+
 import AddIncome from "./components/AddIncome";
 import PieChart from "./components/PieChart";
 import Team from "./components/Team";
@@ -12,9 +12,11 @@ function App() {
   return (
     <div className="App">
       <h1>Hello World</h1>
-      <Mychart />
-
-      <Dounut />
+      <AddIncome />
+      <PieChart />
+      <Team />
+      <Transaction />
+      <UserLogin />
     </div>
   );
 }
