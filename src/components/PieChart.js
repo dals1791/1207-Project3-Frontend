@@ -2,7 +2,6 @@ import { Doughnut, HorizontalBar, Line, Pie } from "react-chartjs-2";
 import React from "react";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import ChartDoughnutLabels from "chartjs-plugin-doughnutlabel";
-
 import "../App.css";
 
 const PieChart = (props) => {
@@ -35,16 +34,19 @@ const PieChart = (props) => {
   }, []);
 
   return (
-    <div className="chart">
+    <div
+      className="chart"
+      style={{
+        border: "1px solid",
+      }}
+    >
       <Doughnut
         data={chartData}
-        //height={50}
-        // width={200}
         options={{
           responsive: true,
           //Set this to false if you want to give chart a custom height/width.
           // If using size of div, set to true. Using true would be easier but lets experiment.
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
           layout: {
             padding: 30,
           },
@@ -90,9 +92,9 @@ const PieChart = (props) => {
             },
           },
           title: {
-            display: false,
+            display: true,
             text: "Monthly Spendings",
-            fontSize: 35,
+            fontSize: 30,
             align: "start",
             position: "top",
           },

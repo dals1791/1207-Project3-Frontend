@@ -3,8 +3,8 @@ import React from "react";
 
 
 import AddIncome from "./components/AddIncome";
-import PieChart from "./components/PieChart";
 import Team from "./components/Team";
+import Landing from "./components/Landing";
 import Transaction from "./components/Transaction";
 import UserLogin from "./components/UserLogin/UserLogin";
 
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <h1>Hello World</h1>
       <AddIncome />
-      <PieChart />
+      <Landing />
       <Team />
       <Transaction />
       <UserLogin />
