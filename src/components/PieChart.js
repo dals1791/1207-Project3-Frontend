@@ -3,7 +3,7 @@ import React from "react";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import ChartDoughnutLabels from "chartjs-plugin-doughnutlabel";
 
-import "./App.css";
+import "../App.css";
 
 const PieChart = (props) => {
   const [chartData, setChartData] = React.useState({});
