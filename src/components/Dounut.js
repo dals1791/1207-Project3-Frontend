@@ -3,8 +3,6 @@ import React from "react";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import ChartDoughnutLabels from "chartjs-plugin-doughnutlabel";
 
-import "./App.css";
-
 const Dounut = (props) => {
   const [chartData, setChartData] = React.useState({});
 
