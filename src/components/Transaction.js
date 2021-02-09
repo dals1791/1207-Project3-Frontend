@@ -4,9 +4,9 @@ const Transaction = (props) => {
   const { user } = props;
 
   const loaded = () => {
-    console.log("User info in transactions: ", user[0].transactions);
-
-    // ============= Calculate total budget and total spendings... =============
+    /* ------------------------------------------------------
+     CALCULATE THE TOTAL SPENDINGS
+    ------------------------------------------------------ */
     let totalSpent = 0;
     const transactions = user[0].transactions;
     const budget = user[0].budget;
@@ -15,13 +15,62 @@ const Transaction = (props) => {
       return (totalSpent = totalSpent + transaction.amount);
     });
 
-    /*
-          <div>
-            <p>Pay back for coffee from Joe</p>
-            <p>Gift</p>
-            <span>$35.94</span>
-          </div>
-    */
+    /* ------------------------------------------------------
+     GET TRANSACTIONS FROM LATEST TO OLDEST - NON-BILLS - EXPENSE TRUE
+    ------------------------------------------------------ */
+
+    const nonRoutineExpense = user[0].transactions.filter((transaction) => {
+      return transaction.isRoutine === false && transaction.isExpense === true;
+    });
+
+    const expenseList = nonRoutineExpense.map((expense, index) => {
+      let formatedDate = new Date(expense.time).toString();
+      console.log("new date: ", formatedDate);
+
+      return (
+        <div
+          style={{
+            border: "1px solid green",
+          }}
+          key={index}
+        >
+          <p>{expense.description}</p>
+          <p>{expense.category}</p>
+          <p>{formatedDate}</p>
+          <span>${expense.amount}</span>
+        </div>
+      );
+    });
+
+    console.log("User info in transactions: ", user[0].transactions);
+    console.log("All non-routine expenses: ", nonRoutineExpense);
+
+    /* ------------------------------------------------------
+    GET TRANSACTIONS FROM LATEST TO OLDEST - BILLS - EXPENSE TRUE
+  ------------------------------------------------------ */
+    const routineExpense = user[0].transactions.filter((transaction) => {
+      return transaction.isRoutine === true && transaction.isExpense === true;
+    });
+
+    const routineList = routineExpense.map((expense, index) => {
+      let formatedDate = new Date(expense.time).toString();
+      console.log("new date: ", formatedDate);
+
+      return (
+        <div
+          style={{
+            border: "1px solid green",
+          }}
+          key={index}
+        >
+          <p>{expense.description}</p>
+          <p>{expense.category}</p>
+          <p>{formatedDate}</p>
+          <span>${expense.amount}</span>
+        </div>
+      );
+    });
+    console.log("All routine expenses: ", routineExpense);
 
     return (
       <div
@@ -49,24 +98,7 @@ const Transaction = (props) => {
           }}
         >
           <h2>Latest</h2>
-
-          <div>
-            <p>Pay back for coffee from Joe</p>
-            <p>Gift</p>
-            <span>$35.94</span>
-          </div>
-
-          <div>
-            <p>Delicious sushi</p>
-            <p>Food</p>
-            <span>$24.99</span>
-          </div>
-
-          <div>
-            <p>Gratituity for Kenny's advice</p>
-            <p>Other</p>
-            <span>$56</span>
-          </div>
+          {expenseList}
         </section>
 
         <section
@@ -76,18 +108,7 @@ const Transaction = (props) => {
           }}
         >
           <h2>Bills</h2>
-
-          <div>
-            <p>Subscription for Alex's video tutorials</p>
-            <p>Subscriptions</p>
-            <span>$24.99</span>
-          </div>
-
-          <div>
-            <p>Rent Due for Mrs. Moris</p>
-            <p>Rent</p>
-            <span>$1350</span>
-          </div>
+          {routineList}
         </section>
       </div>
     );
