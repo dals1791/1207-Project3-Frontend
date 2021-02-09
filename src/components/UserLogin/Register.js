@@ -1,18 +1,19 @@
 import React, {useState} from 'react'
 
-const Register = ()=>{
+const Register = (props)=>{
 const [formData, setFormData] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
-    // props.handleSubmit(formData); // Submit to Parents desired function
+    props.handleSubmit(formData); // Submit to Parents desired function
     // props.history.push("/landing"); //Push back to landing page
   };
   //Handle for UserName & PW - Tracks typing when inputing into form input.
   const handleChange = (event) => {
     setFormData({...formData, [event.target.name]: event.target.value });
   };
+  console.log("this is formdata", formData)
     return(
-        <form>
+        <form onClick={handleSubmit}>
         <h2>Register</h2>
         <div>
         <input
@@ -31,6 +32,13 @@ const [formData, setFormData] = useState("");
         />
         <input
           type="text"
+          name="email"
+          placeholder= "Enter a Email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
           name="userName"
           placeholder= "Enter a Username"
           value={formData.userName}
@@ -44,7 +52,7 @@ const [formData, setFormData] = useState("");
           onChange={handleChange}
         />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button type="submit" >
         Register
       </button>
         </form>
