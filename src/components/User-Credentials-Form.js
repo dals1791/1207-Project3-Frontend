@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const UserCredentials = () => {
+const UserCredentials = (props) => {
   const [formData, setFormData] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
@@ -13,12 +13,12 @@ const UserCredentials = () => {
   };
   return (
     <form>
+      <label>Update User Profile</label>
       <div>
-          <label>Update Username:</label>
         <input
           type="text"
           name="userName"
-          placeholder="Username"
+          placeholder= {props.user.userName}
           value={formData.userName}
           onChange={handleChange}
         />
@@ -27,7 +27,6 @@ const UserCredentials = () => {
       </button>
       </div>
       <div>
-          <label>Update Password:</label>
         <input
           type="text"
           name="Password"
