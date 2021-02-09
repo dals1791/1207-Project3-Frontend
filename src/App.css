@@ -1,38 +1,81 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chart {
+  width: 800px;
+  height: 600px;
+  border: 1px solid;
+  margin: 15px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bar {
+  background-color: rgb(64, 23, 129);
+  width: 100%;
+  height: 120px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  font-size: 2rem;
+  list-style-type: none;
   color: white;
+  padding-top: 70px;
+  padding-right: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.flex-container li:hover {
+  color: green;
+  transition: color 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-button {
+  
+}
+
+.team-component {
+}
+
+.team-member-card {
+  background-color: rgb(64, 23, 129);
+  width: 50%;
+  transition: width 1s;
+}
+
+.team-member-card:hover {
+  width: 100%;
+}
+
+.team-header {
+  text-align: left;
+  padding: 5px 0 0 15px;
+}
+
+.avatar {
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin-left: 25px;
+  margin-top: 40px;
+}
+
+.name-header1, .name-header2, .name-header3 {
+  color: white;
+  text-align: left;
+  padding-left: 100px;
+  padding-top: 15px;
+}
+
+.paragraph-team1, .paragraph-team2, .paragraph-team3 {
+  color:white;
+  text-align: left;
+  padding-left: 100px;
+  padding-bottom: 15px;
+}
+
+.team-member-card {
+  margin: 15px;
 }

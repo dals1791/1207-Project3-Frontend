@@ -1,4 +1,9 @@
+
+import { Route, Switch} from "react-router-dom";
 import "./App.css";
+import React from "react";
+import Mychart from "./Mychart";
+import Dounut from "./Dounut";
 import AddIncome from "./components/AddIncome";
 import PieChart from "./components/PieChart";
 import Team from "./components/Team";
@@ -8,25 +13,22 @@ import UserLogin from "./components/UserLogin";
 function App() {
   return (
     <div className="App">
-      <AddIncome />
-      <PieChart />
-      <Team />
-      <Transaction />
-      <UserLogin />
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <Switch>
+        <Route exact path="/">
+          <PieChart />
+          <Mychart />
+          <AddIncome />
+          <Dounut />
+        </Route>
+        <Route path="/team">
+          <Team />
+        </Route>
+        <Route path="/userlogin">
+          <UserLogin />
+          <Transaction />
+        </Route>
+      </Switch>
+      <NavBar />
     </div>
   );
 }
