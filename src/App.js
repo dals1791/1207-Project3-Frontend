@@ -13,11 +13,30 @@ import NavBar from "./components/NavBar";
 import UserCredentials from "./components/User-Credentials-Form";
 
 function App() {
+  const url = "http://localhost:4000/users";
+
+  // ----------------------- Defines STATES -----------------------
+  const [user, setUser] = React.useState(null);
+
+  // ============= USEEFFECT FUNCTION TO GET DATA =============
+
+  const getUser = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setUser(data);
+  };
+
+  // fetch dogs when page loads
+  React.useEffect(() => {
+    getUser();
+  }, []);
+
   return (
     <div className="App">
+      <AddIncome />
       <Switch>
         <Route exact path="/">
-          <AddIncome />
+         <Landing user={user} />      
         </Route>
         <Route path="/team">
           <Team />
@@ -32,7 +51,10 @@ function App() {
           <Transaction />
         ></Route>
         <Route path="/userinfo">
+<<<<<<< HEAD
           <UserProfile />
+=======
+>>>>>>> c07d97a9598b5f6c8c25138babc1ea809e1e6df0
 
         </Route>
       </Switch>

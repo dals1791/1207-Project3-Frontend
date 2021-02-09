@@ -8,19 +8,19 @@ const NavBar = () => {
             
             <div className="nav-bar-text">
                 <ul>
-                <Link to="/">
+                <Link to="/" style={{ textDecoration: 'none'}}>
                     <li><a href="/">Home</a></li>
                 </Link>
-                <Link to="/transactions">
+                <Link to="/transactions" style={{ textDecoration: 'none'}}>
                     <li><a href="/transactions">Transactions</a></li>
                 </Link>
-                <Link to="/">
+                <Link to="/" style={{ textDecoration: 'none'}}>
                     <li className="add-button"><a href="/">New</a></li>
                 </Link>
-                <Link to="/team">
+                <Link to="/team" style={{ textDecoration: 'none'}}>
                     <li><a href="/team">Team</a></li>
                 </Link>
-                <Link to="/userinfo">
+                <Link to="/userinfo" style={{ textDecoration: 'none'}}>
                     <li><a href="/userinfo">User</a></li>
                 </Link>
                 </ul>

@@ -1,39 +1,18 @@
 import React from "react";
 import PieChart from "./PieChart";
 
-const Landing = () => {
-  const url = "http://localhost:4000/users";
-
-  // ----------------------- Defines STATES -----------------------
-  const [user, setUser] = React.useState(null);
-
-  // ============= USEEFFECT FUNCTION TO GET DATA =============
-
-  const getUser = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setUser(data);
-  };
-
-  // fetch dogs when page loads
-  React.useEffect(() => {
-    getUser();
-  }, []);
+const Landing = (props) => {
+  const { user } = props;
 
   const loaded = () => {
     // ============= Calculate total budget and total spendings... =============
-    // const balance = 0;
-    // const sum = 0;
+    let totalSpent = 0;
+    const transactions = user[0].transactions;
+    const budget = user[0].budget;
 
-    // const totalSpent = user.transactions.forEach((transaction) => {
-    //   return sum + transaction.amount;
-    // });
-
-    // console.log("Total Spent: ", totalSpent);
-
-    console.log("User state: ", user);
-    console.log("transactions : ", user[0].transactions);
-    console.log("Budget : ", user[0].budget);
+    user[0].transactions.forEach((transaction) => {
+      return (totalSpent = totalSpent + transaction.amount);
+    });
 
     return (
       <div
@@ -43,16 +22,35 @@ const Landing = () => {
         }}
       >
         <h1> Spend Summary </h1>
-        <h2> Budget ${user[0].budget[0].income}</h2>
+        <h2> Starting Income ${user[0].budget[0].income}</h2>
 
-        <section>
-          <h2>$2400</h2>
+        <section
+          style={{
+            border: "1px solid green",
+            width: "300px",
+            margin: "0 auto",
+          }}
+        >
+          <h2>${totalSpent}</h2>
           <h3>Total Spent</h3>
-          <h2>$1000</h2>
-          <h3>Remaining</h3>
         </section>
 
-        <PieChart />
+        <section
+          style={{
+            border: "1px solid green",
+            width: "300px",
+            margin: "0 auto",
+          }}
+        >
+          <h2>${user[0].budget[0].income - totalSpent}</h2>
+          <h3>Remaining Balance</h3>
+        </section>
+
+        <PieChart
+          transactions={transactions}
+          budget={budget}
+          totalSpent={totalSpent}
+        />
 
         <section>
           <div

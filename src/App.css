@@ -11,28 +11,35 @@
 .nav-bar {
      background-color: rgb(64, 23, 129);
      display: flex;
-     justify-content: space-between;
+     justify-content: space-around;
      align-items: center;
      color: black;
      height: 60px;
+     position: fixed;
+     top: 645px;
+     width: 100%;
 }
 
 .nav-bar-text ul {
   margin: 0;
   padding: 0;
   display: flex;
+  
 }
 
 .nav-bar-text li {
   list-style: none;
   list-style-type: none;
   text-decoration: none;
+  justify-content: center;
 }
 
 .nav-bar-text li a {
   color: white;
   text-decoration: none;
-  padding: 1rem;
+  list-style-type: none;
+  list-style: none;
+  padding: 0.5rem;
   display: block;
 }
 
@@ -42,7 +49,7 @@
 }
 
 .flex-container li:visited {
-  color: white;
+  color: green;
 }
 
 .add-button {
