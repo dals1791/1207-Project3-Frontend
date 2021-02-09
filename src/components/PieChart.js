@@ -2,6 +2,7 @@ import { Doughnut, HorizontalBar, Line, Pie } from "react-chartjs-2";
 import React from "react";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import ChartDoughnutLabels from "chartjs-plugin-doughnutlabel";
+import "../App.css";
 
 const PieChart = (props) => {
   const [chartData, setChartData] = React.useState({});
