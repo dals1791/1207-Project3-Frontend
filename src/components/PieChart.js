@@ -1,4 +1,4 @@
-import { Doughnut, HorizontalBar, Line, Pie } from "react-chartjs-2";
+import { Doughnut, Pie } from "react-chartjs-2";
 import React from "react";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import ChartDoughnutLabels from "chartjs-plugin-doughnutlabel";
@@ -103,26 +103,20 @@ const PieChart = (props) => {
           //Set this to false if you want to give chart a custom height/width.
           // If using size of div, set to true. Using true would be easier but lets experiment.
           maintainAspectRatio: true,
-          layout: {
-            padding: 30,
-          },
-          // borderWidth: 2,
-          // borderColor: "#000",
           plugins: {
             datalabels: {
               display: true,
               color: "#fff",
+              formatter: function (value, context) {
+                return `$${value}`;
+              },
               backgroundColor: (context) => {
                 return context.dataset.backgroundColor;
               },
               borderRadius: 3,
-              // font: {
-              //   size: "30"
-              // },
               font: function (context) {
-                var width = context.chart.width;
-                var size = Math.round(width / 32);
-
+                let width = context.chart.width;
+                let size = Math.round(width / 32);
                 return {
                   size: size,
                 };
