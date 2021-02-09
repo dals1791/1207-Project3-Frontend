@@ -1,4 +1,4 @@
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import "./App.css";
 import React from "react";
@@ -8,7 +8,8 @@ import PieChart from "./components/PieChart";
 import Team from "./components/Team";
 import Transaction from "./components/Transaction";
 import UserLogin from "./components/UserLogin/UserLogin";
-import UserProfile from "./components/UserProfile"
+import UserProfile from "./components/UserProfile";
+import Landing from "./components/Landing";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     setUser(data);
   };
 
-  // fetch dogs when page loads
+  // fetch data when page loads
   React.useEffect(() => {
     getUser();
   }, []);
@@ -35,7 +36,7 @@ function App() {
       <AddIncome />
       <Switch>
         <Route exact path="/">
-         <Landing user={user} />      
+          <Landing user={user} />
         </Route>
         <Route path="/team">
           <Team />
@@ -46,12 +47,9 @@ function App() {
         </Route>
 
         <Route path="/transactions">
-          <PieChart />
-          <Mychart />
-        ></Route>
-        <Route path="/userinfo">
-
+          <Transaction user={user} />
         </Route>
+        <Route path="/userinfo"></Route>
       </Switch>
       <NavBar />
     </div>
