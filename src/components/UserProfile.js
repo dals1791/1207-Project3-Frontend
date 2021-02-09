@@ -1,6 +1,6 @@
 import React from 'react'
 import UserCredentials from "./User-Credentials-Form"
-
+import {Link} from 'react-router-dom'
 const UserProfile = (props)=>{
 const dummyUser = [
     {
@@ -36,6 +36,11 @@ const loaded = ()=>{
                     {/* NEEDS updating to match update user creds */}
                     <h3>Placeholder for Budget Component/income update</h3>
                 </div>
+                <Link to='/userlogin'>
+                <button>Login</button>
+                </Link>
+                <button>Sign Out</button>
+                
             </div>
         )
     })
