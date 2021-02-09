@@ -1,22 +1,35 @@
+import { Route, Switch} from "react-router-dom";
+
 import "./App.css";
 import React from "react";
-
-
+import Mychart from "./Mychart";
+import Dounut from "./Dounut";
 import AddIncome from "./components/AddIncome";
+import PieChart from "./components/PieChart";
 import Team from "./components/Team";
-import Landing from "./components/Landing";
 import Transaction from "./components/Transaction";
-import UserLogin from "./components/UserLogin/UserLogin";
+import UserLogin from "./components/UserLogin";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <AddIncome />
-      <Landing />
-      <Team />
-      <Transaction />
-      <UserLogin />
+      <Switch>
+        <Route exact path="/">
+          <PieChart />
+          <Mychart />
+          <AddIncome />
+          <Dounut />
+        </Route>
+        <Route path="/team">
+          <Team />
+        </Route>
+        <Route path="/userlogin">
+          <UserLogin />
+          <Transaction />
+        </Route>
+      </Switch>
+      <NavBar />
     </div>
   );
 }
