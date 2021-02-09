@@ -1,5 +1,6 @@
 import React from "react";
 import PieChart from "./PieChart";
+import Summary from "./Summary";
 
 const Landing = (props) => {
   const { user } = props;
@@ -15,36 +16,14 @@ const Landing = (props) => {
     });
 
     return (
-      <div
-        className="landing-component"
-        style={{
-          border: "1px solid red",
-        }}
-      >
-        <h1> Spend Summary </h1>
+      <div className="landing-component" style={{ border: "1px solid" }}>
         <h2> Starting Income ${user[0].budget[0].income}</h2>
 
-        <section
-          style={{
-            border: "1px solid green",
-            width: "300px",
-            margin: "0 auto",
-          }}
-        >
-          <h2>${totalSpent}</h2>
-          <h3>Total Spent</h3>
-        </section>
-
-        <section
-          style={{
-            border: "1px solid green",
-            width: "300px",
-            margin: "0 auto",
-          }}
-        >
-          <h2>${user[0].budget[0].income - totalSpent}</h2>
-          <h3>Remaining Balance</h3>
-        </section>
+        <Summary
+          transactions={transactions}
+          budget={budget}
+          totalSpent={totalSpent}
+        />
 
         <PieChart
           transactions={transactions}

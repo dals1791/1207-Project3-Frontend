@@ -1,4 +1,5 @@
 import React from "react";
+import Summary from "./Summary";
 
 const Transaction = (props) => {
   const { user } = props;
@@ -80,33 +81,20 @@ const Transaction = (props) => {
           padding: "10px",
         }}
       >
-        <h1> Budget for Month </h1>
-
-        <section>
-          <h2>${totalSpent}</h2>
-          <h3>Total Expenses</h3>
-          <h2>${user[0].budget[0].income - totalSpent}</h2>
-          <h3>Total Balance</h3>
-        </section>
+        <Summary
+          transactions={transactions}
+          budget={budget}
+          totalSpent={totalSpent}
+        />
 
         <h2> Your Transactions </h2>
 
-        <section
-          style={{
-            border: "1px solid green",
-            margin: "10px",
-          }}
-        >
+        <section>
           <h2>Latest</h2>
           {expenseList}
         </section>
 
-        <section
-          style={{
-            border: "1px solid green",
-            margin: "10px",
-          }}
-        >
+        <section>
           <h2>Bills</h2>
           {routineList}
         </section>
