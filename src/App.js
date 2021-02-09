@@ -51,10 +51,7 @@ function App() {
           <Transaction />
         ></Route>
         <Route path="/userinfo">
-<<<<<<< HEAD
           <UserProfile />
-=======
->>>>>>> c07d97a9598b5f6c8c25138babc1ea809e1e6df0
 
         </Route>
       </Switch>
