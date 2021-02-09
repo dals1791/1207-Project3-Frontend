@@ -2,22 +2,11 @@ import React from 'react'
 import UserCredentials from "./User-Credentials-Form"
 import {Link} from 'react-router-dom'
 const UserProfile = (props)=>{
-const dummyUser = [
-    {
-        firstName: "Ash",
-        lastname: "Ketchem",
-        email: "ash@gmail.com",
-        userName: "PokeMaster",
-        password: "password",
-        budget: [
-            {income: 1000}
-        ]
-
-    }
-]
-
+const {userInfo} = props
+console.log(userInfo)
 const loaded = ()=>{
-   return dummyUser.map((user)=>{
+   return userInfo.map((user)=>{
+       
         return(
             <div>
                 <div>
@@ -32,7 +21,7 @@ const loaded = ()=>{
                 </div>
                 <div>
                     {/* Update username and password */}
-                    <UserCredentials/>
+                    <UserCredentials user={user}/>
                     {/* NEEDS updating to match update user creds */}
                     <h3>Placeholder for Budget Component/income update</h3>
                 </div>
@@ -47,7 +36,7 @@ const loaded = ()=>{
 }
 const loading = <h3>Loading...</h3>
     return(
-        dummyUser.length >0 ? loaded(): loading
+        userInfo ? loaded(): loading
     )
 }
 
