@@ -6,29 +6,25 @@ const NavBar = () => {
         <div className="nav-bar">
             {/* <h3> BUDGTPAD</h3> */}
             
-            <ul>
-            <div className="flex-container">
-
-                <Link to="/">
-                    <li>Home</li>
+            <div className="nav-bar-text">
+                <ul>
+                <Link to="/" style={{ textDecoration: 'none'}}>
+                    <li><a href="/">Home</a></li>
                 </Link>
-                <Link to="/transactions">
-                    <li>Transactions</li>
+                <Link to="/transactions" style={{ textDecoration: 'none'}}>
+                    <li><a href="/transactions">Transactions</a></li>
                 </Link>
-                <Link to="/">
-                    <li className="add-button">button</li>
+                <Link to="/" style={{ textDecoration: 'none'}}>
+                    <li className="add-button"><a href="/">New</a></li>
                 </Link>
-                <Link to="/team">
-                    <li>Our Team</li>
+                <Link to="/team" style={{ textDecoration: 'none'}}>
+                    <li><a href="/team">Team</a></li>
                 </Link>
-     
-           
-                <Link to="/userinfo">
-                    <li>User</li>
-
+                <Link to="/userinfo" style={{ textDecoration: 'none'}}>
+                    <li><a href="/userinfo">User</a></li>
                 </Link>
+                </ul>
             </div>
-            </ul>
         </div>
     )
 }
