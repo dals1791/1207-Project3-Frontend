@@ -3,24 +3,47 @@
 }
 
 .nav-bar {
-  background-color: rgb(64, 23, 129);
-  width: 100%;
-  height: 120px;
+     background-color: rgb(64, 23, 129);
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     color: black;
+     height: 60px;
+     position: fixed;
+     top: 645px;
+     width: 100%;
 }
 
-.flex-container {
+.nav-bar-text ul {
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-around;
-  font-size: 2rem;
-  list-style-type: none;
-  color: white;
-  padding-top: 70px;
-  padding-right: 30px;
+  
 }
 
-.flex-container li:hover {
+.nav-bar-text li {
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.nav-bar-text li a {
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+  list-style: none;
+  padding: 0.5rem;
+  display: block;
+}
+
+.nav-bar-text li:hover {
   color: green;
   transition: color 0.5s;
+}
+
+.flex-container li:visited {
+  color: green;
 }
 
 .add-button {
@@ -75,4 +98,12 @@
 
 .team-member-card {
   margin: 15px;
+}
+
+@media (min-width: 668px) {
+
+}
+
+@media (min-width: 1028px) {
+
 }

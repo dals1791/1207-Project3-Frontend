@@ -2,8 +2,22 @@ import React, {useState} from 'react'
 import Login from './Login'
 import Register from './Register'
 
-const UserLogin = ()=>{
+ const UserLogin = (props)=>{
+    //SECTION FOR CRUD ROUTES ============
+
+    // creates a user
+    const handleCreate = (newUser)=> {
+        fetch(props.url + "/users", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newUser)
+        })
+    }
     
+    // ======================================
+
     const [toggle, setToggle] = useState(0)
     const handleToggleLogin =()=>{
         setToggle((toggle) => 1)
@@ -13,10 +27,10 @@ const UserLogin = ()=>{
     }
     const displayUserLogin = ()=>{
         if (toggle===1){
-            return <Login/>
+            return <Login handleSubmit={props.getSingleUser}/>
         }
         else if (toggle===2){
-            return <Register/>
+            return <Register handleSubmit={handleCreate}/>
         }
     }
     
