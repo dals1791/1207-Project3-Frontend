@@ -105,7 +105,7 @@ const PieChart = (props) => {
           maintainAspectRatio: true,
           plugins: {
             datalabels: {
-              display: true,
+              display: false,
               color: "#fff",
               formatter: function (value, context) {
                 return `$${value}`;

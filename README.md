@@ -21,12 +21,12 @@ Tnis application will of course be built mobile first, followed by tablet and th
 | Front-End Architecture Planning  | Complete | 
 | Back-End Architecture Planning | Complete | 
 | Initializing React/Express for basic set-up use | Complete |
-| Primary assembly of Express API Server | Pending |
-| Primary assembly of React front-end application | Pending |
-| Setting useState and useEffect hooks | Pending |
+| Primary assembly of Express API Server | Complete |
+| Primary assembly of React front-end application | In Progress |
+| Setting useState and useEffect hooks | In Progress |
 | Calling API to React application | Pending |
 | Testing of bare-bone application for functionality | Pending |
-| CSS Styling | Pending |
+| CSS Styling | In Progress |
 
 ## API
 
@@ -161,6 +161,7 @@ Initial components decided for Project.
 | Pie Chart | Visual diagram of user income and expenses. |
 | Add Transaction | Allows users to log transaction based on category, description, cost, date and time. |
 | Add Income/Goal | Adding user income and goals of spending habits.       |
+| NavBar | Navigation Bar for the app. |
 
 ## MVP Time-Frames
 
