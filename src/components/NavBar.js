@@ -6,29 +6,25 @@ const NavBar = () => {
         <div className="nav-bar">
             {/* <h3> BUDGTPAD</h3> */}
             
-            <ul>
-            <div className="flex-container">
-
+            <div className="nav-bar-text">
+                <ul>
                 <Link to="/">
-                    <li>Home</li>
+                    <li><a href="/">Home</a></li>
                 </Link>
                 <Link to="/transactions">
-                    <li>Transactions</li>
+                    <li><a href="/transactions">Transactions</a></li>
                 </Link>
                 <Link to="/">
-                    <li className="add-button">button</li>
+                    <li className="add-button"><a href="/">New</a></li>
                 </Link>
                 <Link to="/team">
-                    <li>Our Team</li>
+                    <li><a href="/team">Team</a></li>
                 </Link>
-     
-           
                 <Link to="/userinfo">
-                    <li>User</li>
-
+                    <li><a href="/userinfo">User</a></li>
                 </Link>
+                </ul>
             </div>
-            </ul>
         </div>
     )
 }

@@ -8,8 +8,9 @@ import PieChart from "./components/PieChart";
 import Team from "./components/Team";
 import Transaction from "./components/Transaction";
 import UserLogin from "./components/UserLogin/UserLogin";
-import UserProfile from "./components/UserProfile"
+import UserProfile from "./components/UserProfile";
 import NavBar from "./components/NavBar";
+import UserCredentials from "./components/User-Credentials-Form";
 
 function App() {
   return (
@@ -22,16 +23,16 @@ function App() {
           <Team />
         </Route>
         <Route path="/userlogin">
-          <UserLogin />
+          <UserCredentials />
           <Transaction />
         </Route>
 
         <Route path="/transactions">
           <PieChart />
-          <Mychart />
+          <Transaction />
         ></Route>
         <Route path="/userinfo">
-
+          <UserProfile />
 
         </Route>
       </Switch>
