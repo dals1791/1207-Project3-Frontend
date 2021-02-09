@@ -25,9 +25,9 @@ const Transaction = (props) => {
     });
 
     const expenseList = nonRoutineExpense.map((expense, index) => {
-      let formatedDate = new Date(expense.time).toString();
-      console.log("new date: ", formatedDate);
-
+      let formatedDate = new Date(expense.time);
+      console.log("Month: ", formatedDate.getMonth());
+      console.log("Year: ", formatedDate.getYear());
       return (
         <div
           style={{
@@ -37,7 +37,11 @@ const Transaction = (props) => {
         >
           <p>{expense.description}</p>
           <p>{expense.category}</p>
-          <p>{formatedDate}</p>
+          <p>{formatedDate.toString()}</p>
+          <p>
+            {formatedDate.getMonth()} - {formatedDate.getDate()} -{" "}
+            {formatedDate.getYear()}
+          </p>
           <span>${expense.amount}</span>
         </div>
       );
@@ -55,7 +59,6 @@ const Transaction = (props) => {
 
     const routineList = routineExpense.map((expense, index) => {
       let formatedDate = new Date(expense.time).toString();
-      console.log("new date: ", formatedDate);
 
       return (
         <div
