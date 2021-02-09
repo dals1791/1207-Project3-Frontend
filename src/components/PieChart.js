@@ -1,4 +1,4 @@
-import { Doughnut, HorizontalBar, Line, Pie } from "react-chartjs-2";
+import { Doughnut, Pie } from "react-chartjs-2";
 import React from "react";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import ChartDoughnutLabels from "chartjs-plugin-doughnutlabel";
@@ -110,7 +110,7 @@ const PieChart = (props) => {
           // borderColor: "#000",
           plugins: {
             datalabels: {
-              display: true,
+              display: false,
               color: "#fff",
               backgroundColor: (context) => {
                 return context.dataset.backgroundColor;

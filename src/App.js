@@ -1,12 +1,15 @@
+import { Route, Switch} from "react-router-dom";
+
 import "./App.css";
 import React from "react";
-
-
+import Mychart from "./Mychart";
 import AddIncome from "./components/AddIncome";
+import PieChart from "./components/PieChart";
 import Team from "./components/Team";
-import Landing from "./components/Landing";
 import Transaction from "./components/Transaction";
 import UserLogin from "./components/UserLogin/UserLogin";
+import UserProfile from "./components/UserProfile"
+import NavBar from "./components/NavBar";
 
 function App() {
   const url = "http://localhost:4000/users";
@@ -29,12 +32,28 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
       <AddIncome />
-      <Landing user={user} />
-      <Team />
-      <Transaction />
-      <UserLogin />
+      <Switch>
+        <Route exact path="/">
+         <Landing user={user} />      
+        </Route>
+        <Route path="/team">
+          <Team />
+        </Route>
+        <Route path="/userlogin">
+          <UserLogin />
+          <Transaction />
+        </Route>
+
+        <Route path="/transactions">
+          <PieChart />
+          <Mychart />
+        ></Route>
+        <Route path="/userinfo">
+
+        </Route>
+      </Switch>
+      <NavBar />
     </div>
   );
 }
