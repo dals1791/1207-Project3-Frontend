@@ -2,34 +2,45 @@ import { Route, Switch} from "react-router-dom";
 
 import "./App.css";
 import React from "react";
-import Mychart from "./Mychart";
 import AddIncome from "./components/AddIncome";
-import PieChart from "./components/PieChart";
 import Team from "./components/Team";
 import Transaction from "./components/Transaction";
 import UserLogin from "./components/UserLogin/UserLogin";
-import UserProfile from "./components/UserProfile"
+import UserInfo from "./components/UserProfile"
 import NavBar from "./components/NavBar";
+import Landing from "./components/Landing"
 
 function App() {
   const url = "http://localhost:4000/users";
+  const urlLive = "https://project3-backend-1207.herokuapp.com"
 
   // ----------------------- Defines STATES -----------------------
   const [user, setUser] = React.useState(null);
 
   // ============= USEEFFECT FUNCTION TO GET DATA =============
 
-  const getUser = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setUser(data);
-  };
+  // const getUser = async () => {
+  //   const response = await fetch(urlLive);
+  //   const data = await response.json();
+  //   setUser(data);
+  // };
+  const getSingleUser = (user)=>{
+    fetch(urlLive + "/users/"+user.userName+'/'+user.password)
+    .then(res=>res.json())
+    .then((data)=>{
+        if(data.length>0){
+            return setUser(data)
+        }
+        else{
+            console.log("Not a user, try again") 
+        }
+        })
+}
 
-  // fetch dogs when page loads
-  React.useEffect(() => {
-    getUser();
-  }, []);
-
+  // fetch users when page loads
+  // React.useEffect(() => {
+  //   getSingleUser();
+  // }, []);
   return (
     <div className="App">
       <AddIncome />
@@ -41,16 +52,15 @@ function App() {
           <Team />
         </Route>
         <Route path="/userlogin">
-          <UserLogin />
-          <Transaction />
+          <UserLogin setUser={setUser} url={urlLive}getSingleUser={getSingleUser}/>
+          
         </Route>
 
         <Route path="/transactions">
-          <PieChart />
-          <Mychart />
-        ></Route>
+        <Transaction />
+        </Route>
         <Route path="/userinfo">
-
+          <UserInfo user={user}/>
         </Route>
       </Switch>
       <NavBar />

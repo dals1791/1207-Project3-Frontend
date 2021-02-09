@@ -4,20 +4,10 @@ import Register from './Register'
 
  const UserLogin = (props)=>{
     //SECTION FOR CRUD ROUTES ============
-    //move url, emptyy user and stat to app.js
-    const url = "https://project3-backend-1207.herokuapp.com"
-    const emptyUser = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        userName: "",
-        lastName: ""
-    }
-    const [user, setUser] = useState(emptyUser) //move to app.js
 
     // creates a user
     const handleCreate = (newUser)=> {
-        fetch(url + "/users", {
+        fetch(props.url + "/users", {
           method: "post",
           headers: {
             "Content-Type": "application/json"
@@ -25,19 +15,7 @@ import Register from './Register'
           body: JSON.stringify(newUser)
         })
     }
-    // Gets a single User
-    const getSingleUser = (user)=>{
-        fetch(url + "/users/"+user.userName+'/'+user.password)
-        .then(res=>res.json())
-        .then((data)=>{
-            if(data.length>0){
-                return setUser(data)
-            }
-            else{
-                console.log("Not a user, try again") 
-            }
-            })
-    }
+    
     // ======================================
 
     const [toggle, setToggle] = useState(0)
@@ -49,7 +27,7 @@ import Register from './Register'
     }
     const displayUserLogin = ()=>{
         if (toggle===1){
-            return <Login handleSubmit={getSingleUser}/>
+            return <Login handleSubmit={props.getSingleUser}/>
         }
         else if (toggle===2){
             return <Register handleSubmit={handleCreate}/>
