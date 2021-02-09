@@ -3,12 +3,7 @@ import React from "react";
 const Team = () => {
   return (
     <div className="team-component">
-<<<<<<< HEAD
-<<<<<<< HEAD
       <h1> This is the TeamComponent. </h1>
-=======
-=======
->>>>>>> 98d38b5753fe340a34672000d3cf9ac43d0144d5
       <div className="team-header">
       <h1> Our Team </h1>
       </div>
@@ -40,10 +35,6 @@ const Team = () => {
           <p>blah blah blah something about this awesome team member.</p>
           </div>
       </div>
-<<<<<<< HEAD
->>>>>>> 98d38b5753fe340a34672000d3cf9ac43d0144d5
-=======
->>>>>>> 98d38b5753fe340a34672000d3cf9ac43d0144d5
     </div>
   );
 };
