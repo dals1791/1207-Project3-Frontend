@@ -46,7 +46,11 @@ const Landing = (props) => {
           <h3>Remaining Balance</h3>
         </section>
 
-        <PieChart transactions={transactions} budget={budget} />
+        <PieChart
+          transactions={transactions}
+          budget={budget}
+          totalSpent={totalSpent}
+        />
 
         <section>
           <div

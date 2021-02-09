@@ -6,7 +6,7 @@ import "../App.css";
 
 const PieChart = (props) => {
   const [chartData, setChartData] = React.useState({});
-  const { transactions, budget } = props;
+  const { transactions, budget, totalSpent } = props;
 
   console.log("Chart Transaction Props: ", transactions);
   console.log("Chart Budget Props: ", budget);
@@ -116,9 +116,16 @@ const PieChart = (props) => {
                 return context.dataset.backgroundColor;
               },
               borderRadius: 3,
-              font: {
-                size: "30",
-                //weight: "bold",
+              // font: {
+              //   size: "30"
+              // },
+              font: function (context) {
+                var width = context.chart.width;
+                var size = Math.round(width / 32);
+
+                return {
+                  size: size,
+                };
               },
             },
             doughnutlabel: {
@@ -138,7 +145,7 @@ const PieChart = (props) => {
                   color: "green",
                 },
                 {
-                  text: "$" + budget[0].income,
+                  text: "$" + totalSpent,
                   font: {
                     size: "30",
                   },
@@ -148,7 +155,7 @@ const PieChart = (props) => {
             },
           },
           title: {
-            display: true,
+            display: false,
             text: "Monthly Spendings",
             fontSize: 30,
             align: "start",
