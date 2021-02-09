@@ -16,10 +16,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <PieChart />
-          <Mychart />
           <AddIncome />
-          {/* <Dounut /> */}
         </Route>
         <Route path="/team">
           <Team />
@@ -27,6 +24,13 @@ function App() {
         <Route path="/userlogin">
           <UserLogin />
           <Transaction />
+        </Route>
+        <Route path="/transactions">
+          <PieChart />
+          <Mychart />
+        ></Route>
+        <Route path="/userinfo">
+
         </Route>
       </Switch>
       <NavBar />
