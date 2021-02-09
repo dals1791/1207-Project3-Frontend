@@ -3,12 +3,12 @@ import { Route, Switch} from "react-router-dom";
 import "./App.css";
 import React from "react";
 import Mychart from "./Mychart";
-// import Dounut from "./Dounut";
 import AddIncome from "./components/AddIncome";
 import PieChart from "./components/PieChart";
 import Team from "./components/Team";
 import Transaction from "./components/Transaction";
-import UserLogin from "./components/UserLogin";
+import UserLogin from "./components/UserLogin/UserLogin";
+import UserProfile from "./components/UserProfile"
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -25,11 +25,13 @@ function App() {
           <UserLogin />
           <Transaction />
         </Route>
+
         <Route path="/transactions">
           <PieChart />
           <Mychart />
         ></Route>
         <Route path="/userinfo">
+
 
         </Route>
       </Switch>

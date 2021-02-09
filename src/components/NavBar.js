@@ -8,10 +8,11 @@ const NavBar = () => {
             
             <ul>
             <div className="flex-container">
+
                 <Link to="/">
                     <li>Home</li>
                 </Link>
-                <Link to="/">
+                <Link to="/transactions">
                     <li>Transactions</li>
                 </Link>
                 <Link to="/">
@@ -20,8 +21,11 @@ const NavBar = () => {
                 <Link to="/team">
                     <li>Our Team</li>
                 </Link>
-                <Link to="/">
+     
+           
+                <Link to="/userinfo">
                     <li>User</li>
+
                 </Link>
             </div>
             </ul>

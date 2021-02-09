@@ -3,6 +3,7 @@ import React from "react";
 const Team = () => {
   return (
     <div className="team-component">
+      <h1> This is the TeamComponent. </h1>
       <div className="team-header">
       <h1> Our Team </h1>
       </div>
