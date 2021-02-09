@@ -64,7 +64,7 @@ function App() {
         <Transaction />
         </Route>
         <Route path="/userinfo">
-          <UserInfo userInfo={user}/>
+          <UserInfo userInfo={user} url={urlLive}/>
         </Route>
       </Switch>
       <NavBar />
