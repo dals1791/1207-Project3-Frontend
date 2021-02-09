@@ -3,7 +3,7 @@ import { Route, Switch} from "react-router-dom";
 import "./App.css";
 import React from "react";
 import Mychart from "./Mychart";
-import Dounut from "./Dounut";
+// import Dounut from "./Dounut";
 import AddIncome from "./components/AddIncome";
 import PieChart from "./components/PieChart";
 import Team from "./components/Team";
@@ -16,10 +16,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <PieChart />
-          <Mychart />
           <AddIncome />
-          <Dounut />
         </Route>
         <Route path="/team">
           <Team />
@@ -27,6 +24,13 @@ function App() {
         <Route path="/userlogin">
           <UserLogin />
           <Transaction />
+        </Route>
+        <Route path="/transactions">
+          <PieChart />
+          <Mychart />
+        ></Route>
+        <Route path="/userinfo">
+
         </Route>
       </Switch>
       <NavBar />
