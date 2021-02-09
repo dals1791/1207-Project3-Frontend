@@ -6,7 +6,7 @@ import AddIncome from "./components/AddIncome";
 import Team from "./components/Team";
 import Transaction from "./components/Transaction";
 import UserLogin from "./components/UserLogin/UserLogin";
-import UserInfo from "./components/UserProfile"
+import UserInfo from "./components/UserProfile/UserProfile"
 import NavBar from "./components/NavBar";
 import Landing from "./components/Landing"
 
