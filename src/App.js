@@ -1,4 +1,4 @@
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch, Link} from "react-router-dom";
 
 import "./App.css";
 import React from "react";
@@ -44,6 +44,9 @@ function App() {
   return (
     <div className="App">
       <AddIncome />
+      <Link to="/userlogin">
+        <button>Login</button>
+      </Link>
       <Switch>
         <Route exact path="/">
          <Landing user={user} />      
@@ -60,7 +63,7 @@ function App() {
         <Transaction />
         </Route>
         <Route path="/userinfo">
-          <UserInfo user={user}/>
+          <UserInfo userInfo={user}/>
         </Route>
       </Switch>
       <NavBar />
