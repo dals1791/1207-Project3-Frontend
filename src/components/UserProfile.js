@@ -2,11 +2,21 @@ import React from 'react'
 import UserCredentials from "./User-Credentials-Form"
 import {Link} from 'react-router-dom'
 const UserProfile = (props)=>{
-const {userInfo} = props
-console.log(userInfo)
+const {userInfo, url} = props
 const loaded = ()=>{
    return userInfo.map((user)=>{
-       
+    //    CRUD Routes for user profile ===========
+        const updateUser =(userField)=>{ 
+            fetch(url + "/users/" + user._id, {
+            method: "put",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userField)
+          })
+        }
+
+    // =====================================
         return(
             <div>
                 <div>
@@ -21,8 +31,7 @@ const loaded = ()=>{
                 </div>
                 <div>
                     {/* Update username and password */}
-                    <UserCredentials user={user}/>
-                    {/* NEEDS updating to match update user creds */}
+                    <UserCredentials user={user} handleSubmit={updateUser}/>
                     <h3>Placeholder for Budget Component/income update</h3>
                 </div>
                 <Link to='/userlogin'>
