@@ -20,6 +20,7 @@ function App() {
 
   // ============= USEEFFECT FUNCTION TO GET DATA =============
 
+
   // const getUser = async () => {
   //   const response = await fetch(urlLive);
   //   const data = await response.json();
@@ -38,6 +39,7 @@ function App() {
         })
 }
 
+
   // fetch users when page loads
   // React.useEffect(() => {
   //   getSingleUser();
@@ -50,22 +52,22 @@ function App() {
       </Link>
       <Switch>
         <Route exact path="/">
-         <Landing user={user} />      
+          <Landing user={user} />
         </Route>
         <Route path="/team">
           <Team />
         </Route>
         <Route path="/userlogin">
           <UserLogin setUser={setUser} url={urlLive}getSingleUser={getSingleUser}/>
-          
         </Route>
 
         <Route path="/transactions">
-        <Transaction />
+          <Transaction user={user} />
         </Route>
         <Route path="/userinfo">
           <UserInfo userInfo={user} url={urlLive}/>
         </Route>
+        <Route path="/userinfo"></Route>
       </Switch>
       <NavBar />
     </div>

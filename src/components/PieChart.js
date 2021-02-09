@@ -27,11 +27,11 @@ const PieChart = (props) => {
     1. Define an empty array of objects 'categoryTransact' - to hold each category's transactions info
     2. Loop through the CATEGORIES array. Filter all the items with the specific transaction category. These items are objects.
     3. For every item in that same category, add up the 'AMOUNT' property
-    4. Push the total amount spend from each category into the array of objects 'categorySum'
+    4. Push the total amount spend from each category into the array of objects 'categorySpent'
   ------------------------------------------------------ */
   // ------ STEP 1 -------
   let categoryTransact = [];
-  let categorySum = [];
+  let categorySpent = [];
 
   // ------- STEP 2 -------
   categories.forEach((category) => {
@@ -42,21 +42,32 @@ const PieChart = (props) => {
     // -- STEP 3 --
     categoryTransact.forEach((item) => (sum += item.amount));
     // -- STEP 4 ---
-    categorySum.push({
+    categorySpent.push({
       category: category,
       totalAmout: sum,
     });
   });
 
-  console.log("Total spending for each category: ", categorySum);
+  console.log("Total spending for each category: ", categorySpent);
   //MAP the totalAmount key in the array of objects into a new array with just the $ totalAmount
-  const spendData = categorySum.map((item) => item.totalAmout);
+  const spendData = categorySpent.map((item) => item.totalAmout);
 
   // Push the remaining balance amount into the spendData array
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  spendData.push(budget[0].income - spendData.reduce(reducer, 0));
+  //const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  // spendData.push(budget[0].income - spendData.reduce(reducer, 0));
   // Push "Remaining" as a category into the categories array
-  categories.push("Remaining");
+  //categories.push("Remaining");
+
+  /* ------------------------------------------------------
+     MAP OUT THE CATEGORIES INTO A <LI></LI>
+    ------------------------------------------------------ */
+  const chartLegend = categorySpent.map((item, index) => {
+    return (
+      <p key={index}>
+        {item.category} : {item.totalAmout}
+      </p>
+    );
+  });
 
   /* ------------------------------------------------------
      USE EFFECT TO SET THE CHART DATA 
@@ -77,7 +88,7 @@ const PieChart = (props) => {
               "rgba(191, 146, 42, 0.8)",
               "rgba(153, 102, 255, 0.8)",
               "rgba(242, 147, 58, 0.8)",
-              "rgba(38, 173, 108, 0.8)",
+              // "rgba(38, 173, 108, 0.8)",
             ],
             borderWidth: 1,
             borderColor: "#fff",
@@ -98,31 +109,27 @@ const PieChart = (props) => {
     >
       <Doughnut
         data={chartData}
+        width={50}
+        height={50}
         options={{
           responsive: true,
           //Set this to false if you want to give chart a custom height/width.
           // If using size of div, set to true. Using true would be easier but lets experiment.
           maintainAspectRatio: true,
-          layout: {
-            padding: 30,
-          },
-          // borderWidth: 2,
-          // borderColor: "#000",
           plugins: {
             datalabels: {
-              display: false,
+              display: true,
               color: "#fff",
+              formatter: function (value, context) {
+                return `$${value}`;
+              },
               backgroundColor: (context) => {
                 return context.dataset.backgroundColor;
               },
               borderRadius: 3,
-              // font: {
-              //   size: "30"
-              // },
               font: function (context) {
-                var width = context.chart.width;
-                var size = Math.round(width / 32);
-
+                let width = context.chart.width;
+                let size = Math.round(width / 16);
                 return {
                   size: size,
                 };
@@ -145,9 +152,9 @@ const PieChart = (props) => {
                   color: "green",
                 },
                 {
-                  text: "$" + totalSpent,
+                  text: `$ ${budget[0].income - totalSpent}`,
                   font: {
-                    size: "30",
+                    size: "32",
                   },
                   color: "red",
                 },
@@ -163,7 +170,7 @@ const PieChart = (props) => {
           },
           legend: {
             display: false,
-            position: "bottom",
+            position: "right",
             align: "center",
             labels: {
               fontColor: "#08628e",
@@ -200,6 +207,8 @@ const PieChart = (props) => {
           },
         }}
       />
+
+      <section>{chartLegend}</section>
     </div>
   );
 };

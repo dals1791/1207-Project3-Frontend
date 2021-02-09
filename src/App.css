@@ -1,12 +1,6 @@
 .App {
   text-align: center;
 }
-.chart {
-  width: 800px;
-  height: 600px;
-  border: 1px solid;
-  margin: 15px auto;
-}
 
 .nav-bar {
      background-color: rgb(64, 23, 129);
@@ -53,7 +47,6 @@
 }
 
 .add-button {
-  
 }
 
 .team-component {
@@ -85,15 +78,19 @@
   margin-top: 40px;
 }
 
-.name-header1, .name-header2, .name-header3 {
+.name-header1,
+.name-header2,
+.name-header3 {
   color: white;
   text-align: left;
   padding-left: 100px;
   padding-top: 15px;
 }
 
-.paragraph-team1, .paragraph-team2, .paragraph-team3 {
-  color:white;
+.paragraph-team1,
+.paragraph-team2,
+.paragraph-team3 {
+  color: white;
   text-align: left;
   padding-left: 100px;
   padding-bottom: 15px;
