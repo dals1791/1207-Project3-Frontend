@@ -8,13 +8,21 @@ const NavBar = () => {
             
             <ul>
             <div className="flex-container">
-               <li>Home</li>
-               <li>Transactions</li>
-               <li className="add-button">button</li>
-               <Link to="/team">
-               <li>Our Team</li>
-               </Link>
-               <li>User</li>
+                <Link to="/">
+                    <li>Home</li>
+                </Link>
+                <Link to="/">
+                    <li>Transactions</li>
+                </Link>
+                <Link to="/">
+                    <li className="add-button">button</li>
+                </Link>
+                <Link to="/team">
+                    <li>Our Team</li>
+                </Link>
+                <Link to="/">
+                    <li>User</li>
+                </Link>
             </div>
             </ul>
         </div>
