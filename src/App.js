@@ -12,11 +12,30 @@ import UserProfile from "./components/UserProfile"
 import NavBar from "./components/NavBar";
 
 function App() {
+  const url = "http://localhost:4000/users";
+
+  // ----------------------- Defines STATES -----------------------
+  const [user, setUser] = React.useState(null);
+
+  // ============= USEEFFECT FUNCTION TO GET DATA =============
+
+  const getUser = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setUser(data);
+  };
+
+  // fetch dogs when page loads
+  React.useEffect(() => {
+    getUser();
+  }, []);
+
   return (
     <div className="App">
+      <AddIncome />
       <Switch>
         <Route exact path="/">
-          <AddIncome />
+         <Landing user={user} />      
         </Route>
         <Route path="/team">
           <Team />
@@ -31,7 +50,6 @@ function App() {
           <Mychart />
         ></Route>
         <Route path="/userinfo">
-
 
         </Route>
       </Switch>
