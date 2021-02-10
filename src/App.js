@@ -19,7 +19,9 @@ function App() {
 
   // ============= USEEFFECT FUNCTION TO GET DATA =============
   const getSingleUser = (user) => {
+
     fetch(url + "/users/" + user.userName + "/" + user.password)
+
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {
@@ -47,6 +49,7 @@ const handleToggleAdd = ()=>{
   return (
     <div className="App">
       <div className="container-main">
+
       {toggleAdd ? <AddIncome user={user} url={url} handleSubmit={addIncome} toggleAdd={handleToggleAdd}/> : null}
         <Link to="/userlogin">
           <button>Login</button>
@@ -75,7 +78,6 @@ const handleToggleAdd = ()=>{
           <Route path="/userinfo"></Route>
         </Switch>
       </div>
-      
       <NavBar toggleAdd={handleToggleAdd}/>
     </div>
   );
