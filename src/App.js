@@ -52,7 +52,6 @@ function App() {
         {toggleAdd ? (
           <AddIncome
             user={user}
-            url={url}
             handleSubmit={addIncome}
             toggleAdd={handleToggleAdd}
           />

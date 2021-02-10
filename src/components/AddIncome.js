@@ -32,7 +32,7 @@ isExpense: false
   
   
     return(
-        <form className="add-income-component">
+        <form className="add-income-component" >
           <h2>Add a Transaction</h2>
           <div >
           <input
@@ -92,10 +92,11 @@ isExpense: false
           onChange={handleChange}
           />
           </div>
-          <button type="submit" onClick={handleSubmit, props.toggleAdd} >
+          <button type="submit" onClick={ handleSubmit} >
           ADD
           </button>
         </div>
+        <button onClick={props.toggleAdd}>X</button>
       </form>
     )
 }
