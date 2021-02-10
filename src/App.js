@@ -48,33 +48,9 @@ function App() {
     <div className="App">
       <Topbar user={user} />
       <div className="container-main">
-        {toggleAdd ? (
-          <AddIncome
-            user={user}
-            handleSubmit={addIncome}
-            toggleAdd={handleToggleAdd}
-          />
-        ) : null}
+       
 
         <Switch>
-          <Route path="/home">
-            <Landing user={user} />
-          </Route>
-
-          <Route path="/team">
-            <Team />
-          </Route>
-
-          {/*
-          <Route exact path="/">
-            <UserLogin
-              setUser={setUser}
-              url={url}
-              getSingleUser={getSingleUser}
-            />
-          </Route>
-            */}
-
           <Route
             exact
             path="/"
@@ -87,7 +63,13 @@ function App() {
               />
             )}
           />
+          <Route path="/home">
+            <Landing user={user} />
+          </Route>
 
+          <Route path="/team">
+            <Team />
+          </Route>
           <Route path="/transactions">
             <Transaction user={user} />
           </Route>
@@ -96,7 +78,17 @@ function App() {
             <UserInfo userInfo={user} url={url} />
           </Route>
         </Switch>
+        
       </div>
+      <div className="add-transaction-container">
+        {toggleAdd ? (
+          <AddIncome
+            user={user}
+            handleSubmit={addIncome}
+            toggleAdd={handleToggleAdd}
+          />
+        ) : null}
+        </div>
       <NavBar toggleAdd={handleToggleAdd} />
     </div>
   );

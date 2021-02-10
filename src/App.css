@@ -55,7 +55,73 @@ body {
 
 .add-button {
 }
-
+.add-transaction-container{
+  position: fixed;
+  bottom: 8%;
+  left: 5%;
+  width: 90%;
+  margin: 0 auto;
+  color: white
+}
+.add-transaction-container h2{
+  margin-top: 0;
+}
+.add-income-component{
+  border: 5px solid black;
+  border-radius: 10px;
+  padding-bottom: 1rem;
+  background-image: linear-gradient(
+    rgb(64, 23, 129),
+    85%,
+    rgba(11, 13, 16, 1)
+  );
+}
+.add-income-fields{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  
+}
+.add-income-field{
+  border: none;
+  border-bottom: solid;
+  margin-top: .5rem;
+  color: white;
+  background: transparent;
+  font-size: 22px;
+}
+.add-income-routine, .add-income-expense{
+margin: .5rem 0;
+font-size: 18px;
+}
+.add-income-routine div, .add-income-expense div{
+  display:inline;
+  align-content: center;
+  
+}
+.add-income-routine input, .add-income-expense input{
+  width: 10%
+}
+.add-income-routine label, .add-income-expense label{
+  width: 50%
+}
+.add-income-add-button{
+  width:30%;
+  position: relative;
+  left: 30%;
+  margin: .5rem;
+  font-size: 18px;
+  
+}
+.close-button{
+  border-radius: 10px;
+  height: 20%;
+  position: relative;
+  left: 40%;
+  margin: .5rem;
+}
 .team-component {
 }
 
