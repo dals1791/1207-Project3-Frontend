@@ -4,30 +4,23 @@
   text-align: center;
   font-family: 'Red Hat Display', sans-serif;
 }
-.chart {
-  width: 800px;
-  height: 600px;
-  border: 1px solid;
-  margin: 15px auto;
-}
 
 .nav-bar {
-     background-color: rgb(64, 23, 129);
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     color: black;
-     height: 60px;
-     position: fixed;
-     top: 645px;
-     width: 100%;
+  background-color: rgb(64, 23, 129);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  height: 60px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
 
 .nav-bar-text ul {
   margin: 0;
   padding: 0;
   display: flex;
-  
 }
 
 .nav-bar-text li {
@@ -56,7 +49,6 @@
 }
 
 .add-button {
-  
 }
 
 .team-component {
@@ -89,15 +81,19 @@
   margin-top: 40px;
 }
 
-.name-header1, .name-header2, .name-header3 {
+.name-header1,
+.name-header2,
+.name-header3 {
   color: white;
   text-align: left;
   padding-left: 100px;
   padding-top: 15px;
 }
 
-.paragraph-team1, .paragraph-team2, .paragraph-team3 {
-  color:white;
+.paragraph-team1,
+.paragraph-team2,
+.paragraph-team3 {
+  color: white;
   text-align: left;
   padding-left: 100px;
   padding-bottom: 15px;
@@ -110,9 +106,7 @@
 }
 
 @media (min-width: 668px) {
-
 }
 
 @media (min-width: 1028px) {
-
 }
