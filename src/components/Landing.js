@@ -6,12 +6,20 @@ const Landing = (props) => {
   const { user } = props;
 
   const loaded = () => {
-    // ============= Calculate total budget and total spendings... =============
+    // ============= Calculate total remaining and total spent... =============
     let totalSpent = 0;
+    //Make an array to hold the user transactions
     const transactions = user[0].transactions;
+    //Make a variable to hold the user's income/budget
     const budget = user[0].budget;
 
-    user[0].transactions.forEach((transaction) => {
+    //Grab only the transactions that are isExpense: true
+    const totalExpenses = user[0].transactions.filter((transaction) => {
+      return transaction.isExpense === true;
+    });
+
+    // Add up each expense transaction to the totalSpent
+    totalExpenses.forEach((transaction) => {
       return (totalSpent = totalSpent + transaction.amount);
     });
 

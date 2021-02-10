@@ -17,15 +17,24 @@ const PieChart = (props) => {
 
   // Get an array of just the categories from the transactions object -  NO DUPLICATE VALUES
   // CITATION --- https://www.codegrepper.com/code-examples/javascript/array+map+distinct
-  const categories = transactions
+  // const categories = transactions
+  //   .map((transaction) => transaction.category)
+  //   .filter((value, index, self) => self.indexOf(value) === index);
+
+  //- Grab only the transactions that are isExpense: true. The stuff grabed are objects
+  const totalExpenses = transactions.filter((transaction) => {
+    return transaction.isExpense === true;
+  });
+
+  console.log("Total expense data: ", totalExpenses);
+
+  const categories = totalExpenses
     .map((transaction) => transaction.category)
     .filter((value, index, self) => self.indexOf(value) === index);
 
-  console.log("unique catgories: ", categories);
-
   /* ------------------------------------------------------
     1. Define an empty array of objects 'categoryTransact' - to hold each category's transactions info
-    2. Loop through the CATEGORIES array. Filter all the items with the specific transaction category. These items are objects.
+    2. Loop through the CATEGORIES array. Filter all the items with the specific category. These items are objects.
     3. For every item in that same category, add up the 'AMOUNT' property
     4. Push the total amount spend from each category into the array of objects 'categorySpent'
   ------------------------------------------------------ */
@@ -34,9 +43,12 @@ const PieChart = (props) => {
   let categorySpent = [];
 
   // ------- STEP 2 -------
+  console.log("Unique categories", categories);
+
   categories.forEach((category) => {
     let sum = 0;
-    categoryTransact = transactions.filter((transaction) => {
+
+    categoryTransact = totalExpenses.filter((transaction) => {
       return transaction.category === category;
     });
     // -- STEP 3 --
@@ -49,7 +61,7 @@ const PieChart = (props) => {
   });
 
   console.log("Total spending for each category: ", categorySpent);
-  //MAP the totalAmount key in the array of objects into a new array with just the $ totalAmount
+  //MAP the totalAmount property in the array of objects into a new array with just the $ totalAmount
   const spendData = categorySpent.map((item) => item.totalAmout);
 
   // Push the remaining balance amount into the spendData array
@@ -83,11 +95,11 @@ const PieChart = (props) => {
             //data: [1000, 325, 1240, 456, 350, 290],
             data: spendData,
             backgroundColor: [
-              "rgba(201, 62, 62, 0.8)",
-              "rgba(54, 162, 235, 0.8)",
-              "rgba(191, 146, 42, 0.8)",
-              "rgba(153, 102, 255, 0.8)",
-              "rgba(242, 147, 58, 0.8)",
+              "rgba(201, 62, 62, .9)", // red
+              "rgba(54, 162, 235, .9)", // blue
+              "rgba(191, 146, 42, .9)", // gold
+              "rgba(153, 102, 255, .9)", // purple
+              "rgba(242, 147, 58, .9)", // orange
               // "rgba(38, 173, 108, 0.8)",
             ],
             borderWidth: 1,
@@ -142,21 +154,21 @@ const PieChart = (props) => {
                   font: {
                     size: "35",
                   },
-                  color: "green",
+                  color: "black",
                 },
                 {
                   text: "Balance",
                   font: {
                     size: "35",
                   },
-                  color: "green",
+                  color: "black",
                 },
                 {
                   text: `$ ${budget[0].income - totalSpent}`,
                   font: {
                     size: "32",
                   },
-                  color: "red",
+                  color: "green",
                 },
               ],
             },
@@ -170,11 +182,18 @@ const PieChart = (props) => {
           },
           legend: {
             display: false,
-            position: "right",
-            align: "center",
+            position: "bottom",
+            align: "start",
             labels: {
               fontColor: "#08628e",
-              fontSize: 24,
+              //fontSize: 24,
+              font: function (context) {
+                let width = context.chart.width;
+                let size = Math.round(width / 16);
+                return {
+                  size: size,
+                };
+              },
               boxWidth: 100,
             },
           },
