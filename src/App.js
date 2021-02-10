@@ -79,7 +79,9 @@ const handleToggleAdd = ()=>{
           <Route path="/userinfo">
             <UserInfo userInfo={user} url={url} />
           </Route>
-          <Route path="/userinfo"></Route>
+          <Route path="/userinfo">
+            
+          </Route>
         </Switch>
       </div>
       <NavBar toggleAdd={handleToggleAdd}/>
