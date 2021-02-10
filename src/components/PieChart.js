@@ -15,12 +15,6 @@ const PieChart = (props) => {
   - FUNCTION TO GET THE NON-REPEATING CATEGORIES FOR TRANSACTIONS
   ------------------------------------------------------ */
 
-  // Get an array of just the categories from the transactions object -  NO DUPLICATE VALUES
-  // CITATION --- https://www.codegrepper.com/code-examples/javascript/array+map+distinct
-  // const categories = transactions
-  //   .map((transaction) => transaction.category)
-  //   .filter((value, index, self) => self.indexOf(value) === index);
-
   //- Grab only the transactions that are isExpense: true. The stuff grabed are objects
   const totalExpenses = transactions.filter((transaction) => {
     return transaction.isExpense === true;
@@ -28,12 +22,15 @@ const PieChart = (props) => {
 
   console.log("Total expense data: ", totalExpenses);
 
+  // Get an array of just the categories from the transactions object -  NO DUPLICATE VALUES
+  // CITATION --- https://www.codegrepper.com/code-examples/javascript/array+map+distinct
   const categories = totalExpenses
     .map((transaction) => transaction.category)
     .filter((value, index, self) => self.indexOf(value) === index);
 
   /* ------------------------------------------------------
-    1. Define an empty array of objects 'categoryTransact' - to hold each category's transactions info
+    1. Define an empty array of objects 'categoryTransact' - to hold each category's transactions info.
+    1 b. Degine an empty array of objects 'categorySpent' - to hold the totalAmount spent and the 'category' it was spent on
     2. Loop through the CATEGORIES array. Filter all the items with the specific category. These items are objects.
     3. For every item in that same category, add up the 'AMOUNT' property
     4. Push the total amount spend from each category into the array of objects 'categorySpent'
