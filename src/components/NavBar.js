@@ -9,19 +9,19 @@ const NavBar = (props) => {
             <div className="nav-bar-text">
                 <ul>
                 <Link to="/" style={{ textDecoration: 'none'}}>
-                    <li><a href="/">Home</a></li>
+                    <li>Home</li>
                 </Link>
                 <Link to="/transactions" style={{ textDecoration: 'none'}}>
-                    <li><a href="/transactions">Transactions</a></li>
+                    <li>Transactions</li>
                 </Link>
                 
                 <li className="add-button" onClick={()=>{props.toggleAdd()}}>New</li>
                 
                 <Link to="/team" style={{ textDecoration: 'none'}}>
-                    <li><a href="/team">Team</a></li>
+                    <li>Team</li>
                 </Link>
                 <Link to="/userinfo" style={{ textDecoration: 'none'}}>
-                    <li><a href="/userinfo">User</a></li>
+                    <li>User</li>
                 </Link>
                 </ul>
             </div>

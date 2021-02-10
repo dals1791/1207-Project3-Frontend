@@ -15,13 +15,11 @@ function App() {
 
   // ----------------------- Defines STATES -----------------------
   const [user, setUser] = React.useState(null);
-  const [toggleAdd, setToggleAdd] = React.useState(false)
+  const [toggleAdd, setToggleAdd] = React.useState(false);
 
   // ============= USEEFFECT FUNCTION TO GET DATA =============
   const getSingleUser = (user) => {
-
     fetch(url + "/users/" + user.userName + "/" + user.password)
-
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {
@@ -31,58 +29,64 @@ function App() {
         }
       });
   };
-// POST route for addIncome
-const addIncome = (newTransaction)=>{
-  fetch(url +"/transactions/" + user[0]._id, {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newTransaction)
-  })
-  
-}
-const handleToggleAdd = ()=>{
-  setToggleAdd((toggle) => !toggle)
-}
-// useEffect(()=>{getSingleUser()}, [user])
+  // POST route for addIncome
+  const addIncome = (newTransaction) => {
+    fetch(url + "/transactions/" + user[0]._id, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTransaction),
+    });
+  };
+  const handleToggleAdd = () => {
+    setToggleAdd((toggle) => !toggle);
+  };
+  // useEffect(()=>{getSingleUser()}, [user])
   return (
     <div className="App">
       <div className="container-main">
-      {/* <Link to="/userlogin">
-        <button>Login</button>
-      </Link> */}
-      <Switch>
-        <Route exact path="/">
-         <Landing user={user} />      
-        </Route>
-        <Route path="/team">
-          <Team />
-        </Route>
-        <Route path="/userlogin">
-          <UserLogin setUser={setUser} url={urlLive}getSingleUser={getSingleUser}/>
-          
-        </Route>
-
-        <Route path="/transactions">
-        <Transaction />
-        </Route>
-        <Route path="/userinfo">
-        <Link to="/userlogin">
-        <button>Login</button>
-      </Link>
-          <UserInfo userInfo={user} url={urlLive}/>
+      <Link to="/userlogin">
+            <button>Login</button>
+          </Link>
+        {toggleAdd ? (
+          <AddIncome
+            user={user}
+            url={url}
+            handleSubmit={addIncome}
+            toggleAdd={handleToggleAdd}
+          />
+        ) : null}
+        <Switch>
+          <Route exact path="/">
+            <Landing user={user} />
+          </Route>
+          <Route path="/team">
+            <Team />
+          </Route>
+          <Route path="/userlogin">
+            <UserLogin
+              setUser={setUser}
+              url={url}
+              getSingleUser={getSingleUser}
+            />
+          </Route>
 
           <Route path="/transactions">
             <Transaction user={user} />
           </Route>
-          <Route path="/userinfo">
+
+          
+
+          <Route path="/transactions">
+            <Transaction user={user} />
+          </Route>
+          <Route  path="/userinfo">
             <UserInfo userInfo={user} url={url} />
           </Route>
-          <Route path="/userinfo"></Route>
         </Switch>
       </div>
-      <NavBar toggleAdd={handleToggleAdd}/>
+      <NavBar toggleAdd={handleToggleAdd} />
     </div>
   );
 }
