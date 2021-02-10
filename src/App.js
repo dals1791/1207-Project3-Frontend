@@ -43,6 +43,7 @@ function App() {
   // }, []);
   return (
     <div className="App">
+      <div className="container-main">
       <Link to="/userlogin">
         <button>Login</button>
       </Link>
@@ -66,6 +67,7 @@ function App() {
 
         </Route>
       </Switch>
+    </div>
       <NavBar />
     </div>
   );
