@@ -43,7 +43,6 @@ function App() {
         </Route>
         <Route path="/userlogin">
           <UserLogin />
-          <Transaction />
         </Route>
 
         <Route path="/transactions">
