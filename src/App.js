@@ -26,6 +26,7 @@ function App() {
   // };
   const getSingleUser = (user) => {
     fetch(urlLive + "/users/" + user.userName + "/" + user.password)
+      //fetch(url)
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {

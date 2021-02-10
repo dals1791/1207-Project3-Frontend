@@ -9,25 +9,56 @@ const Transaction = (props) => {
      CALCULATE THE TOTAL SPENDINGS
     ------------------------------------------------------ */
     let totalSpent = 0;
-    const transactions = user[0].transactions;
-    const budget = user[0].budget;
+    const budget = user[0].budget; //for use as props also
+    const transactions = user[0].transaction; // for use as props also
 
-    user[0].transactions.forEach((transaction) => {
+    //- Gran only the transactions that are isExpense: true
+    const totalExpenses = user[0].transactions.filter((transaction) => {
+      return transaction.isExpense === true;
+    });
+
+    console.log("Extracted expenses: ", totalExpenses);
+
+    // Add up each expense transaction to the totalSpent
+    totalExpenses.forEach((transaction) => {
       return (totalSpent = totalSpent + transaction.amount);
     });
 
     /* ------------------------------------------------------
-     GET TRANSACTIONS FROM LATEST TO OLDEST - NON-BILLS - EXPENSE TRUE
+     GET TRANSACTIONS - NON-BILLS - POSITIVE AND NEGATIVE TRANSACTIONS
     ------------------------------------------------------ */
 
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "June",
+      "July",
+      "Aug",
+      "Sept",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
     const nonRoutineExpense = user[0].transactions.filter((transaction) => {
-      return transaction.isRoutine === false && transaction.isExpense === true;
+      //return transaction.isRoutine === false && transaction.isExpense === true;
+      return transaction.isRoutine === false;
     });
 
     const expenseList = nonRoutineExpense.map((expense, index) => {
       let formatedDate = new Date(expense.time);
-      console.log("Month: ", formatedDate.getMonth());
-      console.log("Year: ", formatedDate.getYear());
+
+      let transactionType = "";
+
+      if (expense.isExpense === true) {
+        transactionType = "Expense";
+      } else {
+        transactionType = "Deposite";
+      }
+
       return (
         <div
           style={{
@@ -37,10 +68,10 @@ const Transaction = (props) => {
         >
           <p>{expense.description}</p>
           <p>{expense.category}</p>
-          <p>{formatedDate.toString()}</p>
+          <p>Transaction Type: {transactionType}</p>
           <p>
-            {formatedDate.getMonth()} - {formatedDate.getDate()} -{" "}
-            {formatedDate.getYear()}
+            {months[formatedDate.getMonth()]} / {formatedDate.getDate()} /
+            {formatedDate.getFullYear()} - {formatedDate.toLocaleTimeString()}
           </p>
           <span>${expense.amount}</span>
         </div>
@@ -51,25 +82,29 @@ const Transaction = (props) => {
     console.log("All non-routine expenses: ", nonRoutineExpense);
 
     /* ------------------------------------------------------
-    GET TRANSACTIONS FROM LATEST TO OLDEST - BILLS - EXPENSE TRUE
+    GET TRANSACTIONS - BILLS - IS AN EXPENSE
   ------------------------------------------------------ */
     const routineExpense = user[0].transactions.filter((transaction) => {
       return transaction.isRoutine === true && transaction.isExpense === true;
     });
 
     const routineList = routineExpense.map((expense, index) => {
-      let formatedDate = new Date(expense.time).toString();
+      let formatedDate = new Date(expense.time);
 
       return (
         <div
           style={{
             border: "1px solid green",
+            marginBottom: "20px",
           }}
           key={index}
         >
           <p>{expense.description}</p>
           <p>{expense.category}</p>
-          <p>{formatedDate}</p>
+          <p>
+            {months[formatedDate.getMonth()]} / {formatedDate.getDate()} /
+            {formatedDate.getFullYear()} - {formatedDate.toLocaleTimeString()}
+          </p>
           <span>${expense.amount}</span>
         </div>
       );
