@@ -1,7 +1,7 @@
 import { Route, Switch, Link } from "react-router-dom";
 
 import "./App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import AddIncome from "./components/AddIncome";
 import Team from "./components/Team";
 import Transaction from "./components/Transaction";
@@ -11,21 +11,14 @@ import NavBar from "./components/NavBar";
 import Landing from "./components/Landing";
 
 function App() {
-  const url = "http://localhost:4000/users";
-  const urlLive = "https://project3-backend-1207.herokuapp.com";
+  const url = "https://project3-backend-1207.herokuapp.com";
 
   // ----------------------- Defines STATES -----------------------
   const [user, setUser] = React.useState(null);
 
   // ============= USEEFFECT FUNCTION TO GET DATA =============
-
-  // const getUser = async () => {
-  //   const response = await fetch(urlLive);
-  //   const data = await response.json();
-  //   setUser(data);
-  // };
   const getSingleUser = (user) => {
-    fetch(urlLive + "/users/" + user.userName + "/" + user.password)
+    fetch(url + "/users/" + user.userName + "/" + user.password)
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {
@@ -35,15 +28,22 @@ function App() {
         }
       });
   };
-
-  // fetch users when page loads
-  // React.useEffect(() => {
-  //   getSingleUser();
-  // }, []);
+// POST route for addIncome
+const addIncome = (newTransaction)=>{
+  fetch(url +"/transactions/" + user[0]._id, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newTransaction)
+  })
+  
+}
+// useEffect(()=>{getSingleUser()}, [user])
   return (
     <div className="App">
       <div className="container-main">
-        <AddIncome />
+      <AddIncome user={user} url={url} handleSubmit={addIncome}/>
         <Link to="/userlogin">
           <button>Login</button>
         </Link>
@@ -57,7 +57,7 @@ function App() {
           <Route path="/userlogin">
             <UserLogin
               setUser={setUser}
-              url={urlLive}
+              url={url}
               getSingleUser={getSingleUser}
             />
           </Route>
@@ -66,11 +66,12 @@ function App() {
             <Transaction user={user} />
           </Route>
           <Route path="/userinfo">
-            <UserInfo userInfo={user} url={urlLive} />
+            <UserInfo userInfo={user} url={url} />
           </Route>
           <Route path="/userinfo"></Route>
         </Switch>
       </div>
+      
       <NavBar />
     </div>
   );
