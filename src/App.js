@@ -44,9 +44,9 @@ function App() {
   return (
     <div className="App">
       <div className="container-main">
-      <Link to="/userlogin">
+      {/* <Link to="/userlogin">
         <button>Login</button>
-      </Link>
+      </Link> */}
       <Switch>
         <Route exact path="/">
          <Landing user={user} />      
@@ -63,6 +63,9 @@ function App() {
         <Transaction />
         </Route>
         <Route path="/userinfo">
+        <Link to="/userlogin">
+        <button>Login</button>
+      </Link>
           <UserInfo userInfo={user} url={urlLive}/>
 
         </Route>

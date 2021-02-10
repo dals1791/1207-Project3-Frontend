@@ -35,16 +35,18 @@ import Register from './Register'
     }
     
     return(
-        <div>
-          <h1>BUGTPAD</h1>
+        <div className="budgetpad-landing">
+          <h1 className="budgetpad-text">BUGTPAD</h1>
           <p>We got tired of complicated apps, so here you go.</p>
-          <button onClick={handleToggleLogin}>Login</button>
-          <button onClick={handleToggleRegister}>New User?</button>
+          <div className="login-buttons">
+          <button className="login-button" onClick={handleToggleLogin}>Existing Users</button>
+          <button className="new-account-button" onClick={handleToggleRegister}>Create Account</button>
+          </div>
             <div>
                 {displayUserLogin()}
-            </div>
+                
         </div>
-
+        </div>
     )
 }
 

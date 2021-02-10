@@ -52,7 +52,7 @@ const [formData, setFormData] = useState("");
           onChange={handleChange}
         />
         </div>
-        <button type="submit" >
+        <button className="register-button" type="submit" >
         Register
       </button>
         </form>
