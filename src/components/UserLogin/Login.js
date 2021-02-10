@@ -1,16 +1,17 @@
 import React, {useState} from "react";
 
-const Login = () => {
-  const [formData, setFormData] = useState("");
+const Login = (props) => {
+  const [formData, setFormData] = useState({});
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
-    // props.handleSubmit(formData); // Submit to Parents desired function
+    props.handleSubmit(formData); // Submit to Parents desired function
     // props.history.push("/landing"); //Push back to landing page
   };
   //Handle for UserName & PW - Tracks typing when inputing into form input.
   const handleChange = (event) => {
-    setFormData({[event.target.name]: event.target.value });
+    setFormData({...formData,[event.target.name]: event.target.value });
   };
+  console.log("this is login form data", formData)
   return (
     <form>
         <h2>Welcome Back!</h2>
@@ -26,7 +27,7 @@ const Login = () => {
       <div>
         <input
           type="text"
-          name="Password"
+          name="password"
           placeholder="Password"
           value={formData.password}
           onChange={handleChange}
