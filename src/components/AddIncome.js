@@ -92,7 +92,7 @@ isExpense: false
           onChange={handleChange}
           />
           </div>
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={handleSubmit, props.toggleAdd} >
           ADD
           </button>
         </div>

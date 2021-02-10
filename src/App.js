@@ -15,6 +15,7 @@ function App() {
 
   // ----------------------- Defines STATES -----------------------
   const [user, setUser] = React.useState(null);
+  const [toggleAdd, setToggleAdd] = React.useState(false)
 
   // ============= USEEFFECT FUNCTION TO GET DATA =============
   const getSingleUser = (user) => {
@@ -39,11 +40,14 @@ const addIncome = (newTransaction)=>{
   })
   
 }
+const handleToggleAdd = ()=>{
+  setToggleAdd((toggle) => !toggle)
+}
 // useEffect(()=>{getSingleUser()}, [user])
   return (
     <div className="App">
       <div className="container-main">
-      <AddIncome user={user} url={url} handleSubmit={addIncome}/>
+      {toggleAdd ? <AddIncome user={user} url={url} handleSubmit={addIncome} toggleAdd={handleToggleAdd}/> : null}
         <Link to="/userlogin">
           <button>Login</button>
         </Link>
@@ -72,7 +76,7 @@ const addIncome = (newTransaction)=>{
         </Switch>
       </div>
       
-      <NavBar />
+      <NavBar toggleAdd={handleToggleAdd}/>
     </div>
   );
 }
