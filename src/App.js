@@ -42,35 +42,29 @@ function App() {
   // }, []);
   return (
     <div className="App">
-      <div className="container-main">
-        <AddIncome />
-        <Link to="/userlogin">
-          <button>Login</button>
-        </Link>
-        <Switch>
-          <Route exact path="/">
-            <Landing user={user} />
-          </Route>
-          <Route path="/team">
-            <Team />
-          </Route>
-          <Route path="/userlogin">
-            <UserLogin
-              setUser={setUser}
-              url={urlLive}
-              getSingleUser={getSingleUser}
-            />
-          </Route>
+      <Link to="/userlogin">
+        <button>Login</button>
+      </Link>
+      <Switch>
+        <Route exact path="/">
+         <Landing user={user} />      
+        </Route>
+        <Route path="/team">
+          <Team />
+        </Route>
+        <Route path="/userlogin">
+          <UserLogin setUser={setUser} url={urlLive}getSingleUser={getSingleUser}/>
+          
+        </Route>
 
-          <Route path="/transactions">
-            <Transaction user={user} />
-          </Route>
-          <Route path="/userinfo">
-            <UserInfo userInfo={user} url={urlLive} />
-          </Route>
-          <Route path="/userinfo"></Route>
-        </Switch>
-      </div>
+        <Route path="/transactions">
+        <Transaction />
+        </Route>
+        <Route path="/userinfo">
+          <UserInfo />
+
+        </Route>
+      </Switch>
       <NavBar />
     </div>
   );
