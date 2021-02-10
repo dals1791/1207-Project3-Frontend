@@ -1,4 +1,4 @@
-import { Route, Switch, Link} from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 
 import "./App.css";
 import React from "react";
@@ -6,39 +6,35 @@ import AddIncome from "./components/AddIncome";
 import Team from "./components/Team";
 import Transaction from "./components/Transaction";
 import UserLogin from "./components/UserLogin/UserLogin";
-import UserInfo from "./components/UserProfile/UserProfile"
+import UserInfo from "./components/UserProfile/UserProfile";
 import NavBar from "./components/NavBar";
-import Landing from "./components/Landing"
-
+import Landing from "./components/Landing";
 
 function App() {
   const url = "http://localhost:4000/users";
-  const urlLive = "https://project3-backend-1207.herokuapp.com"
+  const urlLive = "https://project3-backend-1207.herokuapp.com";
 
   // ----------------------- Defines STATES -----------------------
   const [user, setUser] = React.useState(null);
 
   // ============= USEEFFECT FUNCTION TO GET DATA =============
 
-
   // const getUser = async () => {
   //   const response = await fetch(urlLive);
   //   const data = await response.json();
   //   setUser(data);
   // };
-  const getSingleUser = (user)=>{
-    fetch(urlLive + "/users/"+user.userName+'/'+user.password)
-    .then(res=>res.json())
-    .then((data)=>{
-        if(data.length>0){
-            return setUser(data)
+  const getSingleUser = (user) => {
+    fetch(urlLive + "/users/" + user.userName + "/" + user.password)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length > 0) {
+          return setUser(data);
+        } else {
+          console.log("Not a user, try again");
         }
-        else{
-            console.log("Not a user, try again") 
-        }
-        })
-}
-
+      });
+  };
 
   // fetch users when page loads
   // React.useEffect(() => {
@@ -46,29 +42,35 @@ function App() {
   // }, []);
   return (
     <div className="App">
-      <AddIncome />
-      <Link to="/userlogin">
-        <button>Login</button>
-      </Link>
-      <Switch>
-        <Route exact path="/">
-          <Landing user={user} />
-        </Route>
-        <Route path="/team">
-          <Team />
-        </Route>
-        <Route path="/userlogin">
-          <UserLogin setUser={setUser} url={urlLive}getSingleUser={getSingleUser}/>
-        </Route>
+      <div className="container-main">
+        <AddIncome />
+        <Link to="/userlogin">
+          <button>Login</button>
+        </Link>
+        <Switch>
+          <Route exact path="/">
+            <Landing user={user} />
+          </Route>
+          <Route path="/team">
+            <Team />
+          </Route>
+          <Route path="/userlogin">
+            <UserLogin
+              setUser={setUser}
+              url={urlLive}
+              getSingleUser={getSingleUser}
+            />
+          </Route>
 
-        <Route path="/transactions">
-          <Transaction user={user} />
-        </Route>
-        <Route path="/userinfo">
-          <UserInfo userInfo={user} url={urlLive}/>
-        </Route>
-        <Route path="/userinfo"></Route>
-      </Switch>
+          <Route path="/transactions">
+            <Transaction user={user} />
+          </Route>
+          <Route path="/userinfo">
+            <UserInfo userInfo={user} url={urlLive} />
+          </Route>
+          <Route path="/userinfo"></Route>
+        </Switch>
+      </div>
       <NavBar />
     </div>
   );

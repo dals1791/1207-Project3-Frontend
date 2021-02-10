@@ -3,22 +3,21 @@
 }
 
 .nav-bar {
-     background-color: rgb(64, 23, 129);
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     color: black;
-     height: 60px;
-     position: fixed;
-     top: 645px;
-     width: 100%;
+  background-color: rgb(64, 23, 129);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  height: 60px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
 
 .nav-bar-text ul {
   margin: 0;
   padding: 0;
   display: flex;
-  
 }
 
 .nav-bar-text li {
@@ -101,9 +100,7 @@
 }
 
 @media (min-width: 668px) {
-
 }
 
 @media (min-width: 1028px) {
-
 }
