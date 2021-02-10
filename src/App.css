@@ -5,6 +5,10 @@
   font-family: 'Red Hat Display', sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 .nav-bar {
   background-color: rgb(64, 23, 129);
   display: flex;
@@ -54,16 +58,6 @@
 .team-component {
 }
 
-.team-member-card {
-  background-color: rgb(64, 23, 129);
-  width: 50%;
-  transition: width 1s;
-}
-
-.team-member-card:hover {
-  width: 100%;
-  display: block;
-}
 
 .team-header {
   text-align: left;
@@ -100,9 +94,142 @@
 }
 
 
+.background-budgtpad {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-.team-member-card {
+.budgetpad-landing {
+  background: url("./Images/strategy.jpg");
+  background-size: contain;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  width: 100%;
+  height: 100vh;
+  color: white;
+}
+
+.team-component {
+  background: url("./Images/strategy.jpg");
+  background-size: contain;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  width: 100%;
+  height: 100vh;
+}
+
+.team-component h1 {
+  color: white;
+  padding-left: 30px;
+}
+
+.team-member-card1, .team-member-card2, .team-member-card3 {
+  background-color: rgb(64, 23, 129);
+  /* width: 100%; */
   margin: 15px;
+  opacity: 0.6;
+  transition: all 0.15s ease-in-out;
+}
+
+.team-member-card1:hover {
+  background-image: url("./Images/cat1.jpg");
+  opacity: 1.0;
+  transition: all opacity .25s ease-in-out;
+}
+
+.team-member-card2:hover {
+  background-image: url("./Images/cat2.jpg");
+  opacity: 1.0;
+  transition: all opacity .25s ease-in-out;
+}
+
+.team-member-card3:hover {
+  background-image: url("./Images/cat3.jpg");
+  background-size: contain;
+  opacity: 1.0;
+  transition: all opacity .25s ease-in-out;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: auto;
+}
+
+.login-button {
+  width: 25%;
+  background-color: rgb(64, 23, 129);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.new-account-button {
+  width: 25%;
+  margin-bottom: 15px;
+  background-color: rgb(64, 23, 129);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.existing-user-login {
+  width: 25%;
+  margin-bottom: 15px;
+  background-color: rgb(64, 23, 129);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.register-button {
+  width: 25%;
+  margin-bottom: 15px;
+  background-color: rgb(64, 23, 129);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.budgetpad-landing p {
+  font-size: 1.5rem;
+  padding: 5px 25px 15px 25px;
+  margin-bottom: 40px;
+}
+
+.budgetpad-text  {
+  padding-top: 20px;
+  font-size: 4rem;
 }
 
 @media (min-width: 668px) {

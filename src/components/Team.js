@@ -7,7 +7,7 @@ const Team = () => {
       <h1> Our Team </h1>
       </div>
 
-      <div className="team-member-card">
+      <div className="team-member-card1">
         <div className="avatar"></div>
         <div className="name-header1">
         <h4>Anny</h4>
@@ -16,7 +16,7 @@ const Team = () => {
           <p>Blah blah blah something about this awesome team member.</p>
           </div>
       </div>
-      <div className="team-member-card">
+      <div className="team-member-card2">
       <div className="avatar"></div>
       <div className="name-header2">
         <h4>Sean</h4>
@@ -25,7 +25,7 @@ const Team = () => {
           <p>blah blah blah something about this awesome team member.</p>
           </div>
       </div>
-          <div className="team-member-card">
+          <div className="team-member-card3">
           <div className="avatar"></div>
           <div className="name-header3">
         <h4>Steven</h4>

@@ -17,6 +17,7 @@ const Login = (props) => {
         <h2>Welcome Back!</h2>
       <div>
         <input
+          className="username-bar"
           type="text"
           name="userName"
           placeholder="Username"
@@ -26,6 +27,7 @@ const Login = (props) => {
       </div>
       <div>
         <input
+          className="password-bar"
           type="text"
           name="password"
           placeholder="Password"
@@ -33,7 +35,7 @@ const Login = (props) => {
           onChange={handleChange}
         />
       </div>
-      <button type="submit" onClick={handleSubmit}>
+      <button className="existing-user-login" type="submit" onClick={handleSubmit}>
         Login
       </button>
     </form>

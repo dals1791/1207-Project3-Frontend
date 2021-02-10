@@ -49,25 +49,29 @@ const handleToggleAdd = ()=>{
   return (
     <div className="App">
       <div className="container-main">
+      {/* <Link to="/userlogin">
+        <button>Login</button>
+      </Link> */}
+      <Switch>
+        <Route exact path="/">
+         <Landing user={user} />      
+        </Route>
+        <Route path="/team">
+          <Team />
+        </Route>
+        <Route path="/userlogin">
+          <UserLogin setUser={setUser} url={urlLive}getSingleUser={getSingleUser}/>
+          
+        </Route>
 
-      {toggleAdd ? <AddIncome user={user} url={url} handleSubmit={addIncome} toggleAdd={handleToggleAdd}/> : null}
+        <Route path="/transactions">
+        <Transaction />
+        </Route>
+        <Route path="/userinfo">
         <Link to="/userlogin">
-          <button>Login</button>
-        </Link>
-        <Switch>
-          <Route exact path="/">
-            <Landing user={user} />
-          </Route>
-          <Route path="/team">
-            <Team />
-          </Route>
-          <Route path="/userlogin">
-            <UserLogin
-              setUser={setUser}
-              url={url}
-              getSingleUser={getSingleUser}
-            />
-          </Route>
+        <button>Login</button>
+      </Link>
+          <UserInfo userInfo={user} url={urlLive}/>
 
           <Route path="/transactions">
             <Transaction user={user} />
