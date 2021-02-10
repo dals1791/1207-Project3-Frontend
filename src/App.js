@@ -9,6 +9,7 @@ import UserLogin from "./components/UserLogin/UserLogin";
 import UserInfo from "./components/UserProfile/UserProfile";
 import NavBar from "./components/NavBar";
 import Landing from "./components/Landing";
+import Topbar from "./components/Topbar";
 
 function App() {
   const url = "https://project3-backend-1207.herokuapp.com";
@@ -45,10 +46,8 @@ function App() {
   // useEffect(()=>{getSingleUser()}, [user])
   return (
     <div className="App">
+      <Topbar user={user} />
       <div className="container-main">
-      <Link to="/userlogin">
-            <button>Login</button>
-          </Link>
         {toggleAdd ? (
           <AddIncome
             user={user}
@@ -56,31 +55,44 @@ function App() {
             toggleAdd={handleToggleAdd}
           />
         ) : null}
+
         <Switch>
-          <Route exact path="/">
+          <Route path="/home">
             <Landing user={user} />
           </Route>
+
           <Route path="/team">
             <Team />
           </Route>
-          <Route path="/userlogin">
+
+          {/*
+          <Route exact path="/">
             <UserLogin
               setUser={setUser}
               url={url}
               getSingleUser={getSingleUser}
             />
           </Route>
+            */}
+
+          <Route
+            exact
+            path="/"
+            render={(rp) => (
+              <UserLogin
+                {...rp}
+                setUser={setUser}
+                url={url}
+                getSingleUser={getSingleUser}
+              />
+            )}
+          />
 
           <Route path="/transactions">
             <Transaction user={user} />
           </Route>
 
-          
-
-          <Route path="/transactions">
-            <Transaction user={user} />
-          </Route>
-          <Route  path="/userinfo">
+          <Route path="/userinfo">
             <UserInfo userInfo={user} url={url} />
           </Route>
         </Switch>
