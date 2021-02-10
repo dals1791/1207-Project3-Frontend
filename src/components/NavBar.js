@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
         <div className="nav-bar">
             {/* <h3> BUDGTPAD</h3> */}
@@ -14,9 +14,9 @@ const NavBar = () => {
                 <Link to="/transactions" style={{ textDecoration: 'none'}}>
                     <li><a href="/transactions">Transactions</a></li>
                 </Link>
-                <Link to="/" style={{ textDecoration: 'none'}}>
-                    <li className="add-button"><a href="/">New</a></li>
-                </Link>
+                
+                <li className="add-button" onClick={()=>{props.toggleAdd()}}>New</li>
+                
                 <Link to="/team" style={{ textDecoration: 'none'}}>
                     <li><a href="/team">Team</a></li>
                 </Link>
