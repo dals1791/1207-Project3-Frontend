@@ -141,16 +141,6 @@ body {
   padding: 5px 0 0 15px;
 }
 
-.avatar {
-  background-color: black;
-  border-radius: 50%;
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  float: left;
-  margin-left: 25px;
-  margin-top: 40px;
-}
 
 .name-header1,
 .name-header2,
@@ -165,9 +155,10 @@ body {
 .paragraph-team2,
 .paragraph-team3 {
   color: white;
-  text-align: left;
-  padding-left: 100px;
-  padding-bottom: 15px;
+  text-align: center;
+  padding: 25px;
+  transition: fadeIn ease 1s;
+
 }
 
 .background-budgtpad {
@@ -209,27 +200,23 @@ body {
   background-color: rgb(64, 23, 129);
   /* width: 100%; */
   margin: 15px;
-  opacity: 0.6;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.20s ease-in-out;
 }
 
 .team-member-card1:hover {
   background-image: url("./Images/cat1.jpg");
-  opacity: 1;
-  transition: all opacity 0.25s ease-in-out;
+  box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
 }
 
 .team-member-card2:hover {
   background-image: url("./Images/cat2.jpg");
-  opacity: 1;
-  transition: all opacity 0.25s ease-in-out;
+  box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
 }
 
 .team-member-card3:hover {
   background-image: url("./Images/cat3.jpg");
   background-size: contain;
-  opacity: 1;
-  transition: all opacity 0.25s ease-in-out;
+  box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
 }
 
 .login-buttons {
@@ -472,6 +459,24 @@ hr {
 .trnact-light-font {
   color: #aecbd6;
 }
+
+.desktop-nav-bar {
+  display: none;
+}
+
+.our-team-header {
+  display: none;
+}
+.paragraph-team1-after, .paragraph-team2-after, .paragraph-team3-after {
+  color: white;
+}
+.paragraph-team1, .paragraph-team2, .paragraph-team3{
+  color: white;
+  display: none;
+}
+
+
+
 /* ***************************************************
 *  -------- MEDIA QUERIES  ---------
 *************************************************** */
@@ -509,4 +514,112 @@ hr {
 }
 
 @media (min-width: 1028px) {
+  .nav-bar {
+    display: none;
+  }
+
+  .desktop-nav-bar {
+    background-color: rgb(64, 23, 129);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 60px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
+
+  .top-bar-container {
+    display: none;
+  }
+
+  .desktop-logo {
+    padding: 30px;
+  }
+  
+  .team-header {
+    color: white;
+  }
+
+  .team-component {
+    background-image: none;
+  }
+
+  .our-team-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(248, 247, 216, 0.7);
+    width: 100%;
+    height: 20vh;
+    background-image: url("./Images/team.jpg");
+    background-position: top 860px center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 100px rgba(5, 11, 17, 0.521);
+    z-index: -1;
+    margin-bottom: 20px;
+    margin-top: -35px;
+  }
+
+  .team-header-desktop {
+    font-size: 56px;
+    color: white;
+  }
+
+  .flex-team-member-card {
+    margin: 0;
+    display: flex;
+    height: 70vh;
+    width: 100%;
+  }
+
+  .name-header1, .name-header2, .name-header3 {
+    text-align: center;
+    font-size: 48px;
+    padding-right: 80px;
+  }
+  
+  .paragraph-team1, .paragraph-team2, .paragraph-team3 {
+    font-size: 30px;
+  }
+
+  .team-member-card1:hover .paragraph-team1-after {
+    opacity: 1;
+  }
+  .team-member-card1:hover .paragraph-team1 {
+    opacity: 0;
+    display: none;
+  }
+
+  .team-member-card2:hover .paragraph-team2 {
+    opacity: 0;
+    display: none;
+  }
+  
+  .team-member-card2:hover .paragraph-team2-after {
+    opacity: 1;
+  }
+
+  .team-member-card3:hover .paragraph-team3 {
+    opacity: 0;
+    display: none;
+  }
+  
+  .team-member-card3:hover .paragraph-team3-after {
+    opacity: 1;
+  }
+
+  .paragraph-team1-after, .paragraph-team2-after, .paragraph-team3-after {
+    color: white;
+    opacity: 0;
+    text-align: center;
+    padding: 25px;
+    align-items: center;
+    font-size: 36px;
+  }
+
+  .budgetpad-landing {
+    margin-bottom: 40px;
+  }
 }

@@ -79,6 +79,9 @@ function App() {
           <Route path="/userinfo">
             <UserInfo userInfo={user} url={url} />
           </Route>
+          <Route path="/userinfo">
+            
+          </Route>
         </Switch>
         
       </div>

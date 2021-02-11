@@ -6,6 +6,7 @@ import { faUserEdit, faUsers, faDollarSign, faHome, faFileInvoiceDollar} from '@
 
 const NavBar = (props) => {
   return (
+    <div>
     <div className="nav-bar">
 
       <div className="nav-bar-text">
@@ -35,6 +36,47 @@ const NavBar = (props) => {
         </ul>
       </div>
     </div>
+
+    <div className="desktop-nav-bar">
+      <div className="desktop-logo-container"><h4 className ="desktop-logo" style={{color: "white", fontSize: "40px"}}>BUGTPAD</h4></div>
+      <div className="nav-bar-text">
+        <ul>
+          <Link to="/home" style={{ textDecoration: "none" }}>
+            <li className="navbar-home" style={{color: "white", fontSize: "32px"}}>Home</li>
+          </Link>
+          <Link to="/transactions" style={{ textDecoration: "none" }}>
+            <li className="navbar-transactions-icon" style={{color: "white", fontSize: "32px"}}>Transactions</li>
+          </Link>
+
+          <li className="navbar-add" onClick={() => {props.toggleAdd();}} style={{color: "lawngreen", fontSize: "32px"}}>
+            Add </li>
+
+          <Link to="/team" style={{ textDecoration: "none" }}>
+            <li className="navbar-team" style={{color: "white", fontSize: "32px"}}>Team</li>
+          </Link>
+          <Link to="/userinfo" style={{ textDecoration: "none" }}>
+            <li className="navbar-user" style={{color: "white", fontSize: "32px"}}>User</li>
+          </Link>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
   );
 };
 
