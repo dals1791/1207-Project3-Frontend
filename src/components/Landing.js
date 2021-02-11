@@ -24,7 +24,7 @@ const Landing = (props) => {
     });
 
     return (
-      <div className="landing-component" style={{ border: "1px solid" }}>
+      <div className="landing-component">
         <h2> Starting Income ${user[0].budget[0].income}</h2>
 
         <Summary

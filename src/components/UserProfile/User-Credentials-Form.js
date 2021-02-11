@@ -13,12 +13,12 @@ const UserCredentials = (props) => {
   };
   console.log(formData);
   return (
-    <div>
-      <label>Update Profile</label><br/>
+    <div className="user-info-cred-form">
+      <label style={{fontSize: 20}}>Update Profile</label><br/>
       <small>note: log out and log back in to see changes</small>
       <form>
         <div>
-          <label>First Name:</label>
+          <label>First Name: </label>
           <input
             type="text"
             name="firstName"
@@ -33,22 +33,7 @@ const UserCredentials = (props) => {
       </form>
       <form>
         <div>
-          <label>Last Name:</label>
-          <input
-            type="text"
-            name="lastName"
-            placeholder={props.user.lastName}
-            value={formData.lastName}
-            onChange={handleChange}
-          />
-          <button type="submit" onClick={handleSubmit}>
-            Update
-          </button>
-        </div>
-      </form>
-      <form>
-        <div>
-          <label>Username:</label>
+          <label>Username: </label>
           <input
             type="text"
             name="userName"
@@ -63,7 +48,7 @@ const UserCredentials = (props) => {
       </form>
       <form>
         <div>
-          <label>Password:</label>
+          <label>Password: </label>
           <input
             type="text"
             name="password"
