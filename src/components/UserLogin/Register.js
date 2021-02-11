@@ -25,20 +25,6 @@ const [formData, setFormData] = useState("");
         />
         <input
           type="text"
-          name="lastName"
-          placeholder= "Enter your Last Name"
-          value={formData.lastName}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="email"
-          placeholder= "Enter a Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
           name="userName"
           placeholder= "Enter a Username"
           value={formData.userName}

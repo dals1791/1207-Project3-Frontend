@@ -312,7 +312,9 @@ body {
 /* .user-info-container{
 
 } */
-.user-info-header {
+
+.user-info-header{
+  position: relative;
   text-align: left;
   padding-left: 5%;
   background: url("./Images/strategy.jpg");
@@ -357,7 +359,7 @@ hr {
   /* left: 15rem;
   bottom: 26.5rem; */
   left: 63%;
-  bottom: 63%;
+  bottom: 13%;
 }
 .user-info-cred-form button,
 .user-info-budget-form button {

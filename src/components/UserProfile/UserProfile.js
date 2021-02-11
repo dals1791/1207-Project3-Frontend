@@ -42,12 +42,13 @@ const UserProfile = (props) => {
               <Link to="/">
                 <button className="user-info-logout-button">Log out</button>
               </Link>
-            </div>
-            <FontAwesomeIcon
+              <FontAwesomeIcon
               className="user-info-icon"
               style={{ color: "gold", fontSize: "90px" }}
               icon={faCoins}
             />
+            </div>
+           
             <hr />
             <div className="user-info-fields">
               {/* Update username and password */}
