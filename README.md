@@ -24,9 +24,9 @@ Tnis application will of course be built mobile first, followed by tablet and th
 | Primary assembly of Express API Server | Complete |
 | Primary assembly of React front-end application | In Progress |
 | Setting useState and useEffect hooks | In Progress |
-| Calling API to React application | Pending |
+| Calling API to React application | Complete |
 | Testing of bare-bone application for functionality | Pending |
-| CSS Styling | In Progress |
+| CSS Styling | MVP Styling finished pending approval from team and lead, post-MVP pending |
 
 ## API
 
@@ -179,10 +179,10 @@ Initial components decided for Project.
 | User Info page - render data | H| 3 hrs| *hrs* | *hrs* |
 | User Info Form Component - Edit user info: name, email, password, income | H|3 hrs | *hrs* | *hrs* |
 | Teams page | H|2 hrs | *hrs* | *hrs* |
-| Mobile Layout | M | 15 hrs | *hrs* | *hrs* |
+| Mobile Layout | M | 15 hrs | 20 hrs | *hrs* |
 | Tablet Layout | M | 15 hrs | *hrs* | *hrs* |
 | Desktop Layout | M | 15 hrs | *hrs* | *hrs* |
-| Total Time | H |  93 hrs | *hrs* | *hrs* |
+| Total Time | H |  93 hrs | 80hrs | *hrs* |
 
 ## Post MVP Time-Frames
 | Task | Priority | Estimated Time | Time Invested | Actual Time |

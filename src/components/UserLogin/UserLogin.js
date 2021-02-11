@@ -38,6 +38,7 @@ const UserLogin = (props) => {
   };
 
   return (
+    <>
     <div className="budgetpad-landing">
       <p>We got tired of complicated apps, so here you go.</p>
       <div className="login-buttons">
@@ -50,6 +51,7 @@ const UserLogin = (props) => {
       </div>
       <div>{displayUserLogin()}</div>
     </div>
+    </>
   );
 };
 

@@ -17,8 +17,10 @@ const Login = (props) => {
   };
   console.log("this is login form data", formData);
   return (
-    <form>
-      <h2>Welcome Back!</h2>
+    <form className="login-component-container">
+      <div className="login-header-desktop">
+        <h2 className="login-header-desktop-text">Welcome Back!</h2>
+      </div>
       <div>
         <input
           className="username-bar"
