@@ -476,6 +476,16 @@ hr{
 .our-team-header {
   display: none;
 }
+.paragraph-team1-after, .paragraph-team2-after, .paragraph-team3-after {
+  color: white;
+}
+.paragraph-team1, .paragraph-team2, .paragraph-team3{
+  color: white;
+  display: none;
+}
+
+
+
 /* ***************************************************
 *  -------- MEDIA QUERIES  ---------
 *************************************************** */
@@ -561,15 +571,6 @@ hr{
     display: none;
   }
 
-  .paragraph-team1-after, .paragraph-team2-after, .paragraph-team3-after {
-    color: white;
-    opacity: 0;
-    text-align: center;
-    padding: 25px;
-    align-items: center;
-    font-size: 36px;
-  }
-
   .team-member-card2:hover .paragraph-team2 {
     opacity: 0;
     display: none;
@@ -588,7 +589,16 @@ hr{
     opacity: 1;
   }
 
+  .paragraph-team1-after, .paragraph-team2-after, .paragraph-team3-after {
+    color: white;
+    opacity: 0;
+    text-align: center;
+    padding: 25px;
+    align-items: center;
+    font-size: 36px;
+  }
 
-
-
+  .budgetpad-landing {
+    margin-bottom: 40px;
+  }
 }
