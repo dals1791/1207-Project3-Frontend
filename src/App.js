@@ -2,21 +2,20 @@ import { Route, Switch, Link } from "react-router-dom";
 
 import "./App.css";
 import React, { useEffect } from "react";
-import AddIncome from "./components/AddIncome";
-import Team from "./components/Team";
-import Transaction from "./components/Transaction";
 import UserLogin from "./components/UserLogin/UserLogin";
-import UserInfo from "./components/UserProfile/UserProfile";
-import NavBar from "./components/NavBar";
-import Landing from "./components/Landing";
-import Topbar from "./components/Topbar";
+import RenderAll from "./components/RenderAll";
 
 function App() {
   const url = "https://project3-backend-1207.herokuapp.com";
 
   // ----------------------- Defines STATES -----------------------
   const [user, setUser] = React.useState(null);
+
+  const [loggedIn, setLoggedIn] = React.useState(false);
+
   const [toggleAdd, setToggleAdd] = React.useState(false);
+
+  //----If loggedIn state is true, setLoggedIn = true
 
   // ============= USEEFFECT FUNCTION TO GET DATA =============
   const getSingleUser = (user) => {
@@ -24,79 +23,25 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {
-          return setUser(data);
+          setUser(data);
+          setLoggedIn(true);
         } else {
           console.log("Not a user, try again");
         }
       });
   };
-  // POST route for addIncome
-  const addIncome = (newTransaction) => {
-    fetch(url + "/transactions/" + user[0]._id, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTransaction),
-    });
+
+  const loaded = () => {
+    return <RenderAll user={user} />;
   };
-  const handleToggleAdd = () => {
-    setToggleAdd((toggle) => !toggle);
+
+  const loading = () => {
+    return (
+      <UserLogin setUser={setUser} url={url} getSingleUser={getSingleUser} />
+    );
   };
-  // useEffect(()=>{getSingleUser()}, [user])
-  return (
-    <div className="App">
-      <Topbar user={user} />
-      <div className="container-main">
-       
 
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={(rp) => (
-              <UserLogin
-                {...rp}
-                setUser={setUser}
-                url={url}
-                getSingleUser={getSingleUser}
-              />
-            )}
-          />
-
-          <Route path="/home">
-            <Landing user={user} />
-          </Route>
-
-          <Route path="/team">
-            <Team />
-          </Route>
-
-          <Route path="/transactions">
-            <Transaction user={user} />
-          </Route>
-
-          <Route path="/userinfo">
-            <UserInfo userInfo={user} url={url} />
-          </Route>
-          <Route path="/userinfo">
-            
-          </Route>
-        </Switch>
-        
-      </div>
-      <div className="add-transaction-container">
-        {toggleAdd ? (
-          <AddIncome
-            user={user}
-            handleSubmit={addIncome}
-            toggleAdd={handleToggleAdd}
-          />
-        ) : null}
-        </div>
-      <NavBar toggleAdd={handleToggleAdd} />
-    </div>
-  );
+  return loggedIn ? loaded() : loading();
 }
 
 export default App;

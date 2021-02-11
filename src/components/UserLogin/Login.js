@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
   const [formData, setFormData] = useState({});
+  const history = useHistory;
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
 
     console.log("login push history - ", props);
-    props.render.push("/home"); //Push back to landing page
+    history.push("/home"); //Push back to landing page
   };
   //Handle for UserName & PW - Tracks typing when inputing into form input.
   const handleChange = (event) => {

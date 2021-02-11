@@ -83,11 +83,6 @@ const Transaction = (props) => {
           <div>
             <p className="transact-descr">{expense.description}</p>
             <p className="trnact-light-font">{expense.category}</p>
-
-            <p className="trnact-light-font">
-              Transaction Type: {transactionType}
-            </p>
-
             <p className="trnact-light-font">
               {months[formatedDate.getMonth()]} / {formatedDate.getDate()} /
               {formatedDate.getFullYear()} - {formatedDate.toLocaleTimeString()}
