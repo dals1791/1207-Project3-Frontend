@@ -4,23 +4,33 @@
 .App {
   text-align: center;
   font-family: "Red Hat Display", sans-serif;
+  width: 100%;
+  height:100%;
 }
 
-body {
+/* html{
   margin: 0;
+  padding: 0;
+  
+} */
+body {
+  /* width: fit-content; */
+  margin: 0;
+  /* padding: 0; */
 }
 /* ===========TOPBAR============= */
 .top-bar-container {
   color: white;
   background-image: linear-gradient(rgb(64, 23, 129), 85%, rgba(11, 13, 16, 1));
+  box-shadow: 0px 5px 10px black;
 }
 .budgetpad-text {
-  padding-top: 20px;
+  padding: 20px 10px 0px 10px;
   font-size: 4rem;
   margin: 0;
 }
 /* ======================= */
-
+/* =========NAVBAR======================== */
 .nav-bar {
   background-color: rgb(64, 23, 129);
   display: flex;
@@ -39,13 +49,6 @@ body {
   display: flex;
 }
 
-/* .nav-bar-text li {
-  list-style: none;
-  list-style-type: none;
-  text-decoration: none;
-  justify-content: center;
-} */
-
 .nav-bar-text li {
   color: white;
   text-decoration: none;
@@ -53,7 +56,7 @@ body {
   list-style: none;
   justify-content: center;
   align-items: baseline;
-  padding: 1.2rem;
+  padding: 1rem;
   display: block;
 }
 
@@ -65,6 +68,7 @@ body {
 .flex-container li:visited {
   color: green;
 }
+/* ======================================== */
 /* ===========Add Income Component========= */
 .add-button {
 }
@@ -75,15 +79,24 @@ body {
   width: 90%;
   margin: 0 auto;
   color: white;
+  box-shadow: 0px 10px 30px black;
+  border-radius: 10px;
 }
 .add-transaction-container h2 {
   margin-top: 0;
 }
 .add-income-component {
-  border: 5px solid black;
+  border: 3px solid black;
   border-radius: 10px;
   padding-bottom: 1rem;
-  background-image: linear-gradient(rgb(64, 23, 129), 85%, rgba(11, 13, 16, 1));
+  /* background-image: linear-gradient(white, 80%, rgba(64, 23, 129, 1)); */
+  background-image: radial-gradient(
+    farthest-corner at 0px 0px,
+    rgba(64, 23, 129, 1),
+    80%,
+    rgb(34, 34, 34)
+  );
+  /* box-shadow: 0px 10px 30px black; */
 }
 .add-income-fields {
   display: flex;
@@ -94,11 +107,16 @@ body {
 }
 .add-income-field {
   border: none;
-  border-bottom: solid;
+  border-radius: 5px;
+  /* border-bottom: solid; */
   margin-top: 0.5rem;
   color: white;
   background: transparent;
   font-size: 22px;
+  box-shadow: 0px 2px 10px white;
+}
+input::placholder{
+  color: white;
 }
 .add-income-routine,
 .add-income-expense {
@@ -113,6 +131,7 @@ body {
 .add-income-routine input,
 .add-income-expense input {
   width: 10%;
+  
 }
 .add-income-routine label,
 .add-income-expense label {
@@ -123,14 +142,28 @@ body {
   position: relative;
   left: 30%;
   margin: 0.5rem;
+  padding: 4px;
   font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(64, 23, 129);
+  box-shadow: 0px 2px 10px white;
+}
+.add-income-add-button:hover,
+.close-button:hover{
+  background-color: white;
+  color: black;
 }
 .close-button {
   border-radius: 10px;
-  height: 20%;
+  border: none;
   position: relative;
-  left: 40%;
+  left: 43%;
   margin: 0.5rem;
+  color: white;
+  background-color: rgb(64, 23, 129);
+  box-shadow: 0px 2px 10px white;
 }
 /* ============================================== */
 .team-component {
@@ -295,10 +328,10 @@ body {
   margin-bottom: 40px;
 }
 
-/* =============User Profile Component =========== */
-/* .user-info-container{
-
-} */
+/* =============User Profile Component MOBILE =========== */
+.user-info-container{
+/* width: 100%; */
+}
 
 .user-info-header{
   position: relative;
@@ -309,6 +342,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   color: white;
+  
 }
 .user-info-header h2,
 .user-info-header p {
@@ -317,11 +351,11 @@ body {
 }
 
 .user-info-fields {
-  height: 100%;
   text-align: right;
   padding-right: 5%;
   border-radius: 5px;
-  padding-top: 3%;
+  padding-top: 4%;
+  padding-bottom: 5%;
 }
 .user-info-budget-form {
   margin-top: 0.75rem;
@@ -359,9 +393,18 @@ hr {
   box-shadow: 2px 5px 5px black;
   margin-left: 0.25rem;
 }
+.user-info-cred-form button:hover,
+.user-info-budget-form button:hover{
+  background-color: white;
+  color:black;
+}
 .user-info-logout-button {
   border-radius: 5px;
   margin: 1px;
+}
+.user-info-logout-button:hover{
+  background-color: rgb(64, 23, 129);
+  color: white;
 }
 
 /* ============================================== */
@@ -372,6 +415,7 @@ hr {
 
 .dounut {
   width: 100%;
+  
 }
 
 .landing-component,
@@ -386,7 +430,8 @@ hr {
   background-color: rgb(64, 23, 129);
   padding: 2%;
   text-align: center;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+  box-shadow: 0px 5px 10px black;
 }
 .spend-summary h3 {
   margin-top: 0px;
@@ -408,6 +453,7 @@ hr {
 }
 .spendSum-remain {
   color: #5dca00;
+  
 }
 .legend {
   display: flex;
@@ -430,6 +476,7 @@ hr {
   border: 1px solid;
   width: 15%;
   height: 20px;
+  box-shadow: 0px 4px 5px black;
 }
 
 .transaction-component {
@@ -447,6 +494,8 @@ hr {
   justify-content: space-evenly;
   align-items: center;
   line-height: 0.5;
+  border-radius: 5px;
+  box-shadow: 0px 5px 6px black;
 }
 .transact-descr {
   font-size: 1.3em;
@@ -459,7 +508,7 @@ hr {
 .trnact-light-font {
   color: #aecbd6;
 }
-
+/* ===============DESKTOP DESIGN================= */
 .desktop-nav-bar {
   display: none;
 }
@@ -474,12 +523,18 @@ hr {
   color: white;
   display: none;
 }
+/* ============================================ */
 
 
 
 /* ***************************************************
 *  -------- MEDIA QUERIES  ---------
 *************************************************** */
+@media (max-width: 320px) {
+  .App{
+    width: fit-content;
+  }
+}
 @media (min-width: 668px) {
   /* ------------------------------------
 *  ----ANNY CSS STYLES  TABLET  ----
