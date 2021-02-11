@@ -87,15 +87,15 @@ const AddIncome = (props) => {
           <input
             type="radio"
             name="isExpense"
-            value="false"
+            value="true"
             onChange={handleChange}
           />
 
-          <label>Inome</label>
+          <label>Income</label>
           <input
             type="radio"
             name="isExpense"
-            value="true"
+            value="false"
             onChange={handleChange}
           />
         </div>
