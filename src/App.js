@@ -63,6 +63,7 @@ function App() {
               />
             )}
           />
+
           <Route path="/home">
             <Landing user={user} />
           </Route>
@@ -70,6 +71,7 @@ function App() {
           <Route path="/team">
             <Team />
           </Route>
+
           <Route path="/transactions">
             <Transaction user={user} />
           </Route>
