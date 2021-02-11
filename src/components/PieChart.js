@@ -191,113 +191,115 @@ const PieChart = (props) => {
 
   return (
     <div className="chart">
-      <Doughnut
-        data={chartData}
-        width={50}
-        height={50}
-        options={{
-          responsive: true,
-          //Set this to false if you want to give chart a custom height/width.
-          // If using size of div, set to true. Using true would be easier but lets experiment.
-          maintainAspectRatio: true,
-          plugins: {
-            datalabels: {
-              display: true,
-              color: "#fff",
-              formatter: function (value, context) {
-                return `$${value}`;
+      <section className="dounut">
+        <Doughnut
+          data={chartData}
+          width={50}
+          height={50}
+          options={{
+            responsive: true,
+            //Set this to false if you want to give chart a custom height/width.
+            // If using size of div, set to true. Using true would be easier but lets experiment.
+            maintainAspectRatio: true,
+            plugins: {
+              datalabels: {
+                display: true,
+                color: "#fff",
+                formatter: function (value, context) {
+                  return `$${value}`;
+                },
+                backgroundColor: (context) => {
+                  return context.dataset.backgroundColor;
+                },
+                borderRadius: 3,
+                font: function (context) {
+                  let width = context.chart.width;
+                  let size = Math.round(width / 16);
+                  return {
+                    size: size,
+                  };
+                },
               },
-              backgroundColor: (context) => {
-                return context.dataset.backgroundColor;
-              },
-              borderRadius: 3,
-              font: function (context) {
-                let width = context.chart.width;
-                let size = Math.round(width / 16);
-                return {
-                  size: size,
-                };
+              doughnutlabel: {
+                labels: [
+                  {
+                    text: "Remaining",
+                    font: {
+                      size: "35",
+                    },
+                    color: "black",
+                  },
+                  {
+                    text: "Balance",
+                    font: {
+                      size: "35",
+                    },
+                    color: "black",
+                  },
+                  {
+                    text: `$ ${budget[0].income - totalSpent}`,
+                    font: {
+                      size: "32",
+                    },
+                    color: "green",
+                  },
+                ],
               },
             },
-            doughnutlabel: {
-              labels: [
-                {
-                  text: "Remaining",
-                  font: {
-                    size: "35",
-                  },
-                  color: "black",
+            title: {
+              display: false,
+              text: "Monthly Spendings",
+              fontSize: 30,
+              align: "start",
+              position: "top",
+            },
+            legend: {
+              display: false,
+              position: "bottom",
+              align: "start",
+              labels: {
+                fontColor: "#08628e",
+                //fontSize: 24,
+                font: function (context) {
+                  let width = context.chart.width;
+                  let size = Math.round(width / 16);
+                  return {
+                    size: size,
+                  };
                 },
+                boxWidth: 100,
+              },
+            },
+            scales: {
+              xAxes: [
                 {
-                  text: "Balance",
-                  font: {
-                    size: "35",
+                  ticks: {
+                    // beginAtZero: true,
+                    // min: 10,
+                    //max: 100,
+                    display: false,
+                    // maxTicksLimit: 5,
                   },
-                  color: "black",
+                  gridLines: {
+                    display: false,
+                  },
                 },
+              ],
+              yAxes: [
                 {
-                  text: `$ ${budget[0].income - totalSpent}`,
-                  font: {
-                    size: "32",
+                  ticks: {
+                    display: false,
+                    // stepSize: 4500,
                   },
-                  color: "green",
+                  gridLines: {
+                    display: false,
+                  },
                 },
               ],
             },
-          },
-          title: {
-            display: false,
-            text: "Monthly Spendings",
-            fontSize: 30,
-            align: "start",
-            position: "top",
-          },
-          legend: {
-            display: false,
-            position: "bottom",
-            align: "start",
-            labels: {
-              fontColor: "#08628e",
-              //fontSize: 24,
-              font: function (context) {
-                let width = context.chart.width;
-                let size = Math.round(width / 16);
-                return {
-                  size: size,
-                };
-              },
-              boxWidth: 100,
-            },
-          },
-          scales: {
-            xAxes: [
-              {
-                ticks: {
-                  // beginAtZero: true,
-                  // min: 10,
-                  //max: 100,
-                  display: false,
-                  // maxTicksLimit: 5,
-                },
-                gridLines: {
-                  display: false,
-                },
-              },
-            ],
-            yAxes: [
-              {
-                ticks: {
-                  display: false,
-                  // stepSize: 4500,
-                },
-                gridLines: {
-                  display: false,
-                },
-              },
-            ],
-          },
-        }}
-      />
+          }}
+        />
+      </section>
 
       <section className="legend">{chartLegend}</section>
     </div>
