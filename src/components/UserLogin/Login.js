@@ -11,11 +11,7 @@ const Login = (props) => {
     props.handleSubmit(formData); // Submit to Parents desired function
 
     console.log("login push history - ", props);
-<<<<<<< HEAD
-    history.push("/home"); //Push back to landing page
-=======
-    // props.render.push("/home"); //Push back to landing page
->>>>>>> aa976a5b020c559aea5a30135ffd8010ee488640
+    //history.push("/home"); //Push back to landing page
   };
   //Handle for UserName & PW - Tracks typing when inputing into form input.
   const handleChange = (event) => {

@@ -9,12 +9,12 @@ const Landing = (props) => {
     // ============= Calculate total remaining and total spent... =============
     let totalSpent = 0;
     //Make an array to hold the user transactions
-    const transactions = user[0].transactions;
+    const transactions = user.transactions;
     //Make a variable to hold the user's income/budget
-    const budget = user[0].budget;
+    const budget = user.budget;
 
     //Grab only the transactions that are isExpense: true
-    const totalExpenses = user[0].transactions.filter((transaction) => {
+    const totalExpenses = user.transactions.filter((transaction) => {
       return transaction.isExpense === true;
     });
 
