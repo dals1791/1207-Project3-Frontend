@@ -16,7 +16,7 @@ const {user, url}= props
   // ----------------------- Defines STATES -----------------------
   // const [user, setUser] = React.useState(null);
   const [toggleAdd, setToggleAdd] = React.useState(false);
-  const [singleUser, setSingleUser]= React.useState([])
+  const [singleUser, setSingleUser]= React.useState(null)
 
   
 
@@ -28,9 +28,7 @@ const getUser =()=>{
     setSingleUser(data)
   })
 }
-// ============= USEEFFECT FUNCTION TO GET DATA =============
-useEffect(()=>{getUser()}, [])
-// ============
+
   // POST route for addIncome
   const addIncome = (newTransaction) => {
     fetch(url + "/transactions/" + singleUser._id, {
@@ -45,6 +43,9 @@ useEffect(()=>{getUser()}, [])
   const handleToggleAdd = () => {
     setToggleAdd((toggle) => !toggle);
   };
+  // ============= USEEFFECT FUNCTION TO GET DATA =============
+useEffect(()=>{getUser()}, [])
+// ============
   return (
     <div className="App">
       <Topbar user={singleUser} />
@@ -53,7 +54,7 @@ useEffect(()=>{getUser()}, [])
 
         <Switch>
           <Route path="/home">
-            <Landing user={user} />
+            <Landing user={singleUser} />
           </Route>
 
           <Route path="/team">
@@ -61,11 +62,11 @@ useEffect(()=>{getUser()}, [])
           </Route>
 
           <Route path="/transactions">
-            <Transaction user={user} />
+            <Transaction user={singleUser} />
           </Route>
 
           <Route path="/userinfo">
-            <UserInfo userInfo={singleUser} url={url} />
+            <UserInfo user={singleUser} url={url} getUser={getUser}/>
           </Route>
           <Route path="/userinfo">
             

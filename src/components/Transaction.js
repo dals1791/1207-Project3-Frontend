@@ -3,17 +3,17 @@ import Summary from "./Summary";
 
 const Transaction = (props) => {
   const { user } = props;
-
+console.log("this is user on trans", user)
   const loaded = () => {
     /* ------------------------------------------------------
      CALCULATE THE TOTAL SPENDINGS
     ------------------------------------------------------ */
     let totalSpent = 0;
-    const budget = user[0].budget; //for use as props also
-    const transactions = user[0].transactions; // for use as props also
+    const budget = user.budget; //for use as props also
+    const transactions = user.transactions; // for use as props also
 
     //- Gran only the transactions that are isExpense: true
-    const totalExpenses = user[0].transactions.filter((transaction) => {
+    const totalExpenses = user.transactions.filter((transaction) => {
       return transaction.isExpense === true;
     });
 
@@ -59,7 +59,7 @@ const Transaction = (props) => {
       "Dec",
     ];
 
-    const nonRoutineExpense = user[0].transactions.filter((transaction) => {
+    const nonRoutineExpense = user.transactions.filter((transaction) => {
       //return transaction.isRoutine === false && transaction.isExpense === true;
       return transaction.isRoutine === false;
     });
@@ -99,13 +99,13 @@ const Transaction = (props) => {
       );
     });
 
-    console.log("User info in transactions: ", user[0].transactions);
+    console.log("User info in transactions: ", user.transactions);
     console.log("All non-routine expenses: ", nonRoutineExpense);
 
     /* ------------------------------------------------------
     GET TRANSACTIONS - BILLS - IS AN EXPENSE
   ------------------------------------------------------ */
-    const routineExpense = user[0].transactions.filter((transaction) => {
+    const routineExpense = user.transactions.filter((transaction) => {
       return transaction.isRoutine === true && transaction.isExpense === true;
     });
 
