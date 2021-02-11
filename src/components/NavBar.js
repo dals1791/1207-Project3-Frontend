@@ -7,7 +7,6 @@ import { faUserEdit, faUsers, faDollarSign, faHome, faFileInvoiceDollar} from '@
 const NavBar = (props) => {
   return (
     <div className="nav-bar">
-      {/* <h3> BUDGTPAD</h3> */}
 
       <div className="nav-bar-text">
         <ul>
