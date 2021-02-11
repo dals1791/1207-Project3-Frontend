@@ -57,6 +57,19 @@ function App() {
         ) : null}
 
         <Switch>
+          <Route
+            exact
+            path="/"
+            render={(rp) => (
+              <UserLogin
+                {...rp}
+                setUser={setUser}
+                url={url}
+                getSingleUser={getSingleUser}
+              />
+            )}
+          />
+
           <Route path="/home">
             <Landing user={user} />
           </Route>
@@ -74,19 +87,6 @@ function App() {
             />
           </Route>
             */}
-
-          <Route
-            exact
-            path="/"
-            render={(rp) => (
-              <UserLogin
-                {...rp}
-                setUser={setUser}
-                url={url}
-                getSingleUser={getSingleUser}
-              />
-            )}
-          />
 
           <Route path="/transactions">
             <Transaction user={user} />

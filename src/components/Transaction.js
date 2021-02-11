@@ -52,28 +52,33 @@ const Transaction = (props) => {
       let formatedDate = new Date(expense.time);
 
       let transactionType = "";
+      let spanColor = "white";
 
       if (expense.isExpense === true) {
         transactionType = "Expense";
+        spanColor = "#ffb0b0";
       } else {
         transactionType = "Deposite";
+        spanColor = "#5dca00";
       }
 
       return (
-        <div
-          style={{
-            border: "1px solid green",
-          }}
-          key={index}
-        >
-          <p>{expense.description}</p>
-          <p>{expense.category}</p>
-          <p>Transaction Type: {transactionType}</p>
-          <p>
-            {months[formatedDate.getMonth()]} / {formatedDate.getDate()} /
-            {formatedDate.getFullYear()} - {formatedDate.toLocaleTimeString()}
-          </p>
-          <span>${expense.amount}</span>
+        <div className="transact-card" key={index}>
+          <div>
+            <p className="transact-descr">{expense.description}</p>
+            <p className="trnact-light-font">{expense.category}</p>
+
+            <p className="trnact-light-font">
+              Transaction Type: {transactionType}
+            </p>
+
+            <p className="trnact-light-font">
+              {months[formatedDate.getMonth()]} / {formatedDate.getDate()} /
+              {formatedDate.getFullYear()} - {formatedDate.toLocaleTimeString()}
+            </p>
+          </div>
+
+          <span style={{ color: spanColor }}>${expense.amount}</span>
         </div>
       );
     });
@@ -92,19 +97,16 @@ const Transaction = (props) => {
       let formatedDate = new Date(expense.time);
 
       return (
-        <div
-          style={{
-            border: "1px solid green",
-            marginBottom: "20px",
-          }}
-          key={index}
-        >
-          <p>{expense.description}</p>
-          <p>{expense.category}</p>
-          <p>
-            {months[formatedDate.getMonth()]} / {formatedDate.getDate()} /
-            {formatedDate.getFullYear()} - {formatedDate.toLocaleTimeString()}
-          </p>
+        <div className="transact-card" key={index}>
+          <div>
+            <p className="transact-descr">{expense.description}</p>
+            <p className="trnact-light-font">{expense.category}</p>
+            <p className="trnact-light-font">
+              {months[formatedDate.getMonth()]} / {formatedDate.getDate()} /
+              {formatedDate.getFullYear()} - {formatedDate.toLocaleTimeString()}
+            </p>
+          </div>
+
           <span>${expense.amount}</span>
         </div>
       );
@@ -112,30 +114,25 @@ const Transaction = (props) => {
     console.log("All routine expenses: ", routineExpense);
 
     return (
-      <div
-        className="transaction-component"
-        style={{
-          border: "2px solid blue",
-          padding: "10px",
-        }}
-      >
+      <div className="transaction-component">
         <Summary
           transactions={transactions}
           budget={budget}
           totalSpent={totalSpent}
         />
 
-        <h2> Your Transactions </h2>
+        <div className="all-transactions">
+          <h2> Your Transactions </h2>
+          <section>
+            <h2>Latest</h2>
+            {expenseList}
+          </section>
 
-        <section>
-          <h2>Latest</h2>
-          {expenseList}
-        </section>
-
-        <section>
-          <h2>Bills</h2>
-          {routineList}
-        </section>
+          <section>
+            <h2>Bills</h2>
+            {routineList}
+          </section>
+        </div>
       </div>
     );
   };
