@@ -89,7 +89,6 @@ body {
   border: 3px solid black;
   border-radius: 10px;
   padding-bottom: 1rem;
-  /* background-image: linear-gradient(white, 80%, rgba(64, 23, 129, 1)); */
   background-image: radial-gradient(
     farthest-corner at 0px 0px,
     rgba(64, 23, 129, 1),
@@ -101,22 +100,57 @@ body {
 .add-income-fields {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 80%;
   margin: 0 auto;
 }
 .add-income-field {
   border: none;
   border-radius: 5px;
-  /* border-bottom: solid; */
+  align-self: flex-center;
   margin-top: 0.5rem;
   color: white;
   background: transparent;
   font-size: 22px;
   box-shadow: 0px 2px 10px white;
 }
-input::placholder{
-  color: white;
+.add-income-category-field{
+  display: flex;
+  align-items: baseline;
+  
+}
+.add-income-category-field input{
+}
+.drop-container{
+  position: relative;
+  margin-left: .5rem;
+  
+}
+.drop-list-container{
+  position: absolute;
+  left: -15rem;
+  bottom: 30px;
+  width: 15rem;
+  height: fit-content;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgb(218, 189, 252);
+  color: black;
+  border: 1px solid black;
+}
+.drop-list{
+  display: flex;
+  justify-content: space-between;
+margin: .25rem 0;
+}
+.drop-list-item{
+  width: 10%;
+  height: 1.2rem;
+  font-size: 24px;
+  align-self: flex-end;
+}
+.drop-list-item-label{
+  font-size: 1.3rem;
 }
 .add-income-routine,
 .add-income-expense {
