@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CategoryDropMenu from "./CategoryDropMenu"
 
 const AddIncome = (props) => {
   const [formData, setFormData] = useState({
@@ -31,7 +32,10 @@ const AddIncome = (props) => {
   };
 
   return (
-    <form className="add-income-component">
+    <>
+    
+    <div className="add-income-component">
+      
       <button onClick={props.toggleAdd} className="close-button">
         X
       </button>
@@ -46,6 +50,7 @@ const AddIncome = (props) => {
           value={formData.description}
           onChange={handleChange}
         />
+        <div>
         <input
         className="add-income-field"
           type="text"
@@ -54,6 +59,8 @@ const AddIncome = (props) => {
           value={formData.category}
           onChange={handleChange}
         />
+        <CategoryDropMenu handleChange={handleChange}/>
+        </div>
         <input
         className="add-income-field"
           type="number"
@@ -107,7 +114,8 @@ const AddIncome = (props) => {
           ADD
         </button>
       </div>
-    </form>
+    </div>
+    </>
   );
 };
 export default AddIncome;
