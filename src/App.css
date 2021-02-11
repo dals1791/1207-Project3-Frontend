@@ -8,6 +8,21 @@
 body {
   margin: 0;
 }
+/* ===========TOPBAR============= */
+.top-bar-container{
+  color: white;
+  background-image: linear-gradient(
+    rgb(64, 23, 129),
+    85%,
+    rgba(11, 13, 16, 1)
+  );
+  }
+.budgetpad-text  {
+  padding-top: 20px;
+  font-size: 4rem;
+  margin:0;
+}
+/* ======================= */
 
 .nav-bar {
   background-color: rgb(64, 23, 129);
@@ -178,6 +193,9 @@ font-size: 18px;
   height: 100vh;
   color: white;
 }
+.budgetpad-landing p {
+  margin-top: 0;
+}
 
 .team-component {
   background: url("./Images/strategy.jpg");
@@ -296,10 +314,7 @@ font-size: 18px;
   margin-bottom: 40px;
 }
 
-.budgetpad-text  {
-  padding-top: 20px;
-  font-size: 4rem;
-}
+
 /* =============User Profile Component =========== */
 /* .user-info-container{
 
@@ -325,8 +340,7 @@ padding: .5rem;
   text-align: right;
   padding-right: 5%;
   border-radius: 5px;
-  
-  padding-top: 10%;
+  padding-top: 3%;
 }
 .user-info-budget-form{
   margin-top: .75rem;
@@ -366,6 +380,11 @@ hr{
   box-shadow: 2px 5px 5px black;
   margin-left: .25rem;
 } 
+.user-info-logout-button{
+  border-radius: 5px;
+  margin: 1px;
+  
+}
 
 
 /* ============================================== */

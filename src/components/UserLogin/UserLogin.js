@@ -39,7 +39,6 @@ const UserLogin = (props) => {
 
   return (
     <div className="budgetpad-landing">
-      <h1 className="budgetpad-text">BUGTPAD</h1>
       <p>We got tired of complicated apps, so here you go.</p>
       <div className="login-buttons">
         <button className="login-button" onClick={handleToggleLogin}>

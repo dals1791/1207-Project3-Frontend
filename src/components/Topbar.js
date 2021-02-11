@@ -6,17 +6,13 @@ const Topbar = (props) => {
   const [login, setLogin] = React.useState("Log In");
 
   return (
-    <div
+    <div className="top-bar-container"
       style={{
-        border: "1px solid purple",
         width: "100%",
         height: "auto",
       }}
     >
-      <h1>BUDGETPAD</h1>
-      <Link to="/">
-        <button>Log out</button>
-      </Link>
+      <h1 className="budgetpad-text">BUDGTPAD</h1>
     </div>
   );
 };
