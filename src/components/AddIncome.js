@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import CategoryDropMenu from "./CategoryDropMenu";
+import { useHistory } from "react-router-dom";
 
 const AddIncome = (props) => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     description: "",
     category: "",
@@ -13,7 +15,7 @@ const AddIncome = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-    // props.history.push("/landing"); //Push back to landing page
+    history.push("/transactions"); //Push back to landing page
   };
   //Handle for Form- Tracks typing when inputing into form input.
   const handleChange = (event) => {
