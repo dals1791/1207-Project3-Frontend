@@ -21,6 +21,11 @@ const Login = (props) => {
       <div className="login-header-desktop">
         <h2 className="login-header-desktop-text">Welcome Back!</h2>
       </div>
+      <div className="login-container-component">
+      <div className="side-image-login"> 
+        <h3 className="side-image-login-text"> We got tired of complicated apps, so here you go.</h3>
+      </div>
+    <div className="login-container">
       <div>
         <input
           className="username-bar"
@@ -48,6 +53,8 @@ const Login = (props) => {
       >
         Login
       </button>
+      </div>
+      </div>
     </form>
   );
 };
