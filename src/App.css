@@ -40,7 +40,8 @@ body {
   list-style-type: none;
   list-style: none;
   justify-content: center;
-  padding: 0.5rem;
+  align-items: baseline;
+  padding: 1.2rem;
   display: block;
 }
 
@@ -348,9 +349,11 @@ hr{
 }
 .user-info-icon{
   position: absolute;
-  left: 66%;
+  /* left: 15rem;
+  bottom: 26.5rem; */
+  left: 63%;
   bottom: 63%;
-  z-index: 10;
+ 
 }
 .user-info-cred-form button, 
 .user-info-budget-form button{
