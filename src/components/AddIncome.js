@@ -9,6 +9,7 @@ const AddIncome = (props) => {
     isRoutine: false,
     isExpense: false,
   });
+  
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
@@ -30,6 +31,7 @@ const AddIncome = (props) => {
       return str;
     }
   };
+  
 
   return (
     <>
@@ -50,7 +52,7 @@ const AddIncome = (props) => {
           value={formData.description}
           onChange={handleChange}
         />
-        <div>
+        <div className="add-income-category-field">
         <input
         className="add-income-field"
           type="text"
@@ -59,7 +61,7 @@ const AddIncome = (props) => {
           value={formData.category}
           onChange={handleChange}
         />
-        <CategoryDropMenu handleChange={handleChange}/>
+        <CategoryDropMenu handleChange={handleChange} />
         </div>
         <input
         className="add-income-field"
