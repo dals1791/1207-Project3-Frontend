@@ -8,7 +8,7 @@ const NavBar = (props) => {
   return (
     <div>
     <div className="nav-bar">
-      {/* <h3> BUDGTPAD</h3> */}
+
       <div className="nav-bar-text">
         <ul>
           <Link to="/home" style={{ textDecoration: "none" }}>
