@@ -23,14 +23,32 @@ const Landing = (props) => {
       return (totalSpent = totalSpent + transaction.amount);
     });
 
+    /* ------------------------------------------------------
+  - CALCULATE DEPOSITES AND ADD TO INCOME
+  ------------------------------------------------------ */
+    //Grab all transaction objects that has isExpense false
+    const totalDeposite = transactions.filter((transaction) => {
+      return transaction.isExpense === false;
+    });
+
+    // Sum up the amount from the transaction objects
+    let depositeSum = 0;
+    totalDeposite.forEach((deposite) => {
+      return (depositeSum += deposite.amount);
+    });
+    console.log("Total deposites: ", totalDeposite);
+    console.log("Total deposite amount: ", depositeSum);
+
+    /* ------------------------------------------------------
+  - RETURNING THE COMPONENT
+  ------------------------------------------------------ */
     return (
       <div className="landing-component">
-        <h2> Starting Income ${user[0].budget[0].income}</h2>
-
         <Summary
           transactions={transactions}
           budget={budget}
           totalSpent={totalSpent}
+          depositeSum={depositeSum}
         />
 
         <PieChart

@@ -161,32 +161,18 @@ const PieChart = (props) => {
      USE EFFECT TO SET THE CHART DATA 
     ------------------------------------------------------ */
   React.useEffect(() => {
-    setChartData(
-      {
-        // labels: ["Remaining", "Food", "Bills", "Groceries", "Gas", "Pet Stuff"],
-        labels: labelArr,
-        datasets: [
-          {
-            label: "Spendings",
-            //data: [1000, 325, 1240, 456, 350, 290],
-            data: spendData,
-            // backgroundColor: [
-            //   "rgba(201, 62, 62, .9)", // red
-            //   "rgba(54, 162, 235, .9)", // blue
-            //   "rgba(191, 146, 42, .9)", // gold
-            //   "rgba(153, 102, 255, .9)", // purple
-            //   "rgba(242, 147, 58, .9)", // orange
-            //   // "rgba(38, 173, 108, 0.8)",
-            // ],
-            backgroundColor: colorLabels,
-            borderWidth: 1,
-            borderColor: "#fff",
-            // hoverBorderWidth:3,
-            // hoverBorderColor:'#000'
-          },
-        ],
-      } // ----- END OF DATA OBJECT -----
-    ); // ----- END OF SET CHART DATA FUNCTION -------
+    setChartData({
+      labels: labelArr, // array
+      datasets: [
+        {
+          label: "Spendings",
+          data: spendData, // array
+          backgroundColor: colorLabels, // array
+          borderWidth: 1,
+          borderColor: "#fff",
+        },
+      ],
+    });
   }, []);
 
   return (
