@@ -10,7 +10,7 @@ const Transaction = (props) => {
     ------------------------------------------------------ */
     let totalSpent = 0;
     const budget = user[0].budget; //for use as props also
-    const transactions = user[0].transaction; // for use as props also
+    const transactions = user[0].transactions; // for use as props also
 
     //- Gran only the transactions that are isExpense: true
     const totalExpenses = user[0].transactions.filter((transaction) => {
@@ -23,6 +23,22 @@ const Transaction = (props) => {
     totalExpenses.forEach((transaction) => {
       return (totalSpent = totalSpent + transaction.amount);
     });
+
+    /* ------------------------------------------------------
+  - CALCULATE DEPOSITES AND ADD TO INCOME
+  ------------------------------------------------------ */
+    //Grab all transaction objects that has isExpense false
+    const totalDeposite = transactions.filter((transaction) => {
+      return transaction.isExpense === false;
+    });
+
+    // Sum up the amount from the transaction objects
+    let depositeSum = 0;
+    totalDeposite.forEach((deposite) => {
+      return (depositeSum += deposite.amount);
+    });
+    console.log("Total deposites: ", totalDeposite);
+    console.log("Total deposite amount: ", depositeSum);
 
     /* ------------------------------------------------------
      GET TRANSACTIONS - NON-BILLS - POSITIVE AND NEGATIVE TRANSACTIONS
@@ -119,10 +135,13 @@ const Transaction = (props) => {
           transactions={transactions}
           budget={budget}
           totalSpent={totalSpent}
+          depositeSum={depositeSum}
         />
+        <div className="transact-headline">
+          <h2> Your Transactions </h2>
+        </div>
 
         <div className="all-transactions">
-          <h2> Your Transactions </h2>
           <section>
             <h2>Latest</h2>
             {expenseList}

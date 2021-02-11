@@ -141,7 +141,6 @@ body {
   padding: 5px 0 0 15px;
 }
 
-
 .name-header1,
 .name-header2,
 .name-header3 {
@@ -158,7 +157,6 @@ body {
   text-align: center;
   padding: 25px;
   transition: fadeIn ease 1s;
-
 }
 
 .background-budgtpad {
@@ -200,7 +198,7 @@ body {
   background-color: rgb(64, 23, 129);
   /* width: 100%; */
   margin: 15px;
-  transition: all 0.20s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .team-member-card1:hover {
@@ -300,7 +298,7 @@ body {
 
 } */
 
-.user-info-header{
+.user-info-header {
   position: relative;
   text-align: left;
   padding-left: 5%;
@@ -407,6 +405,9 @@ hr {
   color: #ff4545;
 }
 .spendSum-remain {
+  color: #fff33e;
+}
+.spendSum-deposite {
   color: #5dca00;
 }
 .legend {
@@ -435,8 +436,14 @@ hr {
 .transaction-component {
   text-align: left;
 }
-.all-transactions {
+.transact-headline {
+  margin: 0 auto;
+  font-size: 1.2em;
   padding: 3%;
+  line-height: 0;
+}
+.all-transactions {
+  padding: 0.5% 3%;
 }
 .transact-card {
   background-color: #002161;
@@ -467,15 +474,17 @@ hr {
 .our-team-header {
   display: none;
 }
-.paragraph-team1-after, .paragraph-team2-after, .paragraph-team3-after {
+.paragraph-team1-after,
+.paragraph-team2-after,
+.paragraph-team3-after {
   color: white;
 }
-.paragraph-team1, .paragraph-team2, .paragraph-team3{
+.paragraph-team1,
+.paragraph-team2,
+.paragraph-team3 {
   color: white;
   display: none;
 }
-
-
 
 /* ***************************************************
 *  -------- MEDIA QUERIES  ---------
@@ -484,11 +493,14 @@ hr {
   /* ------------------------------------
 *  ----ANNY CSS STYLES  TABLET  ----
 ------------------------------------ */
+  .landing-component {
+    margin-bottom: 10%;
+  }
   .chart {
-    max-width: 768px;
+    max-width: 668px;
     display: flex;
     padding: 2%;
-    margin-top: 30px;
+    margin: 30px auto 10px auto;
   }
   .dounut {
     width: 65%;
@@ -505,7 +517,9 @@ hr {
   .legendLabel p {
     font-size: 1.2rem;
   }
-
+  .transact-headline {
+    max-width: 768px;
+  }
   .transact-card {
     font-size: 1.2em;
     justify-content: space-between;
@@ -537,7 +551,7 @@ hr {
   .desktop-logo {
     padding: 30px;
   }
-  
+
   .team-header {
     color: white;
   }
@@ -574,13 +588,17 @@ hr {
     width: 100%;
   }
 
-  .name-header1, .name-header2, .name-header3 {
+  .name-header1,
+  .name-header2,
+  .name-header3 {
     text-align: center;
     font-size: 48px;
     padding-right: 80px;
   }
-  
-  .paragraph-team1, .paragraph-team2, .paragraph-team3 {
+
+  .paragraph-team1,
+  .paragraph-team2,
+  .paragraph-team3 {
     font-size: 30px;
   }
 
@@ -596,7 +614,7 @@ hr {
     opacity: 0;
     display: none;
   }
-  
+
   .team-member-card2:hover .paragraph-team2-after {
     opacity: 1;
   }
@@ -605,12 +623,14 @@ hr {
     opacity: 0;
     display: none;
   }
-  
+
   .team-member-card3:hover .paragraph-team3-after {
     opacity: 1;
   }
 
-  .paragraph-team1-after, .paragraph-team2-after, .paragraph-team3-after {
+  .paragraph-team1-after,
+  .paragraph-team2-after,
+  .paragraph-team3-after {
     color: white;
     opacity: 0;
     text-align: center;
@@ -621,5 +641,49 @@ hr {
 
   .budgetpad-landing {
     margin-bottom: 40px;
+  }
+
+  /* ------------------------------------
+  *  --- ANNY DESKTOP  ----
+  ------------------------------------ */
+  .chart {
+    max-width: 1124px;
+    margin: 0 auto;
+  }
+  .spend-summary {
+    padding: 1%;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 3%;
+  }
+  .spend-summary div {
+    justify-content: center;
+    max-width: 1124px;
+    margin: 0 auto;
+  }
+
+  .all-transactions {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+  }
+  .all-transactions section {
+    width: 42%;
+    background: #f3f3f3;
+    padding: 2%;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px #a8b8bc;
+  }
+  .transact-headline {
+    max-width: 1224px;
+  }
+  .transact-card {
+    font-size: 1.2em;
+    justify-content: space-between;
+    padding: 0 10%;
+    margin: 0.5em;
+    box-shadow: 0px 3px 5px #6884bb;
   }
 }
