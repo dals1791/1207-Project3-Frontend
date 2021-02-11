@@ -13,13 +13,13 @@ const UserBudget = (props) => {
   };
   console.log(formData);
   return (
-    <div>
-      <label>Update Budget</label>
+    <div className="user-info-budget-form">
+      <label style={{fontSize: 20}}>Update Budget</label>
       <br />
       <small>note: log out and log back in to see changes</small>
       <form>
         <div>
-          <label>Income:</label>
+          <label>Income: </label>
           <input
             type="text"
             name="income"
@@ -34,7 +34,7 @@ const UserBudget = (props) => {
       </form>
       <form>
         <div>
-          <label>Category:</label>
+          <label>Category: </label>
           <input
             type="text"
             name="spendCategory"
@@ -49,7 +49,7 @@ const UserBudget = (props) => {
       </form>
       <form>
         <div>
-          <label>Goal:</label>
+          <label>Goal: </label>
           <input
             type="text"
             name="spendGoal"

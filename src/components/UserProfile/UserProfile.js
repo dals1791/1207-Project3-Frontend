@@ -1,7 +1,9 @@
 import React from "react";
 import UserCredentials from "./User-Credentials-Form";
 import UserBudget from "./User-Budget-Form";
-import { Link } from "react-router-dom";
+// ===IMPORT REACT FONTAWESOME======
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoins} from '@fortawesome/free-solid-svg-icons'
 const UserProfile = (props) => {
   const { userInfo, url } = props;
   const loaded = () => {
@@ -30,26 +32,20 @@ const UserProfile = (props) => {
 
         // =====================================
         return (
-          <div>
-            <div>
-              <h2>Welcome</h2>
-              <h2>{user.firstName}</h2>
-            </div>
-            <img src="#" alt="imgText" />
-            <div>
+          <div classname="user-info-container">
+            <div className="user-info-header">
+              <h2>Welcome  {user.firstName}	</h2>
               <p>Username: {user.userName}</p>
               <p>Password: {user.password}</p>
-              <p>Income: {user.budget[0].income}</p>
+              <p>Income: ${user.budget[0].income}</p>
             </div>
-            <div>
+            <FontAwesomeIcon  className="user-info-icon" style={{color: "gold", fontSize: "90px"}} icon={faCoins} />
+            <hr/>
+            <div className="user-info-fields">
               {/* Update username and password */}
               <UserCredentials user={user} handleSubmit={updateUser} />
               <UserBudget budget={budget} handleSubmit={updateBudget}/>
             </div>
-            <Link to="/userlogin">
-              <button>Login</button>
-            </Link>
-            <button>Sign Out</button>
           </div>
         );
       });
