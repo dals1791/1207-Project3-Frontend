@@ -146,12 +146,21 @@ const Transaction = (props) => {
     GET TRANSACTIONS - BILLS - IS AN EXPENSE
   ------------------------------------------------------ */
     const routineExpense = user.transactions.filter((transaction) => {
-      return transaction.isRoutine === true && transaction.isExpense === true;
+      return transaction.isRoutine === true;
     });
 
     const routineList = routineExpense.map((expense, index) => {
       let formatedDate = new Date(expense.time);
+      let transactionType = "";
+      let spanColor = "white";
 
+      if (expense.isExpense === true) {
+        transactionType = "Expense";
+        spanColor = "#ffb0b0";
+      } else {
+        transactionType = "Deposit";
+        spanColor = "#5dca00";
+      }
       return (
         <div className="transact-card" key={index}>
           <div>
@@ -163,7 +172,7 @@ const Transaction = (props) => {
             </p>
           </div>
 
-          <span>${expense.amount}</span>
+          <span style={{ color: spanColor }}>${expense.amount}</span>
           <div
             className="destroy-button"
             onClick={() => {
