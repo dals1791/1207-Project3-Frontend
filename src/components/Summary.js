@@ -14,13 +14,13 @@ const Summary = (props) => {
         </section>
 
         <section className="spendSum-remain">
-          <h2>${props.budget[0].income - props.totalSpent}</h2>
+          <h2>${props.budget[0].income + props.depositeSum - props.totalSpent}</h2>
           <h3>Remaining</h3>
         </section>
 
         <section className="spendSum-deposite">
           <h2>${props.budget[0].income + props.depositeSum}</h2>
-          <h3>Deposits</h3>
+          <h3>Income</h3>
         </section>
       </div>
     </div>
