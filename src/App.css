@@ -769,14 +769,57 @@ hr {
 
   .login-container-component {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     background-color: red;
     width: 75%;
     height: 60vh;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 70px;
+    background-color: white;
+    border-radius: 25px;
+    -webkit-box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
+    -moz-box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
+    box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
+  }
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 150px;
+  }
+
+  .side-image-login {
+    background-color: blue;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./Images/takemymoney.jpg");
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
+  .budgetpad-landing {
+    background-image: none;
+  }
+
+  input {
+    border: 0px;
+  }
+  .username-bar, .password-bar, .existing-user-login {
+    background-color: gray;
+    border-radius: 20px;
+    padding: 5px;
+    font-family: "Red Hat Display", sans-serif;
+    width: 171px;
+    border: 0px;
+    margin: 8px;
+  }
+
+  .existing-user-login {
+    background-color: rgba(248, 247, 216, 0.7);
   }
 
   /* ------------------------------------
