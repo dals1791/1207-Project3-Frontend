@@ -21,7 +21,7 @@ const App = () => {
   };
 
   const loaded = () => {
-    return <RenderAll url={url} user={user} />;
+    return <RenderAll url={url} user={user} setLoggedIn={setLoggedIn}/>;
   };
   const loading = () => {
     return (
