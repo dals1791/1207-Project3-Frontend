@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import myMoney from "../../Images/mymoney.mp4";
 
 const Login = (props) => {
   const [formData, setFormData] = useState({});
@@ -23,9 +24,17 @@ const Login = (props) => {
       </div>
       <div className="login-container-component">
       <div className="side-image-login"> 
-        <h3 className="side-image-login-text"> We got tired of complicated apps, so here you go.</h3>
+      <div className="side-image-login-text">
+      <h3> We got tired of complicated apps, so here you go.</h3>
+      </div>
+      <video autoPlay loop muted className="video-background">
+    <source src={myMoney} type="video/mp4"/>
+    </video>
       </div>
     <div className="login-container">
+      <div className="member-login">
+          <h3> Member Log-in</h3>
+      </div>
       <div>
         <input
           className="username-bar"
