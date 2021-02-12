@@ -7,8 +7,6 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-
-    console.log("login push history - ", props);
     // props.render.push("/home"); //Push back to landing page
   };
   //Handle for UserName & PW - Tracks typing when inputing into form input.
