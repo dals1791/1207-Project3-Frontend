@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import myMoney from "../../Images/mymoney.mp4";
 
 const Register = (props)=>{
-const [formData, setFormData] = useState("");
+const [formData, setFormData] = useState({});
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
@@ -14,7 +14,7 @@ const [formData, setFormData] = useState("");
   };
   console.log("this is formdata", formData)
     return(
-        <form onClick={handleSubmit}  className="register-component-container">
+        <form  className="register-component-container">
         <div className="login-header-desktop">
         <h2 className="register-header-desktop-text">New Account Setup</h2>
       </div>
@@ -55,7 +55,7 @@ const [formData, setFormData] = useState("");
           value={formData.password}
           onChange={handleChange}
         />
-        <button className="register-button" type="submit" >
+        <button className="register-button" type="submit" onClick={handleSubmit} >
         Register
       </button>
       </div>

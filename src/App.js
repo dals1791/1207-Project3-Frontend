@@ -29,7 +29,7 @@ const App = () => {
         <TopBar />
         
         <div className="container-main">
-          <UserLogin getSingleUser={getSingleUser} />
+          <UserLogin getSingleUser={getSingleUser} url={url}/>
         </div>
       </div>
     );
