@@ -62,7 +62,7 @@ function RenderAll(props) {
           </Route>
 
           <Route path="/userinfo">
-            <UserInfo user={singleUser} url={url} getUser={getUser} />
+            <UserInfo user={singleUser} url={url} getUser={getUser} setLoggedIn={props.setLoggedIn}/>
           </Route>
         </Switch>
       </div>

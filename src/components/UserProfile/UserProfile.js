@@ -6,7 +6,7 @@ import UserBudget from "./User-Budget-Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoins } from "@fortawesome/free-solid-svg-icons";
 const UserProfile = (props) => {
-  const { user, url, getUser } = props;
+  const { user, url, getUser, setLoggedIn } = props;
   const loaded = () => {
       return user.budget.map((budget) => {
         //    CRUD Routes for user profile ===========
@@ -31,6 +31,9 @@ const UserProfile = (props) => {
           })
           .then(()=>{getUser()})
         };
+        const handleLoginState = ()=>{
+          setLoggedIn(false)
+        }
 
         // =====================================
         return (
@@ -40,9 +43,10 @@ const UserProfile = (props) => {
               <p>Username: {user.userName}</p>
               <p>Password: {user.password}</p>
               <p>Income: ${user.budget[0].income}</p>
-              <Link to="/">
-                <button className="user-info-logout-button">Log out</button>
-              </Link>
+              
+                <button 
+                onClick={handleLoginState}className="user-info-logout-button">Log out</button>
+              
               <FontAwesomeIcon
               className="user-info-icon"
               style={{ color: "gold" }}
