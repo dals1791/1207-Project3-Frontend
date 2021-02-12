@@ -1,19 +1,45 @@
 import React from "react";
 import Summary from "./Summary";
+import UpdateTransaction from "./UpdateTransaction"
+// ===IMPORT REACT FONTAWESOME======
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 
 const Transaction = (props) => {
   const { user, url, getUser } = props;
-// =====DESTROY ROUTE=============
-const destroyTransaction = (id)=> {
-  fetch(url +"/transactions/"+ id, {
-    method: "delete"
-  })
-  .then(()=>{getUser()})
-}
-// ======================================
-  
-  
-const loaded = () => {
+  const [toggleUpdate, setToggleUpdate]= React.useState(false)
+  // =====DESTROY ROUTE=============
+  const destroyTransaction = (id) => {
+    fetch(url + "/transactions/" + id, {
+      method: "delete",
+    }).then(() => {
+      getUser();
+    });
+  };
+  // ======================================
+  // ============PUT ROUTE=================
+  const handleToggleUpdate= () => {
+    setToggleUpdate((toggle) => !toggle);
+  };
+   
+  const[selectedTrans, setSelectedTrans]= React.useState(null)
+  const handleSetSelectedTrans =(expense)=>{
+    setSelectedTrans(expense)
+  }
+  const handleUpdate = (expense) => {
+    fetch(url + "/transactions/" + selectedTrans._id, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(expense),
+    }).then(() => {
+      getUser();
+    });
+  };
+  // =====================================
+
+  const loaded = () => {
     /* ------------------------------------------------------
      CALCULATE THE TOTAL SPENDINGS
     ------------------------------------------------------ */
@@ -26,7 +52,7 @@ const loaded = () => {
       return transaction.isExpense === true;
     });
 
-    console.log("Extracted expenses: ", totalExpenses);
+    // console.log("Extracted expenses: ", totalExpenses);
 
     // Add up each expense transaction to the totalSpent
     totalExpenses.forEach((transaction) => {
@@ -46,8 +72,8 @@ const loaded = () => {
     totalDeposite.forEach((deposite) => {
       return (depositeSum += deposite.amount);
     });
-    console.log("Total deposites: ", totalDeposite);
-    console.log("Total deposite amount: ", depositeSum);
+    // console.log("Total deposites: ", totalDeposite);
+    // console.log("Total deposite amount: ", depositeSum);
 
     /* ------------------------------------------------------
      GET TRANSACTIONS - NON-BILLS - POSITIVE AND NEGATIVE TRANSACTIONS
@@ -104,7 +130,15 @@ const loaded = () => {
           </div>
 
           <span style={{ color: spanColor }}>${expense.amount}</span>
-          <button className="destroy-button" onClick={()=>{destroyTransaction(expense._id)}}>X</button>
+          <div
+            className="destroy-button"
+            onClick={() => {
+              destroyTransaction(expense._id);
+            }}
+          >
+            <FontAwesomeIcon  className="navbar-home-icon" style={{color: "white", fontSize: "1.5rem"}} icon={faTrashAlt} />
+          </div>
+          <div onClick={()=>{handleToggleUpdate(); handleSetSelectedTrans(expense);}}><FontAwesomeIcon  className="navbar-home-icon" style={{color: "white", fontSize: "1.5rem"}} icon={faEdit} /></div>
         </div>
       );
     });
@@ -121,7 +155,7 @@ const loaded = () => {
 
     const routineList = routineExpense.map((expense, index) => {
       let formatedDate = new Date(expense.time);
-      
+
       return (
         <div className="transact-card" key={index}>
           <div>
@@ -134,7 +168,15 @@ const loaded = () => {
           </div>
 
           <span>${expense.amount}</span>
-          <button className="destroy-button" onClick={()=>{destroyTransaction(expense._id)}}>X</button>
+          <div
+            className="destroy-button"
+            onClick={() => {
+              destroyTransaction(expense._id);
+            }}
+          >
+            <FontAwesomeIcon  className="navbar-home-icon" style={{color: "white", fontSize: "1.5rem"}} icon={faTrashAlt} />
+          </div>
+          <div onClick={()=>{handleToggleUpdate(); handleSetSelectedTrans(expense);}}><FontAwesomeIcon  className="navbar-home-icon" style={{color: "white", fontSize: "1.5rem"}} icon={faEdit} /></div>
         </div>
       );
     });
@@ -171,6 +213,18 @@ const loaded = () => {
     return <h1>Page loading...</h1>;
   };
 
-  return user ? loaded() : loading();
+  return (<>
+    {user ? loaded() : loading()}
+    <div className="add-transaction-container">
+    {toggleUpdate ? (
+      <UpdateTransaction
+      transaction={selectedTrans}
+        handleSubmit={handleUpdate}
+        toggleAdd={handleToggleUpdate}
+      />
+    ) : null}
+    </div>
+    </>
+    );
 };
 export default Transaction;

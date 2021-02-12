@@ -2,15 +2,9 @@ import React, { useState } from "react";
 import CategoryDropMenu from "./CategoryDropMenu"
 import {useHistory} from 'react-router-dom'
 
-const AddIncome = (props) => {
+const UpdateTransaction = (props) => {
   const history = useHistory()
-  const [formData, setFormData] = useState({
-    description: "",
-    category: "",
-    amount: 0,
-    isRoutine: false,
-    isExpense: false,
-  });
+  const [formData, setFormData] = useState(props.transaction);
   
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
@@ -44,7 +38,7 @@ const AddIncome = (props) => {
       <button onClick={props.toggleAdd} className="close-button">
         X
       </button>
-      <h2>Add a Transaction</h2>
+      <h2>Update Your Transaction</h2>
       
       <div className="add-income-fields">
         <input
@@ -116,11 +110,11 @@ const AddIncome = (props) => {
           type="submit"
           onClick={handleSubmit}
         >
-          Add
+          Update
         </button>
       </div>
     </div>
     </>
   );
 };
-export default AddIncome;
+export default UpdateTransaction;
