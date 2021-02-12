@@ -2,6 +2,7 @@ import React from "react";
 import RenderAll from "./RenderAll";
 import UserLogin from "./components/UserLogin/UserLogin";
 import TopBar from "./components/Topbar";
+import NavBar from "./components/NavBar"
 
 const App = () => {
   const url = "https://project3-backend-1207.herokuapp.com";
@@ -26,6 +27,7 @@ const App = () => {
     return (
       <div className="App">
         <TopBar />
+        
         <div className="container-main">
           <UserLogin getSingleUser={getSingleUser} />
         </div>

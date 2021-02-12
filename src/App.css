@@ -751,7 +751,7 @@ hr {
     background-image: url("./Images/team.jpg");
     background-position: top 860px center;
     background-size: cover;
-    box-shadow: inset 0 0 0 100px rgba(5, 11, 17, 0.521);
+    box-shadow: inset 0 0 0 400px rgba(5, 11, 17, 0.521);
     z-index: -1;
     /* margin-top: 50px; */
     font-size: 56px;
