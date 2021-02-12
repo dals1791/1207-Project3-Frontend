@@ -2,9 +2,18 @@ import React from "react";
 import Summary from "./Summary";
 
 const Transaction = (props) => {
-  const { user } = props;
-console.log("this is user on trans", user)
-  const loaded = () => {
+  const { user, url, getUser } = props;
+// =====DESTROY ROUTE=============
+const destroyTransaction = (id)=> {
+  fetch(url +"/transactions/"+ id, {
+    method: "delete"
+  })
+  .then(()=>{getUser()})
+}
+// ======================================
+  
+  
+const loaded = () => {
     /* ------------------------------------------------------
      CALCULATE THE TOTAL SPENDINGS
     ------------------------------------------------------ */
@@ -95,6 +104,7 @@ console.log("this is user on trans", user)
           </div>
 
           <span style={{ color: spanColor }}>${expense.amount}</span>
+          <button className="destroy-button" onClick={()=>{destroyTransaction(expense._id)}}>X</button>
         </div>
       );
     });
@@ -111,7 +121,7 @@ console.log("this is user on trans", user)
 
     const routineList = routineExpense.map((expense, index) => {
       let formatedDate = new Date(expense.time);
-
+      
       return (
         <div className="transact-card" key={index}>
           <div>
@@ -124,6 +134,7 @@ console.log("this is user on trans", user)
           </div>
 
           <span>${expense.amount}</span>
+          <button className="destroy-button" onClick={()=>{destroyTransaction(expense._id)}}>X</button>
         </div>
       );
     });

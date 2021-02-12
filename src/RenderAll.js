@@ -53,12 +53,12 @@ function RenderAll(props) {
             <Landing user={singleUser} />
           </Route>
 
-          <Route path="/team">
+          <Route  path="/team">
             <Team />
           </Route>
 
           <Route path="/transactions">
-            <Transaction user={singleUser} />
+            <Transaction user={singleUser} url={url} getUser={getUser}/>
           </Route>
 
           <Route path="/userinfo">
