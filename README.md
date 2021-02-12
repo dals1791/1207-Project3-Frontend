@@ -28,6 +28,7 @@ Tnis application will of course be built mobile first, followed by tablet and th
 | Testing of bare-bone application for functionality | Pending |
 | CSS Styling | Complete - Post-MVP Styling in progress |
 
+
 ## API
 
 Our team will be constructing our own API on an Express server. This API will have the following schema as an example transaction:
@@ -172,6 +173,7 @@ Initial components decided for Project.
 
 | Task | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
+
 | Create database/seed data | H | 6 hrs | 8 hrs | 8 hrs |
 | Create routes/test | H | 8 hrs | 9 hrs | 9 hrs |
 | Create React Skeleton React Components | H | 5 hrs | 8 hrs | 8 hrs |
@@ -188,6 +190,7 @@ Initial components decided for Project.
 | Tablet Layout | M | 15 hrs | 25 hrs | 20 hrs |
 | Desktop Layout | M | 15 hrs | 25 hrs | 25 hrs |
 | Total Time | H |  93 hrs | 146 hrs | 146 hrs |
+
 
 ## Post MVP Time-Frames
 | Task | Priority | Estimated Time | Time Invested | Actual Time |

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import CategoryDropMenu from "./CategoryDropMenu"
+import {useHistory} from 'react-router-dom'
 
 const AddIncome = (props) => {
+  const history = useHistory()
   const [formData, setFormData] = useState({
     description: "",
     category: "",
@@ -8,10 +11,12 @@ const AddIncome = (props) => {
     isRoutine: false,
     isExpense: false,
   });
+  
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-    // props.history.push("/landing"); //Push back to landing page
+    history.push("/transactions"); //Push back to landing page
+    props.setAddToggle(false)
   };
   //Handle for Form- Tracks typing when inputing into form input.
   const handleChange = (event) => {
@@ -29,9 +34,13 @@ const AddIncome = (props) => {
       return str;
     }
   };
+  
 
   return (
-    <form className="add-income-component">
+    <>
+    
+    <div className="add-income-component">
+      
       <button onClick={props.toggleAdd} className="close-button">
         X
       </button>
@@ -46,6 +55,7 @@ const AddIncome = (props) => {
           value={formData.description}
           onChange={handleChange}
         />
+        <div className="add-income-category-field">
         <input
         className="add-income-field"
           type="text"
@@ -54,6 +64,8 @@ const AddIncome = (props) => {
           value={formData.category}
           onChange={handleChange}
         />
+        <CategoryDropMenu handleChange={handleChange} />
+        </div>
         <input
         className="add-income-field"
           type="number"
@@ -87,15 +99,15 @@ const AddIncome = (props) => {
           <input
             type="radio"
             name="isExpense"
-            value="false"
+            value="true"
             onChange={handleChange}
           />
 
-          <label>Inome</label>
+          <label>Income</label>
           <input
             type="radio"
             name="isExpense"
-            value="true"
+            value="false"
             onChange={handleChange}
           />
         </div>
@@ -104,10 +116,11 @@ const AddIncome = (props) => {
           type="submit"
           onClick={handleSubmit}
         >
-          ADD
+          Add
         </button>
       </div>
-    </form>
+    </div>
+    </>
   );
 };
 export default AddIncome;

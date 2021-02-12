@@ -20,36 +20,30 @@ const UserLogin = (props) => {
 
   // ======================================
 
-  const [toggle, setToggle] = useState(0);
-  const handleToggleLogin = () => {
-    setToggle((toggle) => 1);
-  };
+  const [toggle, setToggle] = useState(false);
+
   const handleToggleRegister = () => {
-    setToggle((toggle) => 2);
+    setToggle((toggle) => !toggle);
   };
-  const displayUserLogin = () => {
-    if (toggle === 1) {
-      return (
-        <Login handleSubmit={props.getSingleUser} render={props.history} />
-      );
-    } else if (toggle === 2) {
-      return <Register handleSubmit={handleCreate} />;
-    }
-  };
+  
 
   return (
+    <>
     <div className="budgetpad-landing">
-      <p>We got tired of complicated apps, so here you go.</p>
+      {/* <p>We got tired of complicated apps, so here you go.</p> */}
       <div className="login-buttons">
-        <button className="login-button" onClick={handleToggleLogin}>
-          Existing Users
-        </button>
-        <button className="new-account-button" onClick={handleToggleRegister}>
+        {/* <button className="new-account-button" onClick={handleToggleRegister}>
           Create Account
-        </button>
+        </button> */}
       </div>
-      <div>{displayUserLogin()}</div>
+      <div>
+        {toggle ? <Register handleSubmit={handleCreate} handleToggle={handleToggleRegister}/> : <Login handleSubmit={props.getSingleUser} render={props.history}/>}
+        </div>
+      <div className="new-account-button-landing" onClick={handleToggleRegister}>
+        <h4>New User? Create Account</h4>
+      </div>
     </div>
+    </>
   );
 };
 

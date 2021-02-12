@@ -4,27 +4,33 @@
 .App {
   text-align: center;
   font-family: "Red Hat Display", sans-serif;
+  width: 100%;
+  height:100%;
 }
 
-body {
+/* html{
   margin: 0;
+  padding: 0;
+  
+} */
+body {
+  /* width: fit-content; */
+  margin: 0;
+  /* padding: 0; */
 }
 /* ===========TOPBAR============= */
-.top-bar-container{
+.top-bar-container {
   color: white;
-  background-image: linear-gradient(
-    rgb(64, 23, 129),
-    85%,
-    rgba(11, 13, 16, 1)
-  );
-  }
-.budgetpad-text  {
-  padding-top: 20px;
+  background-image: linear-gradient(rgb(64, 23, 129), 85%, rgba(11, 13, 16, 1));
+  box-shadow: 0px 5px 10px black;
+}
+.budgetpad-text {
+  padding: 20px 10px 0px 10px;
   font-size: 4rem;
-  margin:0;
+  margin: 0;
 }
 /* ======================= */
-
+/* =========NAVBAR======================== */
 .nav-bar {
   background-color: rgb(64, 23, 129);
   display: flex;
@@ -43,13 +49,6 @@ body {
   display: flex;
 }
 
-/* .nav-bar-text li {
-  list-style: none;
-  list-style-type: none;
-  text-decoration: none;
-  justify-content: center;
-} */
-
 .nav-bar-text li {
   color: white;
   text-decoration: none;
@@ -57,87 +56,153 @@ body {
   list-style: none;
   justify-content: center;
   align-items: baseline;
-  padding: 1.2rem;
+  padding: 1rem;
   display: block;
 }
 
 .nav-bar-text li:hover {
-  color: green;
+  color: lightgreen;
   transition: color 0.5s;
 }
-
+.navbar-add-icon{
+  color: lawngreen;
+}
+.navbar-add-icon:hover{
+  color: darkgreen;
+}
 .flex-container li:visited {
   color: green;
 }
+/* ======================================== */
 /* ===========Add Income Component========= */
 .add-button {
 }
-.add-transaction-container{
+.add-transaction-container {
   position: fixed;
   bottom: 8%;
   left: 5%;
   width: 90%;
   margin: 0 auto;
-  color: white
+  color: white;
+  box-shadow: 0px 10px 30px black;
+  border-radius: 10px;
 }
-.add-transaction-container h2{
+.add-transaction-container h2 {
   margin-top: 0;
 }
-.add-income-component{
-  border: 5px solid black;
+.add-income-component {
+  border: 3px solid black;
   border-radius: 10px;
   padding-bottom: 1rem;
-  background-image: linear-gradient(
-    rgb(64, 23, 129),
-    85%,
-    rgba(11, 13, 16, 1)
+  background-image: radial-gradient(
+    farthest-corner at 0px 0px,
+    rgba(64, 23, 129, 1),
+    80%,
+    rgb(34, 34, 34)
   );
+  /* box-shadow: 0px 10px 30px black; */
 }
-.add-income-fields{
+.add-income-fields {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 80%;
   margin: 0 auto;
-  
 }
-.add-income-field{
+.add-income-field {
   border: none;
-  border-bottom: solid;
-  margin-top: .5rem;
+  border-radius: 5px;
+  align-self: flex-center;
+  margin-top: 0.5rem;
   color: white;
   background: transparent;
   font-size: 22px;
+  box-shadow: 0px 2px 10px white;
 }
-.add-income-routine, .add-income-expense{
-margin: .5rem 0;
-font-size: 18px;
-}
-.add-income-routine div, .add-income-expense div{
-  display:inline;
-  align-content: center;
+.add-income-category-field{
+  display: flex;
+  align-items: baseline;
   
 }
-.add-income-routine input, .add-income-expense input{
-  width: 10%
+.add-income-category-field input{
 }
-.add-income-routine label, .add-income-expense label{
-  width: 50%
+.drop-container{
+  position: relative;
+  margin-left: .5rem;
+  
 }
-.add-income-add-button{
-  width:30%;
+.drop-list-container{
+  position: absolute;
+  left: -15rem;
+  bottom: 30px;
+  width: 15rem;
+  height: fit-content;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgb(218, 189, 252);
+  color: black;
+  border: 1px solid black;
+}
+.drop-list{
+  display: flex;
+  justify-content: space-between;
+margin: .25rem 0;
+}
+.drop-list-item{
+  width: 10%;
+  height: 1.2rem;
+  font-size: 24px;
+  align-self: flex-end;
+}
+.drop-list-item-label{
+  font-size: 1.3rem;
+}
+.add-income-routine,
+.add-income-expense {
+  margin: 0.5rem 0;
+  font-size: 18px;
+}
+.add-income-routine div,
+.add-income-expense div {
+  display: inline;
+  align-content: center;
+}
+.add-income-routine input,
+.add-income-expense input {
+  width: 10%;
+  
+}
+.add-income-routine label,
+.add-income-expense label {
+  width: 50%;
+}
+.add-income-add-button {
+  width: 30%;
   position: relative;
   left: 30%;
-  margin: .5rem;
+  margin: 0.5rem;
+  padding: 4px;
   font-size: 18px;
-  
-}
-.close-button{
+  border: none;
   border-radius: 10px;
-  height: 20%;
+  color: white;
+  background-color: rgb(64, 23, 129);
+  box-shadow: 0px 2px 10px white;
+}
+.add-income-add-button:hover,
+.close-button:hover{
+  background-color: white;
+  color: black;
+}
+.close-button {
+  border-radius: 10px;
+  border: none;
   position: relative;
-  left: 40%;
-  margin: .5rem;
+  left: 43%;
+  margin: 0.5rem;
+  color: white;
+  background-color: rgb(64, 23, 129);
+  box-shadow: 0px 2px 10px white;
 }
 /* ============================================== */
 .team-component {
@@ -146,17 +211,6 @@ font-size: 18px;
 .team-header {
   text-align: left;
   padding: 5px 0 0 15px;
-}
-
-.avatar {
-  background-color: black;
-  border-radius: 50%;
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  float: left;
-  margin-left: 25px;
-  margin-top: 40px;
 }
 
 .name-header1,
@@ -172,9 +226,9 @@ font-size: 18px;
 .paragraph-team2,
 .paragraph-team3 {
   color: white;
-  text-align: left;
-  padding-left: 100px;
-  padding-bottom: 15px;
+  text-align: center;
+  padding: 25px;
+  transition: fadeIn ease 1s;
 }
 
 .background-budgtpad {
@@ -185,9 +239,9 @@ font-size: 18px;
 
 .budgetpad-landing {
   background: url("./Images/strategy.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
   color: white;
@@ -216,27 +270,23 @@ font-size: 18px;
   background-color: rgb(64, 23, 129);
   /* width: 100%; */
   margin: 15px;
-  opacity: 0.6;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .team-member-card1:hover {
   background-image: url("./Images/cat1.jpg");
-  opacity: 1;
-  transition: all opacity 0.25s ease-in-out;
+  box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
 }
 
 .team-member-card2:hover {
   background-image: url("./Images/cat2.jpg");
-  opacity: 1;
-  transition: all opacity 0.25s ease-in-out;
+  box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
 }
 
 .team-member-card3:hover {
   background-image: url("./Images/cat3.jpg");
   background-size: contain;
-  opacity: 1;
-  transition: all opacity 0.25s ease-in-out;
+  box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
 }
 
 .login-buttons {
@@ -293,7 +343,7 @@ font-size: 18px;
   font-family: "Red Hat Display", sans-serif;
 }
 
-.register-button {
+.register-button, .back-button {
   width: 25%;
   margin-bottom: 15px;
   background-color: rgb(64, 23, 129);
@@ -308,20 +358,37 @@ font-size: 18px;
   border-radius: 16px;
   font-family: "Red Hat Display", sans-serif;
 }
-
+.register-button:hover, .back-button:hover, .existing-user-login:hover {
+  background-color: lightgreen;
+  color: black;
+}
 .budgetpad-landing p {
   font-size: 1.5rem;
   padding: 50px 25px 15px 25px;
   margin-bottom: 40px;
 }
+.username-bar, .password-bar, .firstname-bar {
+  background-color: #E7E7E7;
+  border-radius: 20px;
+  padding: 5px;
+  font-family: "Red Hat Display", sans-serif;
+  width: 171px;
+  border: 0px;
+  margin: 8px;
+}
 
+.register-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* =============User Profile Component MOBILE =========== */
+.user-info-container{
+/* width: 100%; */
+}
 
-
-/* =============User Profile Component =========== */
-/* .user-info-container{
-
-} */
-.user-info-header{
+.user-info-header {
+  position: relative;
   text-align: left;
   padding-left: 5%;
   background: url("./Images/strategy.jpg");
@@ -329,86 +396,98 @@ font-size: 18px;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
+  
 }
 .user-info-header h2,
 .user-info-header p {
-margin: 0;
-padding: .5rem;
-
+  margin: 0;
+  padding: 0.5rem;
 }
 
-.user-info-fields{
-  height: 100%;
+.user-info-fields {
   text-align: right;
   padding-right: 5%;
   border-radius: 5px;
-  padding-top: 3%;
+  padding-top: 4%;
+  padding-bottom: 5%;
+  font-size: 1rem;
 }
-.user-info-budget-form{
-  margin-top: .75rem;
+.user-info-budget-form {
+  margin-top: 0.75rem;
 }
-.user-info-cred-form input, 
-.user-info-budget-form input{
+.user-info-cred-form input,
+.user-info-budget-form input {
   font-size: 16px;
   border: none;
   border-radius: 3px;
   /* border-bottom: solid; */
-  margin: .35rem;
+  margin: 0.35rem;
   box-shadow: 0px 3px 5px rgb(64, 23, 129);
-} 
-hr{
+}
+hr {
   border: 2px solid rgb(64, 23, 129);
   margin: 0;
   margin-bottom: 1%;
   box-shadow: 5px 10px 18px black;
-  
 }
-.user-info-icon{
+.user-info-icon {
   position: absolute;
   /* left: 15rem;
   bottom: 26.5rem; */
-  left: 63%;
-  bottom: 63%;
- 
+  left: 60%;
+  bottom: 13%;
+  font-size: 7rem;
 }
-.user-info-cred-form button, 
-.user-info-budget-form button{
+.user-info-cred-form button,
+.user-info-budget-form button {
   background-color: rgb(64, 23, 129);
   color: white;
   border: none;
   border-radius: 8px;
-  padding: .2rem;
-  font-family: 'Red Hat Display', sans-serif;
+  padding: 0.2rem;
+  font-family: "Red Hat Display", sans-serif;
   box-shadow: 2px 5px 5px black;
-  margin-left: .25rem;
-} 
-.user-info-logout-button{
+  margin-left: 0.25rem;
+}
+.user-info-cred-form button:hover,
+.user-info-budget-form button:hover{
+  background-color: white;
+  color:black;
+}
+.user-info-logout-button {
   border-radius: 5px;
   margin: 1px;
-  
 }
-
+.user-info-logout-button:hover{
+  background-color: rgb(64, 23, 129);
+  color: white;
+}
 
 /* ============================================== */
 
 /* ***************************************************
 *  -------- ANNY CSS STYLES  MOBILE --------
 *************************************************** */
+
+.dounut {
+  width: 100%;
+  
+}
+
 .landing-component,
 .spend-summary,
 .transaction-component {
   margin-bottom: 20%;
   font-family: "Nunito Sans", sans-serif;
 }
-.chart {
-  padding-top: 2%;
-}
+
 .spend-summary {
   color: white;
   background-color: rgb(64, 23, 129);
   padding: 2%;
   text-align: center;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+  box-shadow: 0px 5px 10px black;
 }
 .spend-summary h3 {
   margin-top: 0px;
@@ -429,7 +508,11 @@ hr{
   color: #ff4545;
 }
 .spendSum-remain {
+  color: #fff33e;
+}
+.spendSum-deposite {
   color: #5dca00;
+  
 }
 .legend {
   display: flex;
@@ -452,13 +535,20 @@ hr{
   border: 1px solid;
   width: 15%;
   height: 20px;
+  box-shadow: 0px 4px 5px black;
 }
 
 .transaction-component {
   text-align: left;
 }
-.all-transactions {
+.transact-headline {
+  margin: 0 auto;
+  font-size: 1.2em;
   padding: 3%;
+  line-height: 0;
+}
+.all-transactions {
+  padding: 0.5% 3%;
 }
 .transact-card {
   background-color: #002161;
@@ -469,6 +559,8 @@ hr{
   justify-content: space-evenly;
   align-items: center;
   line-height: 0.5;
+  border-radius: 5px;
+  box-shadow: 0px 5px 6px black;
 }
 .transact-descr {
   font-size: 1.3em;
@@ -481,11 +573,415 @@ hr{
 .trnact-light-font {
   color: #aecbd6;
 }
+/* ===============DESKTOP DESIGN================= */
+.desktop-nav-bar {
+  display: none;
+}
+
+.our-team-header {
+  display: none;
+}
+.paragraph-team1-after,
+.paragraph-team2-after,
+.paragraph-team3-after {
+  color: white;
+}
+.paragraph-team1,
+.paragraph-team2,
+.paragraph-team3 {
+  color: white;
+  display: none;
+}
+/* ============================================ */
+
 /* ***************************************************
 *  -------- MEDIA QUERIES  ---------
 *************************************************** */
+@media (max-width: 320px) {
+  .App{
+    width: fit-content;
+  }
+}
+@media (max-width: 1020px){
+  .video-background{
+    display: none;
+  }
+}
 @media (min-width: 668px) {
+  /* ------------------------------------
+*  ----ANNY CSS STYLES  TABLET  ----
+------------------------------------ */
+  .landing-component {
+    margin-bottom: 10%;
+  }
+  .chart {
+    max-width: 668px;
+    display: flex;
+    padding: 2%;
+    margin: 30px auto 10px auto;
+  }
+  .dounut {
+    width: 65%;
+  }
+  .legend {
+    width: 35%;
+    margin-left: 2%;
+  }
+
+  .legendLabel {
+    margin: 0px;
+    width: 100%;
+  }
+  .legendLabel p {
+    font-size: 1.2rem;
+  }
+  .transact-headline {
+    max-width: 768px;
+  }
+  .transact-card {
+    font-size: 1.2em;
+    justify-content: space-between;
+    padding: 0 10%;
+  }
+  .user-info-fields{
+    font-size: 1.4rem;
+    display: flex;
+    align-items: right;
+    justify-content: space-evenly;
+  }
+  .user-info-budget-form{
+    margin-top: 0;
+  }
+  .add-transaction-container{
+    left: 0;
+    right: 0;
+    width: 80%;
+  }
+  .user-info-icon {
+    left: 65%;
+    bottom: 13%;
+    font-size: 8rem;
+  }
 }
 
+
+/* ******************************* */
+/* ******DESKTOP DESIGN********* */
+/* ******************************* */
 @media (min-width: 1028px) {
+  .nav-bar {
+    display: none;
+  }
+
+  .desktop-nav-bar {
+    background-color: rgb(64, 23, 129);
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 100px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
+
+  .top-bar-container {
+    /* display: none; */
+  }
+
+  .desktop-logo {
+    padding: 30px;
+  }
+
+  .team-header {
+    color: white;
+    display: none;
+  }
+
+  .team-component {
+    background-image: none;
+  }
+
+  .our-team-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(248, 247, 216, 0.7);
+    width: 100%;
+    height: 20vh;
+    background-image: url("./Images/team.jpg");
+    background-position: top 860px center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 100px rgba(5, 11, 17, 0.521);
+    z-index: -1;
+    margin-bottom: 20px;
+    margin-top: -35px;
+  }
+
+  .team-header-desktop {
+    font-size: 56px;
+    color: white;
+  }
+
+  .flex-team-member-card {
+    margin: 0;
+    display: flex;
+    height: 70vh;
+    width: 100%;
+  }
+
+  .name-header1,
+  .name-header2,
+  .name-header3 {
+    text-align: center;
+    font-size: 48px;
+    padding-right: 80px;
+  }
+
+  .paragraph-team1,
+  .paragraph-team2,
+  .paragraph-team3 {
+    font-size: 30px;
+  }
+
+  .team-member-card1:hover .paragraph-team1-after {
+    opacity: 1;
+  }
+  .team-member-card1:hover .paragraph-team1 {
+    opacity: 0;
+    display: none;
+  }
+
+  .team-member-card2:hover .paragraph-team2 {
+    opacity: 0;
+    display: none;
+  }
+
+  .team-member-card2:hover .paragraph-team2-after {
+    opacity: 1;
+  }
+
+  .team-member-card3:hover .paragraph-team3 {
+    opacity: 0;
+    display: none;
+  }
+
+  .team-member-card3:hover .paragraph-team3-after {
+    opacity: 1;
+  }
+
+  .paragraph-team1-after,
+  .paragraph-team2-after,
+  .paragraph-team3-after {
+    color: white;
+    opacity: 0;
+    text-align: center;
+    padding: 25px;
+    align-items: center;
+    font-size: 36px;
+  }
+
+  .budgetpad-landing p {
+    padding-top: 149px;
+  }
+
+  .login-header-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(248, 247, 216, 0.7);
+    width: 100%;
+    height: 20vh;
+    background-image: url("./Images/team.jpg");
+    background-position: top 860px center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 400px rgba(5, 11, 17, 0.521);
+    z-index: -1;
+    /* margin-top: 50px; */
+    font-size: 56px;
+    color: white;
+  }
+
+  .transact-headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(248, 247, 216, 0.7);
+    color: white;
+    font-size: 48px;
+    width: 100%;
+    height: 20vh;
+    background-image: url("./Images/team.jpg");
+    background-position: top 860px center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 400px rgba(5, 11, 17, 0.521);
+    z-index: -1;
+    margin-bottom: 10px;
+    margin-top: -35px;
+  }
+  .add-transaction-container{
+    left: 0;
+    right: 0;
+    width: 40%;
+  }
+/* Card styling for desktop with video background. */
+  .login-container-component, .register-container-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    width: 75%;
+    height: 60vh;
+    margin: 0 auto;
+    margin-top: 70px;
+    background-color: white;
+    border-radius: 25px;
+    -webkit-box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
+    -moz-box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
+    box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
+  }
+
+  .login-container, .register-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 125px;
+    align-items: center;
+  }
+
+  .register-container {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .side-image-login {
+    background-color: blue;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./Images/takemymoney.jpg");
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    position: relative;
+    box-shadow: inset 0 0 0 100px rgba(5, 11, 17, 0.521);
+  }
+
+  .side-image-login-text {
+    position: absolute;
+    top: 33%;
+    z-index: 999;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: purple;
+    font-size: 32px;
+  }
+
+  .video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
+  .member-login {
+    color: black;
+    font-size: 22px;
+  }
+
+  .budgetpad-landing {
+    background-image: none;
+    background-color: #A88BD4;
+  }
+
+  input {
+    border: 0px;
+  }
+  .username-bar, .password-bar, .firstname-bar, .existing-user-login {
+    background-color: #E7E7E7;
+    border-radius: 20px;
+    padding: 5px;
+    font-family: "Red Hat Display", sans-serif;
+    width: 171px;
+    border: 0px;
+    margin: 8px;
+  }
+
+  .existing-user-login, .register-button {
+    background-color: rgb(64, 23, 129);
+  }
+
+  /* ------------------------------------
+  *  --- ANNY DESKTOP  ----
+  ------------------------------------ */
+  .chart {
+    max-width: 1124px;
+    margin: 0 auto;
+  }
+  .spend-summary {
+    padding: 1%;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0;
+  }
+  .spend-summary div {
+    justify-content: center;
+    max-width: 1124px;
+    margin: 0 auto;
+  }
+
+  .all-transactions {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+  }
+  .all-transactions section {
+    width: 42%;
+    background: #f3f3f3;
+    padding: 2%;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px #a8b8bc;
+  }
+  .transact-headline {
+    max-width: 1224px;
+  }
+  .transact-card {
+    font-size: 1.2em;
+    justify-content: space-between;
+    padding: 0 10%;
+    margin: 1em;
+    box-shadow: 3px 10px 8px #6884bb;
+  }
+  .user-info-budget-form, .user-info-cred-form{
+    background-color: #f3f3f3;
+    padding: 2%;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px #a8b8bc;
+    font-size: 2rem;
+  }
+  .user-info-budget-form button, 
+  .user-info-cred-form button,
+  .user-info-cred-form input,
+  .user-info-budget-form input,
+  .user-info-logout-button{
+    font-size: 1.4rem;
+  }
+  .user-info-cred-form input,
+  .user-info-budget-form input,
+  .user-info-logout-button{
+    margin-bottom: 1rem;
+  }
+  .user-info-header{
+    font-size: 1.4rem;
+  }
+  .user-info-header svg{
+    font-size: 12rem;
+    /* right: 25rem; */
+  }
 }

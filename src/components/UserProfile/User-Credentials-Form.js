@@ -14,8 +14,7 @@ const UserCredentials = (props) => {
   console.log(formData);
   return (
     <div className="user-info-cred-form">
-      <label style={{fontSize: 20}}>Update Profile</label><br/>
-      <small>note: log out and log back in to see changes</small>
+      <label>Update Profile</label><br/>
       <form>
         <div>
           <label>First Name: </label>

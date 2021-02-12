@@ -6,9 +6,8 @@ import UserBudget from "./User-Budget-Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoins } from "@fortawesome/free-solid-svg-icons";
 const UserProfile = (props) => {
-  const { userInfo, url } = props;
+  const { user, url, getUser } = props;
   const loaded = () => {
-    return userInfo.map((user) => {
       return user.budget.map((budget) => {
         //    CRUD Routes for user profile ===========
         const updateUser = (userField) => {
@@ -18,7 +17,8 @@ const UserProfile = (props) => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(userField),
-          });
+          })
+          .then(()=>{getUser()})
         };
 
         const updateBudget = (budgetField) => {
@@ -28,7 +28,8 @@ const UserProfile = (props) => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(budgetField),
-          });
+          })
+          .then(()=>{getUser()})
         };
 
         // =====================================
@@ -42,12 +43,13 @@ const UserProfile = (props) => {
               <Link to="/">
                 <button className="user-info-logout-button">Log out</button>
               </Link>
-            </div>
-            <FontAwesomeIcon
+              <FontAwesomeIcon
               className="user-info-icon"
-              style={{ color: "gold", fontSize: "90px" }}
+              style={{ color: "gold" }}
               icon={faCoins}
             />
+            </div>
+           
             <hr />
             <div className="user-info-fields">
               {/* Update username and password */}
@@ -57,10 +59,10 @@ const UserProfile = (props) => {
           </div>
         );
       });
-    });
+   
   };
   const loading = <h3>Loading...</h3>;
-  return userInfo ? loaded() : loading;
+  return user ? loaded() : loading;
 };
 
 export default UserProfile;

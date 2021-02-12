@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import myMoney from "../../Images/mymoney.mp4";
 
 const Login = (props) => {
   const [formData, setFormData] = useState({});
@@ -7,9 +8,7 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-
-    console.log("login push history - ", props);
-    props.render.push("/home"); //Push back to landing page
+    // props.render.push("/home"); //Push back to landing page
   };
   //Handle for UserName & PW - Tracks typing when inputing into form input.
   const handleChange = (event) => {
@@ -17,8 +16,23 @@ const Login = (props) => {
   };
   console.log("this is login form data", formData);
   return (
-    <form>
-      <h2>Welcome Back!</h2>
+    <form className="login-component-container">
+      <div className="login-header-desktop">
+        <h2 className="login-header-desktop-text">Welcome Back!</h2>
+      </div>
+      <div className="login-container-component">
+      <div className="side-image-login"> 
+      <div className="side-image-login-text">
+      <h3> We got tired of complicated apps, so here you go.</h3>
+      </div>
+      <video autoPlay loop muted className="video-background">
+    <source src={myMoney} type="video/mp4"/>
+    </video>
+      </div>
+    <div className="login-container">
+      <div className="member-login">
+          <h3> Member Log-in</h3>
+      </div>
       <div>
         <input
           className="username-bar"
@@ -46,6 +60,8 @@ const Login = (props) => {
       >
         Login
       </button>
+      </div>
+      </div>
     </form>
   );
 };

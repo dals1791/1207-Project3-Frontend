@@ -14,9 +14,8 @@ const UserBudget = (props) => {
   console.log(formData);
   return (
     <div className="user-info-budget-form">
-      <label style={{fontSize: 20}}>Update Budget</label>
+      <label >Update Budget</label>
       <br />
-      <small>note: log out and log back in to see changes</small>
       <form>
         <div>
           <label>Income: </label>
