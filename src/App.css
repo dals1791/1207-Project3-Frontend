@@ -578,6 +578,11 @@ hr {
     width: fit-content;
   }
 }
+@media (max-width: 1020px){
+  .video-background{
+    display: none;
+  }
+}
 @media (min-width: 668px) {
   /* ------------------------------------
 *  ----ANNY CSS STYLES  TABLET  ----
@@ -615,7 +620,9 @@ hr {
     padding: 0 10%;
   }
 }
-
+/* ******************************* */
+/* ******DESKTOP DESIGN********* */
+/* ******************************* */
 @media (min-width: 1028px) {
   .nav-bar {
     display: none;
@@ -623,18 +630,19 @@ hr {
 
   .desktop-nav-bar {
     background-color: rgb(64, 23, 129);
+    display: block;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    height: 60px;
+    height: 100px;
     position: fixed;
     top: 0px;
     width: 100%;
   }
 
   .top-bar-container {
-    display: none;
+    /* display: none; */
   }
 
   .desktop-logo {
@@ -643,6 +651,7 @@ hr {
 
   .team-header {
     color: white;
+    display: none;
   }
 
   .team-component {
@@ -744,7 +753,7 @@ hr {
     background-size: cover;
     box-shadow: inset 0 0 0 100px rgba(5, 11, 17, 0.521);
     z-index: -1;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     font-size: 56px;
     color: white;
   }
@@ -867,7 +876,7 @@ hr {
     padding: 1%;
     text-align: center;
     margin-bottom: 0px;
-    margin-top: 3%;
+    margin-top: 0;
   }
   .spend-summary div {
     justify-content: center;
