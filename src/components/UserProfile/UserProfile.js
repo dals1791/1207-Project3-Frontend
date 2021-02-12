@@ -45,7 +45,7 @@ const UserProfile = (props) => {
               </Link>
               <FontAwesomeIcon
               className="user-info-icon"
-              style={{ color: "gold", fontSize: "90px" }}
+              style={{ color: "gold" }}
               icon={faCoins}
             />
             </div>
