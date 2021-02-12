@@ -109,7 +109,7 @@ const Transaction = (props) => {
         transactionType = "Expense";
         spanColor = "#ffb0b0";
       } else {
-        transactionType = "Deposite";
+        transactionType = "Deposit";
         spanColor = "#5dca00";
       }
 
@@ -118,10 +118,6 @@ const Transaction = (props) => {
           <div>
             <p className="transact-descr">{expense.description}</p>
             <p className="trnact-light-font">{expense.category}</p>
-
-            <p className="trnact-light-font">
-              Transaction Type: {transactionType}
-            </p>
 
             <p className="trnact-light-font">
               {months[formatedDate.getMonth()]} / {formatedDate.getDate()} /
