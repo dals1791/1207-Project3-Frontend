@@ -11,7 +11,7 @@ const NavBar = (props) => {
 
       <div className="nav-bar-text">
         <ul>
-          <Link to="/home" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <li><FontAwesomeIcon  className="navbar-home-icon" style={{color: "white", fontSize: "32px"}} icon={faHome} /></li>
           </Link>
           <Link to="/transactions" style={{ textDecoration: "none" }}>
@@ -41,7 +41,7 @@ const NavBar = (props) => {
       <div className="desktop-logo-container"><h4 className ="desktop-logo" style={{color: "white", fontSize: "40px"}}>BUGTPAD</h4></div>
       <div className="nav-bar-text">
         <ul>
-          <Link to="/home" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <li className="navbar-home" style={{color: "white", fontSize: "32px"}}>Home</li>
           </Link>
           <Link to="/transactions" style={{ textDecoration: "none" }}>

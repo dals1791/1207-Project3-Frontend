@@ -2,18 +2,27 @@ import React from "react";
 import Summary from "./Summary";
 
 const Transaction = (props) => {
-  const { user } = props;
-
-  const loaded = () => {
+  const { user, url, getUser } = props;
+// =====DESTROY ROUTE=============
+const destroyTransaction = (id)=> {
+  fetch(url +"/transactions/"+ id, {
+    method: "delete"
+  })
+  .then(()=>{getUser()})
+}
+// ======================================
+  
+  
+const loaded = () => {
     /* ------------------------------------------------------
      CALCULATE THE TOTAL SPENDINGS
     ------------------------------------------------------ */
     let totalSpent = 0;
-    const budget = user[0].budget; //for use as props also
-    const transactions = user[0].transactions; // for use as props also
+    const budget = user.budget; //for use as props also
+    const transactions = user.transactions; // for use as props also
 
     //- Gran only the transactions that are isExpense: true
-    const totalExpenses = user[0].transactions.filter((transaction) => {
+    const totalExpenses = user.transactions.filter((transaction) => {
       return transaction.isExpense === true;
     });
 
@@ -59,7 +68,7 @@ const Transaction = (props) => {
       "Dec",
     ];
 
-    const nonRoutineExpense = user[0].transactions.filter((transaction) => {
+    const nonRoutineExpense = user.transactions.filter((transaction) => {
       //return transaction.isRoutine === false && transaction.isExpense === true;
       return transaction.isRoutine === false;
     });
@@ -95,23 +104,24 @@ const Transaction = (props) => {
           </div>
 
           <span style={{ color: spanColor }}>${expense.amount}</span>
+          <button className="destroy-button" onClick={()=>{destroyTransaction(expense._id)}}>X</button>
         </div>
       );
     });
 
-    console.log("User info in transactions: ", user[0].transactions);
+    console.log("User info in transactions: ", user.transactions);
     console.log("All non-routine expenses: ", nonRoutineExpense);
 
     /* ------------------------------------------------------
     GET TRANSACTIONS - BILLS - IS AN EXPENSE
   ------------------------------------------------------ */
-    const routineExpense = user[0].transactions.filter((transaction) => {
+    const routineExpense = user.transactions.filter((transaction) => {
       return transaction.isRoutine === true && transaction.isExpense === true;
     });
 
     const routineList = routineExpense.map((expense, index) => {
       let formatedDate = new Date(expense.time);
-
+      
       return (
         <div className="transact-card" key={index}>
           <div>
@@ -124,6 +134,7 @@ const Transaction = (props) => {
           </div>
 
           <span>${expense.amount}</span>
+          <button className="destroy-button" onClick={()=>{destroyTransaction(expense._id)}}>X</button>
         </div>
       );
     });
