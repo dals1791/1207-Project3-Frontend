@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import myMoney from "../../Images/mymoney.mp4";
 
 const Register = (props)=>{
 const [formData, setFormData] = useState("");
@@ -13,10 +14,25 @@ const [formData, setFormData] = useState("");
   };
   console.log("this is formdata", formData)
     return(
-        <form onClick={handleSubmit}>
-        <h2>Register</h2>
-        <div>
+        <form onClick={handleSubmit}  className="register-component-container">
+        <div className="login-header-desktop">
+        <h2 className="register-header-desktop-text">New Account Setup</h2>
+      </div>
+      <div className="login-container-component">
+      <div className="side-image-login"> 
+      <div className="side-image-login-text">
+      <h3> We got tired of complicated apps, so here you go.</h3>
+      </div>
+      <video autoPlay loop muted className="video-background">
+    <source src={myMoney} type="video/mp4"/>
+    </video>
+      </div>
+    <div className="register-container">
+      <div className="member-login">
+          <h3> Create an account</h3>
+      </div>
         <input
+          className="firstname-bar"
           type="text"
           name="firstName"
           placeholder= "Enter your First Name"
@@ -24,6 +40,7 @@ const [formData, setFormData] = useState("");
           onChange={handleChange}
         />
         <input
+          className="username-bar"
           type="text"
           name="userName"
           placeholder= "Enter a Username"
@@ -31,16 +48,18 @@ const [formData, setFormData] = useState("");
           onChange={handleChange}
         />
         <input
+          className="password-bar"
           type="text"
           name="password"
           placeholder= "Enter a Password"
           value={formData.password}
           onChange={handleChange}
         />
-        </div>
         <button className="register-button" type="submit" >
         Register
       </button>
+      </div>
+      </div>
         </form>
     )
 }
