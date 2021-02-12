@@ -766,8 +766,8 @@ hr {
     margin-bottom: 10px;
     margin-top: -35px;
   }
-
-  .login-container-component {
+/* Card styling for desktop with video background. */
+  .login-container-component, .register-container-component {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -783,10 +783,16 @@ hr {
     box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
   }
 
-  .login-container {
+  .login-container, .register-container {
     display: flex;
     flex-direction: column;
     margin-right: 125px;
+    align-items: center;
+  }
+
+  .register-container {
+    margin: 0 auto;
+    width: 50%;
   }
 
   .side-image-login {
@@ -836,7 +842,7 @@ hr {
   input {
     border: 0px;
   }
-  .username-bar, .password-bar, .existing-user-login {
+  .username-bar, .password-bar, .firstname-bar, .existing-user-login {
     background-color: #E7E7E7;
     border-radius: 20px;
     padding: 5px;
@@ -846,7 +852,7 @@ hr {
     margin: 8px;
   }
 
-  .existing-user-login {
+  .existing-user-login, .register-button {
     background-color: rgb(64, 23, 129);
   }
 
