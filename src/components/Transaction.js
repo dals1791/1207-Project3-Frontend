@@ -217,6 +217,7 @@ const Transaction = (props) => {
       transaction={selectedTrans}
         handleSubmit={handleUpdate}
         toggleAdd={handleToggleUpdate}
+        setToggleUpdate={setToggleUpdate}
       />
     ) : null}
     </div>

@@ -642,6 +642,11 @@ hr {
     padding: 0 10%;
   }
 }
+.add-transaction-container{
+  left: 0;
+  right: 0;
+  width: 80%;
+}
 /* ******************************* */
 /* ******DESKTOP DESIGN********* */
 /* ******************************* */
@@ -796,6 +801,11 @@ hr {
     z-index: -1;
     margin-bottom: 10px;
     margin-top: -35px;
+  }
+  .add-transaction-container{
+    left: 0;
+    right: 0;
+    width: 40%;
   }
 /* Card styling for desktop with video background. */
   .login-container-component, .register-container-component {

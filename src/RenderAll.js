@@ -72,6 +72,7 @@ function RenderAll(props) {
             user={singleUser}
             handleSubmit={addIncome}
             toggleAdd={handleToggleAdd}
+            setAddToggle={setToggleAdd}
           />
         ) : null}
       </div>
