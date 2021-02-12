@@ -61,10 +61,15 @@ body {
 }
 
 .nav-bar-text li:hover {
-  color: green;
+  color: lightgreen;
   transition: color 0.5s;
 }
-
+.navbar-add-icon{
+  color: lawngreen;
+}
+.navbar-add-icon:hover{
+  color: darkgreen;
+}
 .flex-container li:visited {
   color: green;
 }
@@ -338,7 +343,7 @@ margin: .25rem 0;
   font-family: "Red Hat Display", sans-serif;
 }
 
-.register-button {
+.register-button, .back-button {
   width: 25%;
   margin-bottom: 15px;
   background-color: rgb(64, 23, 129);
@@ -353,7 +358,10 @@ margin: .25rem 0;
   border-radius: 16px;
   font-family: "Red Hat Display", sans-serif;
 }
-
+.register-button:hover, .back-button:hover, .existing-user-login:hover {
+  background-color: lightgreen;
+  color: black;
+}
 .budgetpad-landing p {
   font-size: 1.5rem;
   padding: 50px 25px 15px 25px;

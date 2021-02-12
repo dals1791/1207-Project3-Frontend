@@ -59,6 +59,7 @@ const [formData, setFormData] = useState({});
         Register
       </button>
       </div>
+      <button className="back-button" onCLick={props.handleToggle}>Back to Login</button>
       </div>
         </form>
     )

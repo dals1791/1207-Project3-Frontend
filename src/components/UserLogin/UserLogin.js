@@ -20,20 +20,12 @@ const UserLogin = (props) => {
 
   // ======================================
 
-  const [toggle, setToggle] = useState(0);
+  const [toggle, setToggle] = useState(false);
 
   const handleToggleRegister = () => {
-    setToggle((toggle) => 2);
+    setToggle((toggle) => !toggle);
   };
-  const displayUserLogin = () => {
-     if (toggle === 2) {
-      return <Register handleSubmit={handleCreate} />;
-    } else {
-      return (
-      <Login handleSubmit={props.getSingleUser} render={props.history} />
-      )
-    }
-  };
+  
 
   return (
     <>
@@ -44,7 +36,9 @@ const UserLogin = (props) => {
           Create Account
         </button> */}
       </div>
-      <div>{displayUserLogin()}</div>
+      <div>
+        {toggle ? <Register handleSubmit={handleCreate} handleToggle={handleToggleRegister}/> : <Login handleSubmit={props.getSingleUser} render={props.history}/>}
+        </div>
       <div className="new-account-button-landing" onClick={handleToggleRegister}>
         <h4>New User? Create Account</h4>
       </div>
