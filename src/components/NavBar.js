@@ -12,10 +12,10 @@ const NavBar = (props) => {
       <div className="nav-bar-text">
         <ul>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <li><FontAwesomeIcon  className="navbar-home-icon" style={{color: "white", fontSize: "32px"}} icon={faHome} /></li>
+            <li><FontAwesomeIcon  className="navbar-home-icon" style={{ fontSize: "32px"}} icon={faHome} /></li>
           </Link>
           <Link to="/transactions" style={{ textDecoration: "none" }}>
-            <li><FontAwesomeIcon  className="navbar-transactions-icon" style={{color: "white", fontSize: "32px"}} icon={faFileInvoiceDollar} /></li>
+            <li><FontAwesomeIcon  className="navbar-transactions-icon" style={{fontSize: "32px"}} icon={faFileInvoiceDollar} /></li>
           </Link>
 
           <li
@@ -24,14 +24,14 @@ const NavBar = (props) => {
               props.toggleAdd();
             }}
           >
-            <FontAwesomeIcon  className="navbar-add-icon" style={{color: "lawngreen", fontSize: "42px"}} icon={faDollarSign} />
+            <FontAwesomeIcon  className="navbar-add-icon" style={{ fontSize: "42px"}} icon={faDollarSign} />
           </li>
 
           <Link to="/team" style={{ textDecoration: "none" }}>
-            <li><FontAwesomeIcon  className="navbar-team-icon" style={{color: "white", fontSize: "32px"}} icon={faUsers} /></li>
+            <li><FontAwesomeIcon  className="navbar-team-icon" style={{fontSize: "32px"}} icon={faUsers} /></li>
           </Link>
           <Link to="/userinfo" style={{ textDecoration: "none" }}>
-            <li><FontAwesomeIcon  className="navbar-user-icon" style={{color: "white", fontSize: "32px"}} icon={faUserEdit} /></li>
+            <li><FontAwesomeIcon  className="navbar-user-icon" style={{fontSize: "32px"}} icon={faUserEdit} /></li>
           </Link>
         </ul>
       </div>

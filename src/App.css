@@ -61,10 +61,15 @@ body {
 }
 
 .nav-bar-text li:hover {
-  color: green;
+  color: lightgreen;
   transition: color 0.5s;
 }
-
+.navbar-add-icon{
+  color: lawngreen;
+}
+.navbar-add-icon:hover{
+  color: darkgreen;
+}
 .flex-container li:visited {
   color: green;
 }
@@ -338,7 +343,7 @@ margin: .25rem 0;
   font-family: "Red Hat Display", sans-serif;
 }
 
-.register-button {
+.register-button, .back-button {
   width: 25%;
   margin-bottom: 15px;
   background-color: rgb(64, 23, 129);
@@ -353,7 +358,10 @@ margin: .25rem 0;
   border-radius: 16px;
   font-family: "Red Hat Display", sans-serif;
 }
-
+.register-button:hover, .back-button:hover, .existing-user-login:hover {
+  background-color: lightgreen;
+  color: black;
+}
 .budgetpad-landing p {
   font-size: 1.5rem;
   padding: 50px 25px 15px 25px;
@@ -402,6 +410,7 @@ margin: .25rem 0;
   border-radius: 5px;
   padding-top: 4%;
   padding-bottom: 5%;
+  font-size: 1rem;
 }
 .user-info-budget-form {
   margin-top: 0.75rem;
@@ -425,8 +434,9 @@ hr {
   position: absolute;
   /* left: 15rem;
   bottom: 26.5rem; */
-  left: 63%;
+  left: 60%;
   bottom: 13%;
+  font-size: 7rem;
 }
 .user-info-cred-form button,
 .user-info-budget-form button {
@@ -633,7 +643,28 @@ hr {
     justify-content: space-between;
     padding: 0 10%;
   }
+  .user-info-fields{
+    font-size: 1.4rem;
+    display: flex;
+    align-items: right;
+    justify-content: space-evenly;
+  }
+  .user-info-budget-form{
+    margin-top: 0;
+  }
+  .add-transaction-container{
+    left: 0;
+    right: 0;
+    width: 80%;
+  }
+  .user-info-icon {
+    left: 65%;
+    bottom: 13%;
+    font-size: 8rem;
+  }
 }
+
+
 /* ******************************* */
 /* ******DESKTOP DESIGN********* */
 /* ******************************* */
@@ -789,6 +820,11 @@ hr {
     margin-bottom: 10px;
     margin-top: -35px;
   }
+  .add-transaction-container{
+    left: 0;
+    right: 0;
+    width: 40%;
+  }
 /* Card styling for desktop with video background. */
   .login-container-component, .register-container-component {
     display: flex;
@@ -922,5 +958,30 @@ hr {
     margin: 1em;
     box-shadow: 3px 10px 8px #6884bb;
   }
-
+  .user-info-budget-form, .user-info-cred-form{
+    background-color: #f3f3f3;
+    padding: 2%;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px #a8b8bc;
+    font-size: 2rem;
+  }
+  .user-info-budget-form button, 
+  .user-info-cred-form button,
+  .user-info-cred-form input,
+  .user-info-budget-form input,
+  .user-info-logout-button{
+    font-size: 1.4rem;
+  }
+  .user-info-cred-form input,
+  .user-info-budget-form input,
+  .user-info-logout-button{
+    margin-bottom: 1rem;
+  }
+  .user-info-header{
+    font-size: 1.4rem;
+  }
+  .user-info-header svg{
+    font-size: 12rem;
+    /* right: 25rem; */
+  }
 }

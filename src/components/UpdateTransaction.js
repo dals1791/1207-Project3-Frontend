@@ -10,7 +10,7 @@ const UpdateTransaction = (props) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
     history.push("/transactions"); //Push back to landing page
-    
+    props.setToggleUpdate(false)
   };
   //Handle for Form- Tracks typing when inputing into form input.
   const handleChange = (event) => {
