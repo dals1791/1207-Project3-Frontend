@@ -8,8 +8,8 @@ const PieChart = (props) => {
   const [chartData, setChartData] = React.useState({});
   const { transactions, budget, totalSpent } = props;
 
-  console.log("Chart Transaction Props: ", transactions);
-  console.log("Chart Budget Props: ", budget);
+  // console.log("Chart Transaction Props: ", transactions);
+  // console.log("Chart Budget Props: ", budget);
 
   /* ------------------------------------------------------
   - FUNCTION TO GET THE NON-REPEATING CATEGORIES FOR TRANSACTIONS
@@ -20,7 +20,7 @@ const PieChart = (props) => {
     return transaction.isExpense === true;
   });
 
-  console.log("Total expense data: ", totalExpenses);
+  // console.log("Total expense data: ", totalExpenses);
 
   // Get an array of just the categories from the transactions object -  NO DUPLICATE VALUES
   // CITATION --- https://www.codegrepper.com/code-examples/javascript/array+map+distinct
@@ -57,9 +57,10 @@ const PieChart = (props) => {
     });
   });
 
-  console.log("Total spending for each category: ", categorySpent);
+  console.log("categorySpent Array: ", categorySpent);
   //MAP the totalAmount property in the array of objects into a new array with just the $ totalAmount
   const spendData = categorySpent.map((item) => item.totalAmout);
+  console.log("spendData array: ", spendData);
 
   // Push the remaining balance amount into the spendData array
   //const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -70,81 +71,44 @@ const PieChart = (props) => {
   /* ------------------------------------------------------
   - MAKE OBJECT ARRAY TO HOLD THE CATEGORIES AND ITS COLORS.
   ------------------------------------------------------- */
-  const legend = [
-    {
-      category: "Food and Drink",
-      bgColor: "rgba(232, 159, 0, .9)",
-    },
-    {
-      category: "Grocery",
-      bgColor: "rgba(232, 220, 0, .9)",
-    },
-    {
-      category: "Utility",
-      bgColor: "rgba(111, 214, 0, .9)",
-    },
-    {
-      category: "Rent/Mortgage",
-      bgColor: "rgba(0, 89, 214 , .9)",
-    },
-    {
-      category: "Gas",
-      bgColor: "rgba(116, 0, 224, .9)",
-    },
-    {
-      category: "Gift",
-      bgColor: "rgba(33, 243, 198, .9)",
-    },
-    {
-      category: "Clothing",
-      bgColor: "rgba(33, 22, 154, .9)",
-    },
-    {
-      category: "Pet Supplies",
-      bgColor: "rgba(222, 32, 243, .9)",
-    },
-    {
-      category: "Travel",
-      bgColor: "rgba(212, 139, 4, .9)",
-    },
-    {
-      category: "Entertainment",
-      bgColor: "rgba(255, 145, 164 , .9)",
-    },
-    {
-      category: "Recreation",
-      bgColor: "rgba(140, 191, 57, .9)",
-    },
-    {
-      category: "Other",
-      bgColor: "rgba(153, 104, 47, .9)",
-    },
-  ];
-
-  let legendFiltered = [];
-  for (let i = 0; i < legend.length; i++) {
-    if (categories.indexOf(legend[i].category) >= 0) {
-      legendFiltered.push(legend[i]);
-    }
-  }
-  console.log("filter returned ", legendFiltered);
-
-  //------ MAP OUT THE LABELS FOR CHART IN ORDER FROM THE FILTERED TRANSACTIONS -------
-  const labelArr = legendFiltered.map((item) => {
-    return item.category;
-  });
+  const legend = {
+    "Food and Drink": "rgba(232, 159, 0, .9)",
+    Grocery: "rgba(232, 220, 0, .9)",
+    Utility: "rgba(111, 214, 0, .9)",
+    "Rent/Mortgage": "rgba(0, 89, 214 , .9)",
+    Gas: "rgba(116, 0, 224, .9)",
+    Gift: "rgba(33, 243, 198, .9)",
+    Clothing: "rgba(33, 22, 154, .9)",
+    "Pet Supplies": "rgba(222, 32, 243, .9)",
+    Travel: "rgba(212, 139, 4, .9)",
+    Entertainment: "rgba(255, 145, 164 , .9)",
+    Recreation: "rgba(140, 191, 57, .9)",
+    Other: "rgba(153, 104, 47, .9)",
+  };
 
   /* ------------------------------------------------------
     MAP  OUT THE COLORS FOR THE CHART LABEL
   ------------------------------------------------------ */
-  const colorLabels = legendFiltered.map((item) => {
-    return item.bgColor;
+  let colorLabels = [];
+  categories.forEach((category) => {
+    colorLabels.push(legend[category]);
   });
 
-  console.log("Color Labels: ", colorLabels);
   /* ------------------------------------------------------
     MAP  OUT THE COLORS FOR THE CHART LEGEND
   ------------------------------------------------------ */
+  let legendFiltered = [];
+  legendFiltered = categories.map((category) => {
+    return {
+      category: category,
+      bgColor: legend[category],
+    };
+  });
+  console.log(
+    "legendFiltered with categories[] and colorLabels[] ",
+    legendFiltered
+  );
+
   const chartLegend = legendFiltered.map((item, index) => {
     return (
       <div className="legendLabel">
@@ -162,12 +126,12 @@ const PieChart = (props) => {
     ------------------------------------------------------ */
   React.useEffect(() => {
     setChartData({
-      labels: labelArr, // array
+      labels: categories, // array holding the labels for categories spent
       datasets: [
         {
           label: "Spendings",
-          data: spendData, // array
-          backgroundColor: colorLabels, // array
+          data: spendData, // array holding the $$ amount spent for each cat
+          backgroundColor: colorLabels, // array holding the rgba color tied to each cat
           borderWidth: 1,
           borderColor: "#fff",
         },
