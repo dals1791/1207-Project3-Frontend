@@ -42,7 +42,7 @@ const UserProfile = (props) => {
               <h2>Welcome {user.firstName} </h2>
               <p>Username: {user.userName}</p>
               <p>Password: {user.password}</p>
-              <p>Income: ${user.budget[0].income}</p>
+              <p>Income: ${budget.income}</p>
               
                 <button 
                 onClick={handleLoginState}className="user-info-logout-button">Log out</button>

@@ -2,7 +2,8 @@ import React from "react";
 import RenderAll from "./RenderAll";
 import UserLogin from "./components/UserLogin/UserLogin";
 import TopBar from "./components/Topbar";
-import NavBar from "./components/NavBar"
+import NavBar from "./components/NavBar";
+import SetBudget  from "./components/UserLogin/Set-Budget"
 
 const App = () => {
   const url = "https://project3-backend-1207.herokuapp.com";
@@ -19,9 +20,11 @@ const App = () => {
         }
       });
   };
-
+  
+  // console.log("This is user", user)
+  
   const loaded = () => {
-    return <RenderAll url={url} user={user} setLoggedIn={setLoggedIn}/>;
+        return <RenderAll url={url} user={user} setLoggedIn={setLoggedIn}/>;
   };
   const loading = () => {
     return (

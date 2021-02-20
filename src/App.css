@@ -5,7 +5,7 @@
   text-align: center;
   font-family: "Red Hat Display", sans-serif;
   width: 100%;
-  height:100%;
+  height: 100%;
 }
 
 /* html{
@@ -26,7 +26,7 @@ body {
 }
 .budgetpad-text {
   padding: 20px 10px 0px 10px;
-  font-size: 4rem;
+  font-size: 3.8rem;
   margin: 0;
 }
 /* ======================= */
@@ -64,10 +64,10 @@ body {
   color: lightgreen;
   transition: color 0.5s;
 }
-.navbar-add-icon{
+.navbar-add-icon {
   color: lawngreen;
 }
-.navbar-add-icon:hover{
+.navbar-add-icon:hover {
   color: darkgreen;
 }
 .flex-container li:visited {
@@ -118,19 +118,17 @@ body {
   font-size: 22px;
   box-shadow: 0px 2px 10px white;
 }
-.add-income-category-field{
+.add-income-category-field {
   display: flex;
   align-items: baseline;
-  
 }
-.add-income-category-field input{
+.add-income-category-field input {
 }
-.drop-container{
+.drop-container {
   position: relative;
-  margin-left: .5rem;
-  
+  margin-left: 0.5rem;
 }
-.drop-list-container{
+.drop-list-container {
   position: absolute;
   left: -15rem;
   bottom: 30px;
@@ -143,18 +141,18 @@ body {
   color: black;
   border: 1px solid black;
 }
-.drop-list{
+.drop-list {
   display: flex;
   justify-content: space-between;
-margin: .25rem 0;
+  margin: 0.25rem 0;
 }
-.drop-list-item{
+.drop-list-item {
   width: 10%;
   height: 1.2rem;
   font-size: 24px;
   align-self: flex-end;
 }
-.drop-list-item-label{
+.drop-list-item-label {
   font-size: 1.3rem;
 }
 .add-income-routine,
@@ -170,7 +168,6 @@ margin: .25rem 0;
 .add-income-routine input,
 .add-income-expense input {
   width: 10%;
-  
 }
 .add-income-routine label,
 .add-income-expense label {
@@ -190,7 +187,7 @@ margin: .25rem 0;
   box-shadow: 0px 2px 10px white;
 }
 .add-income-add-button:hover,
-.close-button:hover{
+.close-button:hover {
   background-color: white;
   color: black;
 }
@@ -276,17 +273,26 @@ margin: .25rem 0;
 .team-member-card1:hover {
   background-image: url("./Images/cat1.jpg");
   box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .team-member-card2:hover {
   background-image: url("./Images/cat2.jpg");
   box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .team-member-card3:hover {
   background-image: url("./Images/cat3.jpg");
   background-size: contain;
   box-shadow: inset 0 0 0 300px rgba(5, 11, 17, 0.521);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .login-buttons {
@@ -343,7 +349,8 @@ margin: .25rem 0;
   font-family: "Red Hat Display", sans-serif;
 }
 
-.register-button, .back-button {
+.register-button,
+.back-button {
   width: 25%;
   margin-bottom: 15px;
   background-color: rgb(64, 23, 129);
@@ -358,7 +365,9 @@ margin: .25rem 0;
   border-radius: 16px;
   font-family: "Red Hat Display", sans-serif;
 }
-.register-button:hover, .back-button:hover, .existing-user-login:hover {
+.register-button:hover,
+.back-button:hover,
+.existing-user-login:hover {
   background-color: lightgreen;
   color: black;
 }
@@ -367,8 +376,10 @@ margin: .25rem 0;
   padding: 50px 25px 15px 25px;
   margin-bottom: 40px;
 }
-.username-bar, .password-bar, .firstname-bar {
-  background-color: #E7E7E7;
+.username-bar,
+.password-bar,
+.firstname-bar {
+  background-color: #e7e7e7;
   border-radius: 20px;
   padding: 5px;
   font-family: "Red Hat Display", sans-serif;
@@ -377,14 +388,14 @@ margin: .25rem 0;
   margin: 8px;
 }
 
-.register-container{
+.register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 /* =============User Profile Component MOBILE =========== */
-.user-info-container{
-/* width: 100%; */
+.user-info-container {
+  /* width: 100%; */
 }
 
 .user-info-header {
@@ -396,7 +407,6 @@ margin: .25rem 0;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  
 }
 .user-info-header h2,
 .user-info-header p {
@@ -450,15 +460,15 @@ hr {
   margin-left: 0.25rem;
 }
 .user-info-cred-form button:hover,
-.user-info-budget-form button:hover{
+.user-info-budget-form button:hover {
   background-color: white;
-  color:black;
+  color: black;
 }
 .user-info-logout-button {
   border-radius: 5px;
   margin: 1px;
 }
-.user-info-logout-button:hover{
+.user-info-logout-button:hover {
   background-color: rgb(64, 23, 129);
   color: white;
 }
@@ -471,7 +481,6 @@ hr {
 
 .dounut {
   width: 100%;
-  
 }
 
 .landing-component,
@@ -512,7 +521,6 @@ hr {
 }
 .spendSum-deposite {
   color: #5dca00;
-  
 }
 .legend {
   display: flex;
@@ -573,6 +581,19 @@ hr {
 .trnact-light-font {
   color: #aecbd6;
 }
+/* ========SET USER BUDGET========== */
+.set-budget-header-container{
+  display: flex;
+  flex-direction: column;
+}
+.set-budget-header{
+  margin-top: 10px;
+  padding: 0 .5rem;
+}
+.set-budget-header-smtxt{
+  margin: 0;
+  padding: 0 .5rem;
+}
 /* ===============DESKTOP DESIGN================= */
 .desktop-nav-bar {
   display: none;
@@ -592,18 +613,21 @@ hr {
   color: white;
   display: none;
 }
+.login-header-desktop-text{
+  margin-top: 0;
+}
 /* ============================================ */
 
 /* ***************************************************
 *  -------- MEDIA QUERIES  ---------
 *************************************************** */
-@media (max-width: 320px) {
-  .App{
+@media (max-width: 370px) {
+  .App {
     width: fit-content;
   }
 }
-@media (max-width: 1020px){
-  .video-background{
+@media (max-width: 1020px) {
+  .video-background {
     display: none;
   }
 }
@@ -643,16 +667,16 @@ hr {
     justify-content: space-between;
     padding: 0 10%;
   }
-  .user-info-fields{
+  .user-info-fields {
     font-size: 1.4rem;
     display: flex;
     align-items: right;
     justify-content: space-evenly;
   }
-  .user-info-budget-form{
+  .user-info-budget-form {
     margin-top: 0;
   }
-  .add-transaction-container{
+  .add-transaction-container {
     left: 0;
     right: 0;
     width: 80%;
@@ -664,11 +688,10 @@ hr {
   }
 }
 
-
 /* ******************************* */
 /* ******DESKTOP DESIGN********* */
 /* ******************************* */
-@media (min-width: 1028px) {
+@media (min-width: 1020px) {
   .nav-bar {
     display: none;
   }
@@ -779,7 +802,7 @@ hr {
     text-align: center;
     padding: 25px;
     align-items: center;
-    font-size: 36px;
+    font-size: 1.4em;
   }
 
   .budgetpad-landing p {
@@ -820,13 +843,14 @@ hr {
     margin-bottom: 10px;
     margin-top: -35px;
   }
-  .add-transaction-container{
+  .add-transaction-container {
     left: 0;
     right: 0;
     width: 40%;
   }
-/* Card styling for desktop with video background. */
-  .login-container-component, .register-container-component {
+  /* Card styling for desktop with video background. */
+  .login-container-component,
+  .register-container-component {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -837,12 +861,13 @@ hr {
     margin-top: 70px;
     background-color: white;
     border-radius: 25px;
-    -webkit-box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
-    -moz-box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
-    box-shadow: 10px 10px 33px 5px rgba(0,0,0,0.58);
+    -webkit-box-shadow: 10px 10px 33px 5px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: 10px 10px 33px 5px rgba(0, 0, 0, 0.58);
+    box-shadow: 10px 10px 33px 5px rgba(0, 0, 0, 0.58);
   }
 
-  .login-container, .register-container {
+  .login-container,
+  .register-container {
     display: flex;
     flex-direction: column;
     margin-right: 125px;
@@ -895,14 +920,17 @@ hr {
 
   .budgetpad-landing {
     background-image: none;
-    background-color: #A88BD4;
+    background-color: #a88bd4;
   }
 
   input {
     border: 0px;
   }
-  .username-bar, .password-bar, .firstname-bar, .existing-user-login {
-    background-color: #E7E7E7;
+  .username-bar,
+  .password-bar,
+  .firstname-bar,
+  .existing-user-login {
+    background-color: #e7e7e7;
     border-radius: 20px;
     padding: 5px;
     font-family: "Red Hat Display", sans-serif;
@@ -911,7 +939,8 @@ hr {
     margin: 8px;
   }
 
-  .existing-user-login, .register-button {
+  .existing-user-login,
+  .register-button {
     background-color: rgb(64, 23, 129);
   }
 
@@ -958,29 +987,30 @@ hr {
     margin: 1em;
     box-shadow: 3px 10px 8px #6884bb;
   }
-  .user-info-budget-form, .user-info-cred-form{
+  .user-info-budget-form,
+  .user-info-cred-form {
     background-color: #f3f3f3;
     padding: 2%;
     border-radius: 3px;
     box-shadow: 0 3px 5px #a8b8bc;
     font-size: 2rem;
   }
-  .user-info-budget-form button, 
+  .user-info-budget-form button,
   .user-info-cred-form button,
   .user-info-cred-form input,
   .user-info-budget-form input,
-  .user-info-logout-button{
+  .user-info-logout-button {
     font-size: 1.4rem;
   }
   .user-info-cred-form input,
   .user-info-budget-form input,
-  .user-info-logout-button{
+  .user-info-logout-button {
     margin-bottom: 1rem;
   }
-  .user-info-header{
+  .user-info-header {
     font-size: 1.4rem;
   }
-  .user-info-header svg{
+  .user-info-header svg {
     font-size: 12rem;
     /* right: 25rem; */
   }

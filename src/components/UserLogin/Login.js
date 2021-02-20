@@ -14,7 +14,7 @@ const Login = (props) => {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-  console.log("this is login form data", formData);
+  // console.log("this is login form data", formData);
   return (
     <form className="login-component-container">
       <div className="login-header-desktop">

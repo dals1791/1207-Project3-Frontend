@@ -2,9 +2,9 @@ import React from "react";
 
 const Summary = (props) => {
   console.log("Summary props: ", props);
-
-  return (
-    <div className="spend-summary">
+  
+  const loaded =()=>{
+    return<div className="spend-summary">
       <h1> Spend Summary </h1>
 
       <div>
@@ -24,6 +24,11 @@ const Summary = (props) => {
         </section>
       </div>
     </div>
+
+  }
+  const loading = "Add Your Budget"
+  return (
+    props.budget.length >0 ? loaded(): loading
   );
 };
 export default Summary;
