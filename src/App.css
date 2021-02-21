@@ -26,7 +26,7 @@ body {
 }
 .budgetpad-text {
   padding: 20px 10px 0px 10px;
-  font-size: 4rem;
+  font-size: 3.8rem;
   margin: 0;
 }
 /* ======================= */
@@ -581,6 +581,19 @@ hr {
 .trnact-light-font {
   color: #aecbd6;
 }
+/* ========SET USER BUDGET========== */
+.set-budget-header-container{
+  display: flex;
+  flex-direction: column;
+}
+.set-budget-header{
+  margin-top: 10px;
+  padding: 0 .5rem;
+}
+.set-budget-header-smtxt{
+  margin: 0;
+  padding: 0 .5rem;
+}
 /* ===============DESKTOP DESIGN================= */
 .desktop-nav-bar {
   display: none;
@@ -600,12 +613,15 @@ hr {
   color: white;
   display: none;
 }
+.login-header-desktop-text{
+  margin-top: 0;
+}
 /* ============================================ */
 
 /* ***************************************************
 *  -------- MEDIA QUERIES  ---------
 *************************************************** */
-@media (max-width: 320px) {
+@media (max-width: 370px) {
   .App {
     width: fit-content;
   }
@@ -675,7 +691,7 @@ hr {
 /* ******************************* */
 /* ******DESKTOP DESIGN********* */
 /* ******************************* */
-@media (min-width: 1028px) {
+@media (min-width: 1020px) {
   .nav-bar {
     display: none;
   }
