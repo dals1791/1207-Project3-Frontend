@@ -1,4 +1,4 @@
-# Project 3 - MERN - BUDGTPAD (name is not final)!
+# BUDGTPAD!
 
 ## Project Links
 
